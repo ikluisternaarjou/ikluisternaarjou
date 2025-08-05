@@ -153,26 +153,37 @@
       margin-bottom: 10px;
       font-size: 1.1rem;
     }
-    .review-carousel {
+.review-carousel {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap: 20px;
   padding: 20px;
+
+  max-width: 1000px; /* centreren */
+  margin: 0 auto;
 }
 
 .review-card {
+  flex-shrink: 0;
   min-width: 250px;
-  background-color: #f4f4f4;
-  border-radius: 8px;
+  background-color: #fff;
+  border-radius: 12px;
   padding: 20px;
   scroll-snap-align: start;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
 }
-.reviews {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 60px 5%;
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.stars {
+  color: gold;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  display: block;
 }
 
 
@@ -291,6 +302,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
