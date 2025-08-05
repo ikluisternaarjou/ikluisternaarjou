@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EvenLuisteren</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fffdf8;
+      color: #0d1b2a;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #0d1b2a;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f1b400;
+    }
+
+    .btn-primary {
+      background-color: #f1b400;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: #0d1b2a;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #d9a300;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 5% 60px;
+      background: linear-gradient(to bottom, #fffdf8, #f7f4eb);
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #4a4a4a;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 5%;
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature img {
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    ul li {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    footer {
+      background: #f7f4eb;
+      text-align: center;
+      padding: 60px 5%;
+      margin-top: auto;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 5%;
+      }
+
+      header h1 {
+        margin-bottom: 15px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .section {
+        padding: 40px 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EVENLUISTEREN</h1>
+    <nav>
+      <a href="#voorwie">Voor wie</a>
+      <a href="#hoehetwerkt">Hoe het werkt</a>
+      <a href="#overons">Over ons</a>
+      <a href="#contact" class="btn-primary">Plan een gesprek</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Loop je vast?<br>Wij luisteren.</h2>
+    <p>Gratis en vertrouwelijk gesprek van 30 minuten.<br>Samen kijken we wat jou verder helpt.</p>
+    <a href="#contact" class="btn-primary">Plan direct een gratis gesprek</a>
+  </section>
+
+  <section class="section features">
+    <div class="feature">
+      <img src="https://img.icons8.com/ios-filled/50/puzzle.png" alt="Laagdrempelig">
+      <h3>Laagdrempelig</h3>
+      <p>Geen verwijzing nodig, gewoon praten</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/ios-filled/50/clock.png" alt="Kennismaking">
+      <h3>Gratis kennismaking</h3>
+      <p>30 minuten luisteren zonder verplichtingen</p>
+    </div>
+    <div class="feature">
+      <img src="https://img.icons8.com/ios-filled/50/compass.png" alt="Vervolgtrajecten">
+      <h3>Vervolgtrajecten</h3>
+      <p>We helpen je de juiste weg te vinden</p>
+    </div>
+  </section>
+
+  <section class="section" id="hoehetwerkt">
+    <h2>Hoe het werkt</h2>
+    <ul>
+      <li>1. Je plant een gratis gesprek</li>
+      <li>2. We luisteren zonder oordeel</li>
+      <li>3. Samen kijken we naar vervolgstappen</li>
+    </ul>
+    <a href="#hoehetwerkt" class="btn-primary">Lees meer over hoe het werkt</a>
+  </section>
+
+  <section class="section" id="overons">
+    <h2>Over ons</h2>
+    <p>Ik help mensen helderheid te vinden in werk, relaties en leven.</p>
+  </section>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <p>📱 Bel of WhatsApp ons: <strong>06-41251757</strong></p>
+    <p>📍 Veghel, Noord-Brabant — Gesprekken telefonisch of online</p>
+    <p>🕒 Ma t/m vr: 09:00 – 17:00 (soms ook ’s avonds)</p>
+    <p>📧 info@evenluisteren.nl</p>
+  </footer>
+</body>
+</html>
