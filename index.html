@@ -185,43 +185,21 @@
       .section {
         padding: 40px 5%;
       }
-.reviews {
-  background-color: #fffdf8;
-  padding: 60px 5%;
-  text-align: center;
-}
-
-.reviews h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  font-family: 'Playfair Display', serif;
-}
-
-.review-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.review {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+.review-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
   padding: 20px;
-  font-size: 1rem;
-  line-height: 1.5;
-  transition: transform 0.3s ease;
 }
 
-.review:hover {
-  transform: translateY(-5px);
-}
-
-.review .stars {
-  display: block;
-  font-size: 1.2rem;
-  color: #f1b400;
-  margin-bottom: 10px;
+.review-card {
+  min-width: 250px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  padding: 20px;
+  scroll-snap-align: start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
     }
@@ -307,4 +285,5 @@
   </footer>
 </body>
 </html>
+
 
