@@ -185,6 +185,45 @@
       .section {
         padding: 40px 5%;
       }
+.reviews {
+  background-color: #fffdf8;
+  padding: 60px 5%;
+  text-align: center;
+}
+
+.reviews h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  font-family: 'Playfair Display', serif;
+}
+
+.review-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.review {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: transform 0.3s ease;
+}
+
+.review:hover {
+  transform: translateY(-5px);
+}
+
+.review .stars {
+  display: block;
+  font-size: 1.2rem;
+  color: #f1b400;
+  margin-bottom: 10px;
+}
+
     }
   </style>
 </head>
@@ -222,6 +261,27 @@
       <p>We helpen je de juiste weg te vinden</p>
     </div>
   </section>
+<section class="reviews">
+  <h2>💬 Ervaringen van anderen</h2>
+  <div class="review-container">
+    <div class="review">
+      <span class="stars">★★★★★</span>
+      <p>“Ik voelde me eindelijk gehoord.”<br><strong>Sanne (32)</strong><br>Het gesprek met Erwin was zó verhelderend. Geen oordeel, alleen rust en richting.</p>
+    </div>
+    <div class="review">
+      <span class="stars">★★★★★</span>
+      <p>“Het was precies wat ik nodig had.”<br><strong>Mark (45)</strong><br>Geen druk, geen verkooppraatje. Gewoon iemand die met je meedenkt.</p>
+    </div>
+    <div class="review">
+      <span class="stars">★★★★★</span>
+      <p>“Ik durfde eindelijk hulp te vragen.”<br><strong>Lotte (28)</strong><br>Binnen een dag had ik een gesprek. Dat gaf me vertrouwen.</p>
+    </div>
+    <div class="review">
+      <span class="stars">★★★★★</span>
+      <p>“Laagdrempelig en professioneel.”<br><strong>Jeroen (51)</strong><br>Even Luisteren was precies wat ik zocht: snel, persoonlijk en deskundig.</p>
+    </div>
+  </div>
+</section>
 
   <section class="section" id="hoehetwerkt">
     <h2>Hoe het werkt</h2>
@@ -247,3 +307,4 @@
   </footer>
 </body>
 </html>
+
