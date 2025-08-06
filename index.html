@@ -422,24 +422,40 @@ Want soms is één goed gesprek al genoeg om weer ruimte te voelen — en verder
     <p>🕒 Ma t/m vr: 08:00 – 20:00(bij behoefte ook later of in de weekeinden neem hiervoor contact op)</p>
     <p>📧 info@ikluisternaarjou.nl</p>
   </footer>
-  <script>
-  const carousel = document.querySelector('.review-carousel');
-  const scrollAmount = 270; // ongeveer de breedte van één kaart + gap
-  const intervalTime = 1700; // tijd in milliseconden (3 seconden)
+<script>
+  // Selecteer alle carrousels met de klasse 'review-carousel'
+  const carousels = document.querySelectorAll('.review-carousel');
 
-  let autoScroll = setInterval(() => {
-    if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
-      // Terug naar begin als we aan het einde zijn
-      carousel.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      // Scroll naar rechts
-      carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    }
-  }, intervalTime);
+  carousels.forEach(carousel => {
+    const scrollAmount = 270; // Ongeveer de breedte van één kaart + gap
+    const intervalTime = 1700; // Tijd in milliseconden (1.7 seconden)
+
+    let autoScroll = setInterval(() => {
+      if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+        // Terug naar begin als we aan het einde zijn
+        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        // Scroll naar rechts
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }, intervalTime);
+
+    // Optioneel: stop de autoscroll bij hover om interactie toe te staan
+    carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+    carousel.addEventListener('mouseleave', () => {
+      autoScroll = setInterval(() => {
+        if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }, intervalTime);
+    });
+  });
 </script>
-
 </body>
 </html>
+
 
 
 
