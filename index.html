@@ -5,314 +5,301 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ikluisternaarjou.nl</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-<style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  html, body {
-    overflow-x: hidden;
-  }
+    html, body {
+      overflow-x: hidden;
+    }
 
-  body {
-    font-family: 'Inter', sans-serif;
-    background-color: #fffdf8;
-    color: #0d1b2a;
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  header h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-  }
-
-  nav a {
-    margin-left: 30px;
-    text-decoration: none;
-    color: #0d1b2a;
-    font-weight: 500;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-
-  nav a:hover {
-    color: #f1b400;
-  }
-
-  .btn-primary {
-    background-color: #f1b400;
-    padding: 12px 24px;
-    border-radius: 8px;
-    color: #0d1b2a;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
-
-  .btn-primary:hover {
-    background-color: #d9a300;
-    transform: translateY(-2px);
-  }
-
-  .hero {
-    text-align: center;
-    padding: 100px 5% 60px;
-    background: linear-gradient(to bottom, #fffdf8, #f7f4eb);
-  }
-
-  .hero h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    line-height: 1.2;
-  }
-
-  .hero p {
-    font-size: 1.3rem;
-    max-width: 700px;
-    margin: 0 auto 30px;
-    color: #4a4a4a;
-  }
-
-  .section {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 60px 5%;
-    text-align: center;
-  }
-
-  section {
-    padding: 80px 15%;
-  }
-
-  .features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-  }
-
-  .feature {
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-  }
-
-  .feature:hover {
-    transform: translateY(-5px);
-  }
-
-  .feature img {
-    height: 50px;
-    margin-bottom: 20px;
-  }
-
-  h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-  }
-
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-  }
-
-  ul li {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-  }
-
-  footer {
-    background: #f7f4eb;
-    text-align: center;
-    padding: 60px 5%;
-    margin-top: auto;
-  }
-
-  footer p {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-  }
-
-  .review-carousel {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .review-card {
-    flex-shrink: 0;
-    min-width: 250px;
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    scroll-snap-align: start;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
-  }
-
-  .review-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .stars {
-    color: gold;
-    font-size: 1.4em;
-    margin-bottom: 10px;
-    display: block;
-  }
-
-  .review-card img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 15px;
-    border-radius: 8px;
-  }
-
-  @media (max-width: 768px) {
-    header {
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fffdf8;
+      color: #0d1b2a;
+      line-height: 1.6;
+      display: flex;
       flex-direction: column;
-      text-align: center;
-      padding: 15px 5%;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     header h1 {
-      margin-bottom: 15px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     nav {
-      flex-direction: column;
-      gap: 10px;
+      display: flex;
+      align-items: center;
     }
 
     nav a {
-      margin: 10px 0;
+      margin-left: 30px;
+      text-decoration: none;
+      color: #0d1b2a;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f1b400;
+    }
+
+    .btn-primary {
+      background-color: #f1b400;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: #0d1b2a;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #d9a300;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 5% 60px;
+      background: linear-gradient(to bottom, #fffdf8, #f7f4eb);
     }
 
     .hero h2 {
-      font-size: 2.5rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.2;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #4a4a4a;
     }
 
     .section {
-      padding: 40px 5%;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 5%;
+      text-align: center;
     }
 
     section {
-      padding: 40px 5%;
+      padding: 80px 15%;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature img {
+      height: 50px;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    ul li {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+    footer {
+      background: #f7f4eb;
+      text-align: center;
+      padding: 60px 5%;
+      margin-top: auto;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+    }
+
+    .review-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .review-card {
-      min-width: 80%;
+      flex-shrink: 0;
+      min-width: 250px;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stars {
+      color: gold;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      display: block;
     }
 
     .review-card img {
-      height: auto;
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 15px;
+      border-radius: 8px;
     }
+
     .faq-section {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: 60px 5%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 60px 5%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-.faq-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  margin-bottom: 40px;
-  color: #0d1b2a;
-  text-align: center;
-}
+    .faq-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+      color: #0d1b2a;
+      text-align: center;
+    }
 
-.faq-item {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
-}
+    .faq-item {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
 
-.faq-question {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #0d1b2a;
-  text-align: left;
-  width: 100%;
-  cursor: pointer;
-  padding: 10px 0;
-  transition: color 0.3s ease;
-}
+    .faq-question {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #0d1b2a;
+      text-align: left;
+      width: 100%;
+      cursor: pointer;
+      padding: 10px 0;
+      transition: color 0.3s ease;
+    }
 
-.faq-question:hover {
-  color: #f1b400;
-}
+    .faq-question:hover {
+      color: #f1b400;
+    }
 
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  font-size: 1.05rem;
-  color: #4a4a4a;
-  padding-left: 10px;
-}
+    .faq-answer {
+      display: none;
+      font-size: 1.05rem;
+      color: #4a4a4a;
+      padding-left: 10px;
+      margin-top: 10px;
+    }
 
-.faq-item.active .faq-answer {
-  max-height: 500px; /* genoeg ruimte voor lange antwoorden */
-  margin-top: 10px;
-}
+    .faq-item.active .faq-answer {
+      display: block;
+    }
 
-  }
-</style>
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 5%;
+      }
 
+      header h1 {
+        margin-bottom: 15px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      nav a {
+        margin: 10px 0;
+      }
+
+      .hero h2 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+      }
+
+      .section {
+        padding: 40px 5%;
+      }
+
+      section {
+        padding: 40px 5%;
+      }
+
+      .review-card {
+        min-width: 80%;
+      }
+
+      .review-card img {
+        height: auto;
+      }
+    }
+  </style>
 </head>
-  <script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const item = button.parentElement;
-      item.classList.toggle('active');
-    });
-  });
-</script>
-
 <body>
   <header>
     <h1>Ikluisternaarjou.nl</h1>
@@ -323,13 +310,10 @@
       <a href="#contact" class="btn-primary">Bel nu !</a>
     </nav>
   </header>
-
   <section class="hero">
     <h2>Probleem groot of klein?<br>Wij luisteren.</h2>
-    <p>Ruzie met je kind, stress op het werk, relatieproblemen, als afvallen niet lukt — soms wil je gewoon even praten.
-</p>
-    <a href="#contact" class="btn-primary">Bel nu voor een gratis luisterend oor!
-</a>
+    <p>Ruzie met je kind, stress op het werk, relatieproblemen, als afvallen niet lukt — soms wil je gewoon even praten.</p>
+    <a href="#contact" class="btn-primary">Bel nu voor een gratis luisterend oor!</a>
   </section>
 
   <section class="section features">
@@ -340,7 +324,7 @@
     </div>
     <div class="feature">
       <img src="https://img.icons8.com/ios-filled/50/clock.png" alt="Kennismaking">
-      <h3>Praten / luisteren </h3>
+      <h3>Praten / luisteren</h3>
       <p>30 minuten zonder verplichtingen</p>
     </div>
     <div class="feature">
@@ -349,281 +333,157 @@
       <p>We helpen je de juiste weg te vinden</p>
     </div>
   </section>
-<section class="reviews">
-  <div class="review-carousel">
-    <div class="review-card">
-      <span class="stars">★★★★★</span>
-      <p>“heb op de app een lang gesprek gevoerd want durfde niet te bellen.”<br><strong>Sanne (32)</strong><br> heb nu de juiste hulp gevonden.</p>
+
+  <section class="reviews">
+    <div class="review-carousel">
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>“heb op de app een lang gesprek gevoerd want durfde niet te bellen.”<br><strong>Sanne (32)</strong><br>heb nu de juiste hulp gevonden.</p>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>“Het was precies wat ik nodig had.”<br><strong>Mark (45)</strong><br>Geen druk, geen verkooppraatje. Gewoon iemand die met je meedenkt.</p>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>“Ik durfde eindelijk hulp te vragen.”<br><strong>Lotte (28)</strong><br>Binnen een dag had ik een gesprek. Dat gaf me vertrouwen.</p>
+      </div>
+      <div class="review-card">
+        <span class="stars">★★★★★</span>
+        <p>“Ik zat al een tijdje met dingen waar ik niet echt uit kwam.”<br><strong>Jeroen (51)</strong><br>Kreeg meteen iemand aan de lijn. Het gesprek was gratis, fijn want ik zat niet te wachten op weer kosten.</p>
+      </div>
     </div>
-    <div class="review-card">
-      <span class="stars">★★★★★</span>
-      <p>“Het was precies wat ik nodig had.”<br><strong>Mark (45)</strong><br>Geen druk, geen verkooppraatje. Gewoon iemand die met je meedenkt.</p>
+  </section>
+
+  <section class="section faq-section" id="veel-gestelde-vragen">
+    <h2>Veel gestelde vragen</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">Moet ik bellen of mag ik ook appen?</button>
+      <div class="faq-answer">
+        <p>Beide mag! Jij kiest wat prettig voelt. We reageren snel en persoonlijk!</p>
+      </div>
     </div>
-    <div class="review-card">
-      <span class="stars">★★★★★</span>
-      <p>“Ik durfde eindelijk hulp te vragen.”<br><strong>Lotte (28)</strong><br>Binnen een dag had ik een gesprek. Dat gaf me vertrouwen.</p>
+
+    <div class="faq-item">
+      <button class="faq-question">Wanneer kan ik contact opnemen?</button>
+      <div class="faq-answer">
+        <p>Maandag t/m vrijdag: 08:00–20:00. Indien gewenst ook later/in het weekend beschikbaar—app gerust om dit te checken!</p>
+      </div>
     </div>
-    <div class="review-card">
-      <span class="stars">★★★★★</span>
-      <p>“Ik zat al een tijdje met dingen waar ik niet echt uit kwam.”<br><strong>Jeroen (51)</strong><br>kreeg meteen iemand aan de lijn Het gesprek was gratis, fijn want ik zat niet te wachten op weer kosten.</p>
+
+    <div class="faq-item">
+      <button class="faq-question">Wat gebeurt er na het gesprek?</button>
+      <div class="faq-answer">
+        <p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is, zoeken we een passende coach of therapeut uit ons netwerk. Jij beslist zelf of je verder wilt.</p>
+      </div>
     </div>
-  </div>
-</section>
 
+    <div class="faq-item">
+      <button class="faq-question">Is het eerste gesprek echt gratis?</button>
+      <div class="faq-answer">
+        <p>Ja. Je krijgt een 30 minuten gratis en vertrouwelijk gesprek, zonder verplichtingen maar met gratis advies.</p>
+      </div>
+    </div>
 
-  <section class="section" id="hoehetwerkt">
-    <h2>Hoe het werkt</h2>
-    <ul>
-      <li>1. Je neemt contact op Je belt ons op het moment dat jij daar behoefte aan hebt. Geen wachttijden, geen formulieren, geen verwijzing — gewoon direct contact.</li>
+    <div class="faq-item">
+      <button class="faq-question">Is het anoniem?</button>
+      <div class="faq-answer">
+        <p>Ja. Uiteraard is het volledig anoniem en gaan wij vertrouwelijk om met uw gegevens! U hoeft alleen maar informatie te delen die u wilt delen.</p>
+      </div>
+    </div>
 
-<li>2. Ik luister naar jou Je krijgt een warm en professioneel luisterend oor. Jij deelt wat er speelt, ik luister aandachtig en zonder oordeel. Alles mag er zijn: verdriet, twijfel, frustratie, hoop. Wat jij voelt, is welkom.</li>
+    <div class="faq-item">
+      <button class="faq-question">Kan ik ook namens iemand anders contact opnemen?</button>
+      <div class="faq-answer">
+        <p>Ja dat mag! Bijvoorbeeld als je je zorgen maakt om een partner, collega of familielid.</p>
+      </div>
+    </div>
 
-<li>3. We praten 30 minuten gratis Je krijgt een half uur lang de ruimte om je verhaal te doen. Gratis en vrijblijvend. Ik denk met je mee, stel vragen en bied waar nodig deskundig advies.</li>
+    <div class="faq-item">
+      <button class="faq-question">Voor welke problemen kan ik bellen?</button>
+      <div class="faq-answer">
+        <p>Voor alles waar u tegenaan loopt, bijvoorbeeld:</p>
+        <ul>
+          <li>💬 Ruzie met je kind</li>
+          <li>💬 Stress of (bijna) burn-out</li>
+          <li>💬 Problemen in relaties of vriendschappen</li>
+          <li>💬 Opvoedvragen</li>
+          <li>💬 Moeite met afvallen/aankomen of zelfbeeld</li>
+          <li>💬 Gevoelens van onrust, twijfel of overbelasting</li>
+          <li>💬 Rouw of verlies</li>
+          <li>💬 Gewoon even praten</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="voorwie">
+    <h2>Voor wie?</h2>
+    <p>De situaties waarin wij ondersteuning bieden zijn herkenbaar voor velen.</p>
 
-<li>4. We kijken samen naar een passend vervolg Als jij dat wilt, kijken we samen welke zorgprofessional het beste bij jou past. Iemand die aansluit bij jouw situatie, wensen en persoonlijkheid. Jij houdt de regie — ik help je op weg.</li>
-    </ul>
-    <a href="#hoehetwerkt" class="btn-primary">Bel of WhatsApp voor direct contact</a>
+    <div class="review-carousel">
+      <div class="review-card"><img src="afvallen.jpg" alt="Afvallen"><p><strong>Afvallen</strong><br>Als het afvallen maar niet wil lukken</p></div>
+      <div class="review-card"><img src="angststoornis.jpg" alt="Angststoornis"><p><strong>Angstoornis</strong><br>Als angsten de kwaliteit van je leven beheersen</p></div>
+      <div class="review-card"><img src="bindingsangst.jpg" alt="Bindingsangst"><p><strong>Bindingsangst</strong><br>Als relaties maar niet willen lukken</p></div>
+      <div class="review-card"><img src="depressie.jpg" alt="Depressie"><p><strong>Depressie</strong><br>Als het leven niet leuk meer is</p></div>
+      <div class="review-card"><img src="familieruzie.jpg" alt="Familieruzie"><p><strong>Familieruzie</strong><br>Als de familiedynamiek er niet meer is</p></div>
+      <div class="review-card"><img src="dementie.jpg" alt="Dementie"><p><strong>Dementie</strong><br>Als je om moet gaan met dementie</p></div>
+      <div class="review-card"><img src="hsp.jpg" alt="HSP"><p><strong>HSP en overgeprikkeld</strong><br>Als overprikkeling je leven beheerst</p></div>
+      <div class="review-card"><img src="kindere.jpg" alt="Puber ruzie"><p><strong>Puber ruzie</strong><br>Als er weer met een deur gegooid wordt</p></div>
+      <div class="review-card"><img src="mantelzorg.jpg" alt="Mantelzorg"><p><strong>Mantelzorg</strong><br>Als de zorg voor anderen je even te veel wordt</p></div>
+      <div class="review-card"><img src="relatieproblemen.jpg" alt="Relatieproblemen"><p><strong>Relatieproblemen</strong><br>Als je relatie niet meer loopt</p></div>
+      <div class="review-card"><img src="werkstres.jpg" alt="Werkstress"><p><strong>Werkstress</strong><br>Als de werkstress te veel dreigt te worden</p></div>
+      <div class="review-card"><img src="rouw.jpg" alt="Rouw"><p><strong>Rouw</strong><br>Als missen de overhand krijgt</p></div>
+      <div class="review-card"><img src="verlatingsangst.jpg" alt="Verlatingsangst"><p><strong>Verlatingsangst</strong><br>Als je je teveel vastklampt</p></div>
+    </div>
   </section>
 
   <section class="section" id="overons">
     <h2>Over ons</h2>
-    <p></p>
     <p>🎧 Luisteren is onze kracht</p>
     <p>Bij <em>Ikluisternaarjou</em> draait alles om écht contact. Een moment van rust, aandacht en helderheid — zonder formulieren, wachttijden of drempels. Gewoon bellen of appen.</p>
-    <p>Onze zorgprofessionals bieden een luisterend oor bij stress, relatieproblemen, opvoedvragen of andere situaties waarin iemand even vastloopt. Laagdrempelig, deskundig en zonder oordeel.
-Want soms is één goed gesprek al genoeg om weer ruimte te voelen — en verder te kunnen.</p>
+    <p>Onze zorgprofessionals bieden een luisterend oor bij stress, relatieproblemen, opvoedvragen of andere situaties waarin iemand even vastloopt. Laagdrempelig, deskundig en zonder oordeel. Want soms is één goed gesprek al genoeg om weer ruimte te voelen — en verder te kunnen.</p>
   </section>
-  
- <section class="section faq-section" id="veel-gestelde-vragen">
-  <h2>Veel gestelde vragen</h2>
 
-  <div class="faq-item">
-    <button class="faq-question">Moet ik bellen of mag ik ook appen?</button>
-    <div class="faq-answer">
-      <p>Beide mag! Jij kiest wat prettig voelt. We reageren snel en persoonlijk!</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Wanneer kan ik contact opnemen?</button>
-    <div class="faq-answer">
-      <p>Maandag t/m vrijdag: 08:00–20:00. Indien gewenst ook later/in het weekend beschikbaar—app gerust om dit te checken!</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Wat gebeurt er na het gesprek?</button>
-    <div class="faq-answer">
-      <p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is, zoeken we een passende coach of therapeut uit ons netwerk. Jij beslist zelf of je verder wilt.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Is het eerste gesprek echt gratis?</button>
-    <div class="faq-answer">
-      <p>Ja. Je krijgt een 30 minuten gratis en vertrouwelijk gesprek, zonder verplichtingen maar met gratis advies.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Is het anoniem?</button>
-    <div class="faq-answer">
-      <p>Ja. Uiteraard is het volledig anoniem en gaan wij vertrouwelijk om met uw gegevens! U hoeft alleen maar informatie te delen die u wilt delen.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Kan ik ook namens iemand anders contact opnemen?</button>
-    <div class="faq-answer">
-      <p>Ja dat mag! Bijvoorbeeld als je je zorgen maakt om een partner, collega of familielid.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <button class="faq-question">Voor welke problemen kan ik bellen?</button>
-    <div class="faq-answer">
-      <p>Voor alles waar u tegenaan loopt, bijvoorbeeld:</p>
-      <ul>
-        <li>💬 Ruzie met je kind</li>
-        <li>💬 Stress of (bijna) burn-out</li>
-        <li>💬 Problemen in relaties of vriendschappen</li>
-        <li>💬 Opvoedvragen</li>
-        <li>💬 Moeite met afvallen/aankomen of zelfbeeld</li>
-        <li>💬 Gevoelens van onrust, twijfel of overbelasting</li>
-        <li>💬 Rouw of verlies</li>
-        <li>💬 Gewoon even praten</li>
-      </ul>
-    </div>
-  </div>
-</section>
-<section class="section" id="voorwie">
-  <h2>Voor wie?</h2>
-  <p>De situaties waarin wij ondersteuning bieden zijn herkenbaar voor velen.</p>
-
-  <div class="review-carousel">
-    <div class="review-card">
-      <img src="afvallen.jpg" alt="Puber in conflict met ouder" style="width:100%; border-radius:8px;">
-      <p><strong>Afvallen</strong><br>Als het afvallen maar niet wil lukken</p>
-    </div>
-    <div class="review-card">
-      <img src="angststoornis.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Angstoornis</strong><br>Als angsten de kwaliteit van je leven beheersen</p>
-    </div>
-    <div class="review-card">
-      <img src="bindingsangst.jpg" alt="Relatieproblemen" style="width:100%; border-radius:8px;">
-      <p><strong>Bindingsangst</strong><br>Als relaties maar niet willen lukken</p>
-    </div>
-       <div class="review-card">
-      <img src="depressie.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Depressie</strong><br>Als het leven niet leuk meer is</p>
-    </div>
-       <div class="review-card">
-      <img src="familieruzie.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Familieruzie</strong><br>Als de familiedynamiek er niet meer is</p>
-    </div>
-       <div class="review-card">
-      <img src="dementie.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Dementie</strong><br>Als je om moet gaan met dementie</p>
-    </div>
-       <div class="review-card">
-      <img src="hsp.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>HSP en overgeprikkeld</strong><br>Als overprikkeling je leven beheerst</p>
-    </div>
-       <div class="review-card">
-      <img src="kindere.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Puber ruzie</strong><br>Als er weer met een deur gegooid wordt</p>
-    </div>
-       <div class="review-card">
-      <img src="mantelzorg.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Mantelzorg</strong><br>Als de zorg voor anderen je even te veel wordt</p>
-    </div>
-       <div class="review-card">
-      <img src="relatieproblemen.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Relatieproblemen</strong><br>Als je relatie niet meer loopt</p>
-     </div>
-       <div class="review-card">
-      <img src="werkstres.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Werkstress</strong><br>Als de werkstress te veel dreigt te worden</p>
-    </div>
-     <div class="review-card">
-      <img src="rouw.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Rouw</strong><br>Als missen de overhand krijgt</p>
-    </div>
-     <div class="review-card">
-      <img src="verlatingsangst.jpg" alt="Gestreste werknemer" style="width:100%; border-radius:8px;">
-      <p><strong>Verlatingsangst</strong><br>Als je je teveel vastklampt</p>
-    </div>
-  </div>
-</section>
-
-
-    
-  </section>
   <footer id="contact">
     <h2>Contact</h2>
     <p>📍 Veghel, Noord-Brabant — Gesprekken telefonisch of online</p>
-    <p>🕒 Ma t/m vr: 08:00 – 20:00(bij behoefte ook later of in de weekeinden neem hiervoor contact op)</p>
+    <p>🕒 Ma t/m vr: 08:00 – 20:00 (bij behoefte ook later of in de weekeinden neem hiervoor contact op)</p>
     <p>📧 info@ikluisternaarjou.nl</p>
     <p>📱 Bel of WhatsApp ons: <a href="https://wa.me/31641251757" aria-label="WhatsApp ons op 06-41251757">06-41251757</a></p>
   </footer>
-<script>
-  // Selecteer alle carrousels met de klasse 'review-carousel'
-  const carousels = document.querySelectorAll('.review-carousel');
 
-  carousels.forEach(carousel => {
-    const scrollAmount = 270; // Ongeveer de breedte van één kaart + gap
-    const intervalTime = 1700; // Tijd in milliseconden (1.7 seconden)
+  <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
 
-    let autoScroll = setInterval(() => {
-      if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
-        // Terug naar begin als we aan het einde zijn
-        carousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        // Scroll naar rechts
-        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      }
-    }, intervalTime);
-
-    // Optioneel: stop de autoscroll bij hover om interactie toe te staan
-    carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
-    carousel.addEventListener('mouseleave', () => {
-      autoScroll = setInterval(() => {
+    const carousels = document.querySelectorAll('.review-carousel');
+    carousels.forEach(carousel => {
+      const scrollAmount = 270;
+      const intervalTime = 1700;
+      let autoScroll = setInterval(() => {
         if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
           carousel.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
           carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
       }, intervalTime);
+
+      carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
+      carousel.addEventListener('mouseleave', () => {
+        autoScroll = setInterval(() => {
+          if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+        }, intervalTime);
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
