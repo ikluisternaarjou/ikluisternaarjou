@@ -246,10 +246,73 @@
     .review-card img {
       height: auto;
     }
+    .faq-section {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 60px 5%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #0d1b2a;
+  text-align: center;
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0d1b2a;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #f1b400;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  font-size: 1.05rem;
+  color: #4a4a4a;
+  padding-left: 10px;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px; /* genoeg ruimte voor lange antwoorden */
+  margin-top: 10px;
+}
+
   }
 </style>
 
 </head>
+  <script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      item.classList.toggle('active');
+    });
+  });
+</script>
+
 <body>
   <header>
     <h1>Ikluisternaarjou.nl</h1>
@@ -331,45 +394,68 @@
 Want soms is één goed gesprek al genoeg om weer ruimte te voelen — en verder te kunnen.</p>
   </section>
   
-  <section class="section" id="Veel gestelde vragen?">
-    <h2>Veel gestelde vragen?</h2>
-    <p></p>
-    <p></p>
-    <p><strong>Moet ik bellen of mag ik ook appen?</strong> </p> 
-    <p>Beide mag! jij kiest wat prettig voelt. We reageren snel en persoonlijk!></p>
-    <p></p>
+ <section class="section faq-section" id="veel-gestelde-vragen">
+  <h2>Veel gestelde vragen</h2>
 
-    <p><strong>Wanneer kan ik contact opnemen?</strong> </p> 
-    <p>Maandag t/m vrijdag: 08:00-20:00. Indien gewenst ook later/in het weekend beschikbaar app gerust om dit checken!</p>
-        <p></p>
+  <div class="faq-item">
+    <button class="faq-question">Moet ik bellen of mag ik ook appen?</button>
+    <div class="faq-answer">
+      <p>Beide mag! Jij kiest wat prettig voelt. We reageren snel en persoonlijk!</p>
+    </div>
+  </div>
 
-    <p><strong>Wat gebeurt er na het gesprek? </strong> </p>
-     <p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is zoeken we een passende coach of therapeut uit ons netwerk. Jij beslist zelf of je verder wilt></p>
-       <p></p>
+  <div class="faq-item">
+    <button class="faq-question">Wanneer kan ik contact opnemen?</button>
+    <div class="faq-answer">
+      <p>Maandag t/m vrijdag: 08:00–20:00. Indien gewenst ook later/in het weekend beschikbaar—app gerust om dit te checken!</p>
+    </div>
+  </div>
 
-    <p><strong>Is het eerste gesprek echt gratis?</strong></p>
-    <p>Ja. Je krijgt een 30 minuten gratis en vertrouwelijk gesprek, zonder verplichtingen maar met gratis advies.</p>
-        <p></p>
+  <div class="faq-item">
+    <button class="faq-question">Wat gebeurt er na het gesprek?</button>
+    <div class="faq-answer">
+      <p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is, zoeken we een passende coach of therapeut uit ons netwerk. Jij beslist zelf of je verder wilt.</p>
+    </div>
+  </div>
 
-    <p><strong>Is het anoniem?</strong></p>
-    <p>Ja. Uiteraard is het volledig anoniem en gaan wij vertrouwelijk om met uw gegevens! U hoeft alleen maar informatie te delen die u wilt delen.</p>
-        <p></p>
+  <div class="faq-item">
+    <button class="faq-question">Is het eerste gesprek echt gratis?</button>
+    <div class="faq-answer">
+      <p>Ja. Je krijgt een 30 minuten gratis en vertrouwelijk gesprek, zonder verplichtingen maar met gratis advies.</p>
+    </div>
+  </div>
 
-    <p><strong>Kan ik ook namens iemand anders contact opnemen?</strong></p>
-    <p>Ja dat mag! Bijvoorbeeld als je je zorgen maakt om een partner, collega of familielid!</p>
-    <p></p>
-    <p><strong>Voor welke problemen kan ik bellen?</strong></p>
-<p>Voor alles waar u tegenaan loopt, bijvoorbeeld:</p>
-<ul>
-  <li>💬 Ruzie met je kind</li>
-  <li>💬 Stress of (bijna) burn-out</li>
-  <li>💬 Problemen in relaties of vriendschappen</li>
-  <li>💬 Opvoedvragen</li>
-  <li>💬 Moeite met afvallen/aankomen of zelfbeeld</li>
-  <li>💬 Gevoelens van onrust, twijfel of overbelasting</li>
-  <li>💬 Rouw of verlies</li>
-  <li>💬 Gewoon even praten</li>
-</ul>
+  <div class="faq-item">
+    <button class="faq-question">Is het anoniem?</button>
+    <div class="faq-answer">
+      <p>Ja. Uiteraard is het volledig anoniem en gaan wij vertrouwelijk om met uw gegevens! U hoeft alleen maar informatie te delen die u wilt delen.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Kan ik ook namens iemand anders contact opnemen?</button>
+    <div class="faq-answer">
+      <p>Ja dat mag! Bijvoorbeeld als je je zorgen maakt om een partner, collega of familielid.</p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">Voor welke problemen kan ik bellen?</button>
+    <div class="faq-answer">
+      <p>Voor alles waar u tegenaan loopt, bijvoorbeeld:</p>
+      <ul>
+        <li>💬 Ruzie met je kind</li>
+        <li>💬 Stress of (bijna) burn-out</li>
+        <li>💬 Problemen in relaties of vriendschappen</li>
+        <li>💬 Opvoedvragen</li>
+        <li>💬 Moeite met afvallen/aankomen of zelfbeeld</li>
+        <li>💬 Gevoelens van onrust, twijfel of overbelasting</li>
+        <li>💬 Rouw of verlies</li>
+        <li>💬 Gewoon even praten</li>
+      </ul>
+    </div>
+  </div>
+</section>
 <section class="section" id="voorwie">
   <h2>Voor wie?</h2>
   <p>De situaties waarin wij ondersteuning bieden zijn herkenbaar voor velen.</p>
@@ -473,6 +559,7 @@ Want soms is één goed gesprek al genoeg om weer ruimte te voelen — en verder
 </script>
 </body>
 </html>
+
 
 
 
