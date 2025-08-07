@@ -287,6 +287,28 @@ footer p {
   .hero p {
     font-size: clamp(0.9rem, 3.2vw, 1.1rem);
   }
+  .hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Zorgt voor responsiviteit */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-logo {
+  max-width: 200px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+  min-width: 280px;
+}
+
 
   .section {
     padding: clamp(30px, 6vw, 40px) 5%;
@@ -379,16 +401,17 @@ nav a {
       <a href="#contact" class="btn-primary">Bel nu !</a>
     </nav>
   </header>
-  <section class="hero">
-    <h2>Probleem groot of klein?<br>Wij luisteren.</h2>
-    <p>Ruzie met je kind, stress op het werk, relatieproblemen, als afvallen niet lukt — soms wil je gewoon even praten.</p>
-    <a href="#contact" class="btn-primary">Bel nu voor een gratis luisterend oor!</a>
-  </section>
-  <section class="hero">
-    <h2>Probleem groot of klein?<br>Wij luisteren.</h2>
-    <p>Ruzie met je kind, stress op het werk, relatieproblemen, als afvallen niet lukt — soms wil je gewoon even praten.</p>
-    <a href="#contact" class="btn-primary">Bel nu voor een gratis luisterend oor!</a>
-  </section>
+ <section class="hero">
+  <div class="hero-content">
+    <img src="logo2.jpg" alt="Logo" class="hero-logo">
+    <div class="hero-text">
+      <h2>Probleem groot of klein?<br>Wij luisteren.</h2>
+      <p>Ruzie met je kind, stress op het werk, relatieproblemen, als afvallen niet lukt — soms wil je gewoon even praten.</p>
+      <a href="#contact" class="btn-primary">Bel nu voor een gratis luisterend oor!</a>
+    </div>
+  </div>
+</section>
+
 
   <section class="section features">
     <div class="feature">
@@ -572,6 +595,7 @@ nav a {
   </script>
 </body>
 </html>
+
 
 
 
