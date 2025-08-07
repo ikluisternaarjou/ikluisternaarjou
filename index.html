@@ -333,18 +333,52 @@ footer p {
     font-size: clamp(0.85rem, 3.5vw, 0.95rem);
   }
 }
+  header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  height: 50px; /* Pas de hoogte aan naar wens */
+  width: auto; /* Behoudt de verhoudingen */
+}
+
+nav {
+  display: flex;
+  gap: 20px; /* Ruimte tussen nav-links */
+}
+
+nav a {
+  text-decoration: none;
+  color: #333; /* Pas de kleur aan */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Voorbeeldkleur */
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
 </style>
 </head>
 <body>
-  <header>
-    <h1>Ikluisternaarjou.nl</h1>
-    <nav>
-      <a href="#voorwie">Voor wie</a>
-      <a href="#hoehetwerkt">Hoe het werkt</a>
-      <a href="#overons">Over ons</a>
-      <a href="#contact" class="btn-primary">Bel nu !</a>
-    </nav>
-  </header>
+<header>
+  <a href="/" class="logo-link">
+    <img src="logo.png" alt="Ikluisternaarjou Logo" class="logo">
+  </a>
+  <nav>
+    <a href="#voorwie">Voor wie</a>
+    <a href="#hoehetwerkt">Hoe het werkt</a>
+    <a href="#overons">Over ons</a>
+    <a href="#contact" class="btn-primary">Bel nu !</a>
+  </nav>
+</header>
   <section class="hero">
     <h2>Probleem groot of klein?<br>Wij luisteren.</h2>
     <p>Ruzie met je kind, stress op het werk, relatieproblemen, als afvallen niet lukt — soms wil je gewoon even praten.</p>
@@ -533,6 +567,7 @@ footer p {
   </script>
 </body>
 </html>
+
 
 
 
