@@ -257,6 +257,70 @@ footer p {
   display: block;
 }
 
+  .voorwie-carousel {
+  display: flex;
+  flex-wrap: nowrap; /* géén onder elkaar */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 16px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.voorwie-carousel::-webkit-scrollbar {
+  display: none; /* scrollbar verbergen op mobiel */
+}
+
+.voorwie-card {
+  flex: 0 0 auto; /* niet breder dan nodig */
+  scroll-snap-align: start;
+  width: 220px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.voorwie-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.voorwie-card p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #333;
+}
+
+@media (max-width: 480px) {
+  .voorwie-card {
+    width: 160px;  /* smaller on mobile */
+  }
+
+  .voorwie-card img {
+    height: 100px;
+  }
+}
+#voorwie {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+  #voorwie p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  font-size: clamp(1rem, 4vw, 1.1rem);
+  margin: 0 auto 10px;
+  text-align: center;
+}
+
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
@@ -313,61 +377,6 @@ footer p {
   .faq-section h2 {
     font-size: clamp(1.5rem, 5vw, 2rem);
   }
-.voorwie-carousel {
-  display: flex;
-  flex-wrap: nowrap; /* géén onder elkaar */
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  gap: 16px;
-  padding: 20px 0;
-  width: 100%;
-}
-
-.voorwie-carousel::-webkit-scrollbar {
-  display: none; /* scrollbar verbergen op mobiel */
-}
-
-.voorwie-card {
-  flex: 0 0 auto; /* niet breder dan nodig */
-  scroll-snap-align: start;
-  width: 220px;
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
-
-.voorwie-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.voorwie-card p {
-  font-size: 0.9rem;
-  line-height: 1.3;
-  color: #333;
-}
-
-@media (max-width: 480px) {
-  .voorwie-card {
-    width: 160px;  /* smaller on mobile */
-  }
-
-  .voorwie-card img {
-    height: 100px;
-  }
-}
-#voorwie {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
 
 @media (max-width: 480px) {
   .hero {
@@ -655,6 +664,7 @@ nav a {
 
 </body>
 </html>
+
 
 
 
