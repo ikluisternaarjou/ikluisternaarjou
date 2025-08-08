@@ -315,22 +315,24 @@ footer p {
   }
 .voorwie-carousel {
   display: flex;
+  flex-wrap: nowrap; /* géén onder elkaar */
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 16px;
-  padding: 20px 0;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  gap: 16px;
+  padding: 20px 0;
+  width: 100%;
 }
 
 .voorwie-carousel::-webkit-scrollbar {
-  display: none;
+  display: none; /* scrollbar verbergen op mobiel */
 }
 
 .voorwie-card {
-  flex-shrink: 0;
+  flex: 0 0 auto; /* niet breder dan nodig */
   scroll-snap-align: start;
-  width: clamp(180px, 75vw, 220px);
+  width: 220px;
   background-color: #fff;
   border-radius: 12px;
   padding: 12px;
@@ -354,11 +356,11 @@ footer p {
 
 @media (max-width: 480px) {
   .voorwie-card {
-    width: 85vw;
+    width: 160px;  /* smaller on mobile */
   }
 
   .voorwie-card img {
-    height: 120px;
+    height: 100px;
   }
 }
 
@@ -649,6 +651,7 @@ nav a {
 
 </body>
 </html>
+
 
 
 
