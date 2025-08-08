@@ -256,6 +256,45 @@ footer p {
 .faq-item.active .faq-answer {
   display: block;
 }
+/* Voeg dit toe buiten media-queries */
+.voorwie-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.voorwie-card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: clamp(160px, 75vw, 220px);
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.voorwie-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.voorwie-card p {
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #333;
+}
+
+#voorwie h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 10px;
+  text-align: center;
+}
 
 @media (max-width: 768px) {
   header {
@@ -377,6 +416,38 @@ nav a {
   max-height: none;
   object-fit: contain;
 }
+  .voorwie-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 15px;
+  padding: 20px 0;
+  max-width: 100%;
+}
+
+.voorwie-card {
+  flex-shrink: 0;
+  width: clamp(180px, 70vw, 250px);
+  scroll-snap-align: start;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.voorwie-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.voorwie-card p {
+  font-size: 0.9rem;
+}
+
 
 </style>
 </head>
@@ -459,22 +530,23 @@ nav a {
     <h2>Voor wie?</h2>
     <p>De situaties waarin wij ondersteuning bieden zijn herkenbaar voor velen.</p>
 
-    <div class="review-carousel">
-      <div class="review-card"><img src="afvallen.jpg" alt="Afvallen"><p><strong>Afvallen</strong><br>Als het afvallen maar niet wil lukken</p></div>
-      <div class="review-card"><img src="angststoornis.jpg" alt="Angststoornis"><p><strong>Angstoornis</strong><br>Als angsten de kwaliteit van je leven beheersen</p></div>
-      <div class="review-card"><img src="bindingsangst.jpg" alt="Bindingsangst"><p><strong>Bindingsangst</strong><br>Als relaties maar niet willen lukken</p></div>
-      <div class="review-card"><img src="depressie.jpg" alt="Depressie"><p><strong>Depressie</strong><br>Als het leven niet leuk meer is</p></div>
-      <div class="review-card"><img src="familieruzie.jpg" alt="Familieruzie"><p><strong>Familieruzie</strong><br>Als de familiedynamiek er niet meer is</p></div>
-      <div class="review-card"><img src="dementie.jpg" alt="Dementie"><p><strong>Dementie</strong><br>Als je om moet gaan met dementie</p></div>
-      <div class="review-card"><img src="hsp.jpg" alt="HSP"><p><strong>HSP en overgeprikkeld</strong><br>Als overprikkeling je leven beheerst</p></div>
-      <div class="review-card"><img src="kindere.jpg" alt="Puber ruzie"><p><strong>Puber ruzie</strong><br>Als er weer met een deur gegooid wordt</p></div>
-      <div class="review-card"><img src="mantelzorg.jpg" alt="Mantelzorg"><p><strong>Mantelzorg</strong><br>Als de zorg voor anderen je even te veel wordt</p></div>
-      <div class="review-card"><img src="relatieproblemen.jpg" alt="Relatieproblemen"><p><strong>Relatieproblemen</strong><br>Als je relatie niet meer loopt</p></div>
-      <div class="review-card"><img src="werkstres.jpg" alt="Werkstress"><p><strong>Werkstress</strong><br>Als de werkstress te veel dreigt te worden</p></div>
-      <div class="review-card"><img src="rouw.jpg" alt="Rouw"><p><strong>Rouw</strong><br>Als missen de overhand krijgt</p></div>
-      <div class="review-card"><img src="verlatingsangst.jpg" alt="Verlatingsangst"><p><strong>Verlatingsangst</strong><br>Als je je teveel vastklampt</p></div>
-    </div>
-  </section>
+  <div class="voorwie-carousel">
+    <div class="voorwie-card"><img src="afvallen.jpg" alt="Afvallen"><p><strong>Afvallen</strong><br>Als het afvallen maar niet wil lukken</p></div>
+    <div class="voorwie-card"><img src="angststoornis.jpg" alt="Angststoornis"><p><strong>Angstoornis</strong><br>Als angsten je leven beheersen</p></div>
+    <div class="voorwie-card"><img src="bindingsangst.jpg" alt="Bindingsangst"><p><strong>Bindingsangst</strong><br>Als relaties niet lukken</p></div>
+    <div class="voorwie-card"><img src="depressie.jpg" alt="Depressie"><p><strong>Depressie</strong><br>Als het leven niet meer leuk voelt</p></div>
+    <div class="voorwie-card"><img src="familieruzie.jpg" alt="Familieruzie"><p><strong>Familieruzie</strong><br>Als de band met familie gespannen is</p></div>
+    <div class="voorwie-card"><img src="dementie.jpg" alt="Dementie"><p><strong>Dementie</strong><br>Als je hiermee te maken krijgt</p></div>
+    <div class="voorwie-card"><img src="hsp.jpg" alt="HSP"><p><strong>HSP & Overprikkeling</strong><br>Als alles te veel wordt</p></div>
+    <div class="voorwie-card"><img src="kindere.jpg" alt="Puber ruzie"><p><strong>Puber-ruzie</strong><br>Als je kind je niet begrijpt</p></div>
+    <div class="voorwie-card"><img src="mantelzorg.jpg" alt="Mantelzorg"><p><strong>Mantelzorg</strong><br>Als de zorg te zwaar wordt</p></div>
+    <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="Relatieproblemen"><p><strong>Relatieproblemen</strong><br>Als je elkaar kwijt raakt</p></div>
+    <div class="voorwie-card"><img src="werkstres.jpg" alt="Werkstress"><p><strong>Werkstress</strong><br>Als je op instorten staat</p></div>
+    <div class="voorwie-card"><img src="rouw.jpg" alt="Rouw"><p><strong>Rouw</strong><br>Als het verlies te groot is</p></div>
+    <div class="voorwie-card"><img src="verlatingsangst.jpg" alt="Verlatingsangst"><p><strong>Verlatingsangst</strong><br>Als je niet los kunt laten</p></div>
+  </div>
+</section>
+
  <section class="section" id="overons">
     <h2>Over ons</h2>
     <p>🎧 Luisteren is onze kracht</p>
@@ -585,6 +657,7 @@ nav a {
   </script>
 </body>
 </html>
+
 
 
 
