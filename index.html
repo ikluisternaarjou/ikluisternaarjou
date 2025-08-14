@@ -1,603 +1,398 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ikluisternaarjou.nl</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  overflow-x: hidden;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #fffdf8;
-  color: #0d1b2a;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2vw 5%;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-header h1 {
-  font-size: clamp(1.5rem, 5vw, 1.8rem);
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav a {
-  margin-left: 2vw;
-  text-decoration: none;
-  color: #0d1b2a;
-  font-weight: 500;
-  font-size: clamp(0.9rem, 3vw, 1rem);
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #f1b400;
-}
-
-.btn-primary {
-  background-color: #f1b400;
-  padding: 10px 20px;
-  border-radius: 8px;
-  color: #0d1b2a;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.btn-primary:hover {
-  background-color: #d9a300;
-  transform: translateY(-2px);
-}
-
-.hero {
-  text-align: center;
-  padding: clamp(60px, 10vw, 100px) 5% clamp(40px, 8vw, 60px);
-  background: linear-gradient(to bottom, #fffdf8, #f7f4eb);
-}
-
-.hero h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 8vw, 3.2rem);
-  font-weight: 700;
-  margin-bottom: 20px;
-  line-height: 1.2;
-}
-
-.hero p {
-  font-size: clamp(1rem, 3.5vw, 1.3rem);
-  max-width: 90%;
-  margin: 0 auto 30px;
-  color: #4a4a4a;
-}
-
-.section {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: clamp(40px, 8vw, 60px) 5%;
-  text-align: center;
-}
-
-section {
-  padding: clamp(40px, 8vw, 80px) 5%;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: 20px;
-  margin-top: 40px;
-}
-
-.feature {
-  padding: 20px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
-}
-
-.feature img {
-  height: 50px;
-  width: auto;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.4rem, 5vw, 1.6rem);
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-ul li {
-  margin-bottom: 15px;
-  font-size: clamp(1rem, 3vw, 1.1rem);
-}
-
-footer {
-  background: #f7f4eb;
-  text-align: center;
-  padding: clamp(40px, 8vw, 60px) 5%;
-  margin-top: auto;
-}
-
-footer p {
-  margin-bottom: 10px;
-  font-size: clamp(1rem, 3vw, 1.1rem);
-}
-
-.review-carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 15px;
-  padding: 20px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.review-card {
-  flex-shrink: 0;
-  width: clamp(200px, 80%, 300px);
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 15px;
-  scroll-snap-align: start;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.review-card:hover {
-  transform: translateY(-5px);
-}
-
-.stars {
-  color: gold;
-  font-size: clamp(1.2rem, 4vw, 1.4rem);
-  margin-bottom: 10px;
-  display: block;
-}
-
-.review-card img {
-  width: 100%;
-  height: auto;
-  max-height: 300px;
-  object-fit: cover;
-  display: block;
-  margin-bottom: 15px;
-  border-radius: 8px;
-}
-
-.faq-section {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: clamp(40px, 8vw, 60px) 5%;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.faq-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 6vw, 2.4rem);
-  margin-bottom: 40px;
-  color: #0d1b2a;
-  text-align: center;
-}
-
-.faq-item {
-  margin-bottom: 20px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
-}
-
-.faq-question {
-  background: none;
-  border: none;
-  font-size: clamp(1rem, 3.5vw, 1.2rem);
-  font-weight: 600;
-  color: #0d1b2a;
-  text-align: left;
-  width: 100%;
-  cursor: pointer;
-  padding: 10px 0;
-  transition: color 0.3s ease;
-}
-
-.faq-question:hover {
-  color: #f1b400;
-}
-
-.faq-answer {
-  display: none;
-  font-size: clamp(0.95rem, 3vw, 1.05rem);
-  color: #4a4a4a;
-  padding-left: 10px;
-  margin-top: 10px;
-}
-
-.faq-item.active .faq-answer {
-  display: block;
-}
-
-  .voorwie-carousel {
-  display: flex;
-  flex-wrap: nowrap; /* géén onder elkaar */
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  gap: 16px;
-  padding: 20px 0;
-  width: 100%;
-}
-
-.voorwie-carousel::-webkit-scrollbar {
-  display: none; /* scrollbar verbergen op mobiel */
-}
-
-.voorwie-card {
-  flex: 0 0 auto; /* niet breder dan nodig */
-  scroll-snap-align: start;
-  width: 220px;
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
-  text-align: center;
-}
-
-.voorwie-card img {
-  width: 100%;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.voorwie-card p {
-  font-size: 0.9rem;
-  line-height: 1.3;
-  color: #333;
-}
-
-  .faq-section {
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-.faq-item {
-  width: 100%;
-}
-.faq-answer ul {
-  padding-left: 20px;
-}
-footer {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-
-footer a {
-  word-break: break-word;
-}
-
-
-@media (max-width: 480px) {
-  .voorwie-card {
-    width: 160px;  /* smaller on mobile */
-  }
-
-  .voorwie-card img {
-    height: 100px;
-  }
-}
-#voorwie {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-  #voorwie p {
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-  font-size: clamp(1rem, 4vw, 1.1rem);
-  margin: 0 auto 10px;
-  text-align: center;
-}
-
-
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
-    padding: 3vw 5%;
-  }
-
-  header h1 {
-    margin-bottom: 2vw;
-    font-size: clamp(1.2rem, 4.5vw, 1.5rem);
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 1.5vw;
-    width: 100%;
-  }
-
-  nav a {
-    margin: 1vw 0;
-    font-size: clamp(0.85rem, 3.5vw, 0.95rem);
-  }
-
-  .hero h2 {
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
-  }
-
-  .hero p {
-    font-size: clamp(0.9rem, 3.2vw, 1.1rem);
-}
-
-
-  .section {
-    padding: clamp(30px, 6vw, 40px) 5%;
-  }
-
-  section {
-    padding: clamp(30px, 6vw, 40px) 5%;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .review-card {
-    width: 90%;
-  }
-
-  .review-card img {
-    max-height: 200px;
-  }
-
-  .faq-section h2 {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-  }
-
-@media (max-width: 480px) {
-  .hero {
-    padding: clamp(40px, 8vw, 60px) 3%;
-  }
-
-  .section, section {
-    padding: clamp(20px, 5vw, 30px) 3%;
-  }
-
-  .review-card {
-    width: 95%;
-    padding: 10px;
-  }
-
-  .btn-primary {
-    padding: 8px 16px;
-    font-size: clamp(0.85rem, 3.5vw, 0.95rem);
-  }
-}
-  header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-.logo {
-  height: 50px; /* Pas de hoogte aan naar wens */
-  width: auto; /* Behoudt de verhoudingen */
-}
-
-nav {
-  display: flex;
-  gap: 20px; /* Ruimte tussen nav-links */
-}
-
-nav a {
-  text-decoration: none;
-  color: #333; /* Pas de kleur aan */
-}
-
-.btn-primary {
-  background-color: #007bff; /* Voorbeeldkleur */
-  color: white;
-  padding: 8px 16px;
-  border-radius: 5px;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-</style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    /* ====== Reset & Base ====== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; }
+    :root{
+      --bg:#fffdf8;
+      --paper:#ffffff;
+      --ink:#0d1b2a;
+      --muted:#4a4a4a;
+      --brand:#f1b400;
+      --brand-d:#d9a300;
+      --tint:#f7f4eb;
+      --shadow: 0 8px 24px rgba(0,0,0,.08);
+      --radius: 14px;
+    }
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--bg);
+      color:var(--ink);
+      line-height:1.6;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ====== Header ====== */
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding: 14px 5%;
+      background:#fff; position:sticky; top:0; z-index:1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,.06);
+      backdrop-filter:saturate(1.2) blur(6px);
+    }
+    .brand{
+      display:flex;gap:10px;align-items:center;
+    }
+    .logo{
+      width:36px;height:36px;display:block;
+    }
+    header h1{
+      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+      font-weight:700; letter-spacing:.3px;
+    }
+    nav{ display:flex; align-items:center; gap: clamp(10px,2.5vw,22px); }
+    nav a{
+      text-decoration:none; color:var(--ink); font-weight:500;
+      font-size:clamp(.95rem, 2.5vw, 1rem); position:relative;
+      transition: color .25s ease;
+    }
+    nav a:hover{ color:var(--brand); }
+    .btn-primary{
+      background:var(--brand); color:var(--ink); font-weight:700;
+      padding:10px 18px; border-radius:10px; text-decoration:none;
+      transition: transform .18s ease, box-shadow .18s ease, background .2s ease;
+      box-shadow: 0 6px 16px rgba(241,180,0,.25);
+    }
+    .btn-primary:hover{ background:var(--brand-d); transform: translateY(-1px); }
+    .btn-primary:active{ transform: translateY(0); }
+
+    /* ====== Hero ====== */
+    .hero{
+      display:grid; grid-template-columns: 1.1fr .9fr;
+      gap: clamp(20px,4vw,60px);
+      align-items:center; justify-content:center;
+      padding: clamp(50px,8vw,110px) 5% clamp(30px,6vw,70px);
+      background: radial-gradient(1200px 600px at 10% 0%, #fff9e6 0%, #fffdf8 45%, #f7f4eb 100%);
+    }
+    .hero-text h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2rem,6.8vw,3.4rem); line-height:1.1; margin-bottom:16px;
+    }
+    .hero-text p{
+      font-size:clamp(1rem,3.2vw,1.2rem); color:var(--muted);
+      max-width: 58ch; margin-bottom:20px;
+    }
+    .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
+    .subtle{ font-size:.95rem; color:var(--muted); }
+
+    /* ====== Animated Ear (SVG) ====== */
+    .ear-wrap{
+      width:100%; aspect-ratio: 1/1; max-width: 460px; margin-inline:auto;
+      background: conic-gradient(from 180deg at 50% 50%, #fff 0%, #fff 60%, #fff7d6 100%);
+      border-radius: 24px; box-shadow: var(--shadow);
+      display:grid; place-items:center; position:relative; overflow:hidden;
+    }
+    .ear-wrap::after{
+      content:""; position:absolute; inset:auto -20% -35% -20%;
+      height:60%; background:radial-gradient(50% 100% at 50% 0%, #ffe9a5 0%, transparent 70%);
+      filter: blur(40px); opacity:.6; pointer-events:none;
+    }
+    svg.ear{
+      width: 78%; height: auto; display:block;
+    }
+    .wave{
+      transform-origin: left center;
+      animation: wavePulse 2.2s ease-in-out infinite;
+      opacity:.9;
+    }
+    .wave:nth-child(2){ animation-delay:.25s; opacity:.75; }
+    .wave:nth-child(3){ animation-delay:.5s; opacity:.6; }
+    @keyframes wavePulse{
+      0%,100%{ transform: scaleX(1); opacity:.55; }
+      50%{ transform: scaleX(1.06); opacity:.95; }
+    }
+    .ear-outline{
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,.1));
+      animation: gentleFloat 6s ease-in-out infinite;
+      transform-origin: 50% 50%;
+    }
+    @keyframes gentleFloat{
+      0%,100%{ transform: translateY(0px); }
+      50%{ transform: translateY(-6px); }
+    }
+
+    /* ====== Sections ====== */
+    section{ padding: clamp(40px, 7vw, 80px) 5%; }
+    .section{ max-width: 1100px; margin: 0 auto; text-align:center; }
+
+    .features{
+      display:grid; grid-template-columns: repeat(auto-fit, minmax(min(260px,100%), 1fr));
+      gap: 22px; margin-top: 26px;
+    }
+    .feature{
+      padding:22px; background:var(--paper); border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .feature:hover{ transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0,0,0,.1); }
+    .feature img{ height:50px; width:auto; margin-bottom:16px; }
+    h2.section-title{
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5.5vw, 2.4rem);
+      margin-bottom: 8px;
+    }
+    h3{ font-family:'Playfair Display',serif; font-size: clamp(1.2rem, 4.6vw, 1.5rem); margin-bottom:8px; }
+
+    /* ====== Voor wie (carousel) ====== */
+    #voorwie .intro{ color:var(--muted); max-width: 60ch; margin: 0 auto 16px; }
+    .voorwie-carousel{
+      display:flex; flex-wrap:nowrap; overflow-x:auto;
+      scroll-snap-type:x mandatory; gap:16px; padding: 14px 2px 6px;
+      -webkit-overflow-scrolling:touch;
+    }
+    .voorwie-carousel::-webkit-scrollbar{ height:8px; }
+    .voorwie-carousel::-webkit-scrollbar-thumb{ background:#ddd; border-radius:6px; }
+    .voorwie-card{
+      flex:0 0 auto; width:220px; scroll-snap-align:start;
+      background:var(--paper); border-radius: 12px; padding: 12px;
+      box-shadow: var(--shadow); text-align:center;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .voorwie-card:hover{ transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
+    .voorwie-card img{ width:100%; height:140px; object-fit:cover; border-radius:8px; margin-bottom:10px; }
+    .voorwie-card p{ font-size:.95rem; line-height:1.35; color:#333; }
+
+    /* ====== FAQ ====== */
+    .faq-section{
+      background:var(--paper); border-radius: 16px; box-shadow: var(--shadow);
+      max-width: 1100px; margin: 0 auto;
+    }
+    .faq-section h2{ text-align:center; margin-bottom: 20px; }
+    .faq-item{ border-bottom:1px solid #eee; padding: 10px 0; }
+    .faq-question{
+      background:none; border:none; width:100%; text-align:left;
+      font-size:clamp(1rem,3vw,1.1rem); font-weight:700; color:var(--ink);
+      padding:12px 2px; cursor:pointer; transition: color .2s ease;
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    }
+    .faq-question:hover{ color:var(--brand); }
+    .faq-answer{ display:none; color:var(--muted); padding: 2px 2px 12px 2px; }
+    .faq-item.active .faq-answer{ display:block; }
+
+    /* ====== Reviews ====== */
+    .reviews .review-carousel{
+      display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
+      gap:16px; padding: 8px; max-width:100%; margin: 8px auto 0;
+    }
+    .review-card{
+      flex:0 0 auto; width: clamp(220px, 70%, 320px);
+      background:var(--paper); border-radius: 12px; padding: 16px;
+      scroll-snap-align:start; box-shadow: var(--shadow); transition: transform .25s ease;
+    }
+    .review-card:hover{ transform: translateY(-4px); }
+    .stars{ color: #ffb300; font-size: 1.1rem; margin-bottom: 8px; display:block; }
+
+    /* ====== Footer ====== */
+    footer{
+      background:var(--tint); text-align:center;
+      padding: clamp(36px, 7vw, 60px) 5%; margin-top:auto;
+    }
+    footer p{ margin-bottom:8px; }
+    footer a{ color:#0067c5; text-decoration:none; }
+    footer a:hover{ text-decoration:underline; }
+
+    /* ====== Reveal on scroll ====== */
+    .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in{ opacity:1; transform: translateY(0); }
+
+    /* ====== Sticky Call Button ====== */
+    .floating-call{
+      position: fixed; right: 18px; bottom: 18px; z-index: 1100;
+      background: var(--brand); color: var(--ink);
+      border-radius: 999px; padding: 12px 18px; font-weight:800;
+      box-shadow: 0 14px 30px rgba(241,180,0,.35);
+      text-decoration:none; transition: transform .2s ease;
+    }
+    .floating-call:hover{ transform: translateY(-2px) scale(1.015); }
+
+    /* ====== Mobile ====== */
+    @media (max-width: 980px){
+      .hero{ grid-template-columns: 1fr; text-align:center; }
+      .hero-cta{ justify-content:center; }
+      .ear-wrap{ order: -1; }
+    }
+    @media (max-width: 520px){
+      .voorwie-card{ width:170px; }
+      .voorwie-card img{ height:110px; }
+    }
+
+    /* ====== Reduced Motion ====== */
+    @media (prefers-reduced-motion: reduce){
+      .wave, .ear-outline, .reveal{ animation:none !important; transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-</head>
-<body>
+
+  <!-- Header -->
   <header>
-    <h1>Ikluisternaarjou.nl</h1>
+    <div class="brand">
+      <!-- Minimal ear logo -->
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M32 6c-9.4 0-17 7.6-17 17 0 5.2 2.3 9.2 5.2 12.7 2.4 2.8 4.1 5.9 4.1 9.9 0 6 5 11 11 11s11-5 11-11c0-5.1-2.8-8.2-6-10.8-2.8-2.3-4.8-4.6-4.8-8.8 0-5.6 4.7-10 10.5-10 2.6 0 5 .9 7 .9" fill="none" stroke="#0d1b2a" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <h1>Ikluisternaarjou.nl</h1>
+    </div>
     <nav>
       <a href="#voorwie">Voor wie</a>
       <a href="#hoehetwerkt">Hoe het werkt</a>
       <a href="#overons">Over ons</a>
-      <a href="#contact" class="btn-primary">Bel nu !</a>
+      <a href="#contact" class="btn-primary" aria-label="Bel nu">Bel nu!</a>
     </nav>
   </header>
- <section class="hero">
-  <div class="hero-content">
-    <div class="hero-text">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text reveal">
       <h2>Probleem groot of klein?<br>Wij luisteren.</h2>
       <p>Ruzie met je kind, stress op het werk, relatieproblemen, als afvallen niet lukt — soms wil je gewoon even praten.</p>
-      <a href="#contact" class="btn-primary">Bel nu voor een gratis luisterend oor!</a>
+      <div class="hero-cta">
+        <a href="https://wa.me/31641251757" class="btn-primary" aria-label="WhatsApp voor direct contact">Bel / App nu – gratis 30 min</a>
+        <span class="subtle">Zonder wachttijd • Vertrouwelijk • Laagdrempelig</span>
+      </div>
     </div>
-  </div>
-</section>
 
-
-  <section class="section features">
-    <div class="feature">
-      <img src="https://img.icons8.com/ios-filled/50/puzzle.png" alt="Laagdrempelig">
-      <h3>Laagdrempelig</h3>
-      <p>Geen verwijzing nodig, gewoon praten</p>
-    </div>
-    <div class="feature">
-      <img src="https://img.icons8.com/ios-filled/50/clock.png" alt="Kennismaking">
-      <h3>Praten / luisteren</h3>
-      <p>30 minuten zonder verplichtingen</p>
-    </div>
-    <div class="feature">
-      <img src="https://img.icons8.com/ios-filled/50/compass.png" alt="Vervolgtrajecten">
-      <h3>Wilt u meer?</h3>
-      <p>We helpen je de juiste weg te vinden</p>
+    <div class="ear-wrap reveal" aria-hidden="true">
+      <!-- Animated listening ear with waves -->
+      <svg class="ear" viewBox="0 0 400 400">
+        <!-- Sound waves -->
+        <g>
+          <path class="wave" d="M60,200 C120,120 120,280 180,200" fill="none" stroke="#f1b400" stroke-width="10" stroke-linecap="round"/>
+          <path class="wave" d="M40,200 C120,90 120,310 200,200" fill="none" stroke="#f1b400" stroke-width="7" stroke-linecap="round"/>
+          <path class="wave" d="M20,200 C120,60 120,340 220,200" fill="none" stroke="#f1b400" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <!-- Ear outline -->
+        <g class="ear-outline">
+          <path d="M250,85c-62,0-112,50-112,112 0,33 15,58 33,80 16,19 27,39 27,65 0,39 32,71 71,71s71-32 71-71c0-33-18-53-39-70-18-15-31-29-31-56 0-36 30-64 67-64 16,0 30,5 42,5" fill="none" stroke="#0d1b2a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M261,152c-25,11-38,31-38,57 0,35 28,51 49,69 13,11 22,23 22,42 0,20-16,36-36,36" fill="none" stroke="#0d1b2a" stroke-width="8" stroke-linecap="round"/>
+        </g>
+      </svg>
     </div>
   </section>
 
-  
-<section class="section" id="voorwie">
-  <h2>Voor wie?</h2>
-  <p>De situaties waarin wij ondersteuning bieden zijn herkenbaar voor velen.</p>
+  <!-- Features -->
+  <section class="section reveal">
+    <h2 class="section-title">Waarom mensen ons bellen</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/puzzle.png" alt="Laagdrempelig">
+        <h3>Laagdrempelig</h3>
+        <p>Geen verwijzing nodig, meteen ruimte om te praten.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/clock.png" alt="Kennismaking">
+        <h3>Praten / luisteren</h3>
+        <p>Gratis 30 minuten, zonder verplichtingen.</p>
+      </div>
+      <div class="feature">
+        <img src="https://img.icons8.com/ios-filled/50/compass.png" alt="Vervolgtrajecten">
+        <h3>Wilt u meer?</h3>
+        <p>We helpen je de juiste weg te vinden.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="voorwie-carousel">
-    <div class="voorwie-card"><img src="afvallen.jpg" alt="Afvallen"><p><strong>Afvallen</strong><br>Als het afvallen maar niet wil lukken</p></div>
-    <div class="voorwie-card"><img src="angststoornis.jpg" alt="Angststoornis"><p><strong>Angstoornis</strong><br>Als angsten de kwaliteit van je leven beheersen</p></div>
-    <div class="voorwie-card"><img src="bindingsangst.jpg" alt="Bindingsangst"><p><strong>Bindingsangst</strong><br>Als relaties maar niet willen lukken</p></div>
-    <div class="voorwie-card"><img src="depressie.jpg" alt="Depressie"><p><strong>Depressie</strong><br>Als het leven niet leuk meer is</p></div>
-    <div class="voorwie-card"><img src="familieruzie.jpg" alt="Familieruzie"><p><strong>Familieruzie</strong><br>Als de familiedynamiek er niet meer is</p></div>
-    <div class="voorwie-card"><img src="dementie.jpg" alt="Dementie"><p><strong>Dementie</strong><br>Als je om moet gaan met dementie</p></div>
-    <div class="voorwie-card"><img src="hsp.jpg" alt="HSP"><p><strong>HSP en overgeprikkeld</strong><br>Als overprikkeling je leven beheerst</p></div>
-    <div class="voorwie-card"><img src="kindere.jpg" alt="Puber ruzie"><p><strong>Puber ruzie</strong><br>Als er weer met een deur gegooid wordt</p></div>
-    <div class="voorwie-card"><img src="mantelzorg.jpg" alt="Mantelzorg"><p><strong>Mantelzorg</strong><br>Als de zorg voor anderen je even te veel wordt</p></div>
-    <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="Relatieproblemen"><p><strong>Relatieproblemen</strong><br>Als je relatie niet meer loopt</p></div>
-    <div class="voorwie-card"><img src="werkstres.jpg" alt="Werkstress"><p><strong>Werkstress</strong><br>Als de werkstress te veel dreigt te worden</p></div>
-    <div class="voorwie-card"><img src="rouw.jpg" alt="Rouw"><p><strong>Rouw</strong><br>Als missen de overhand krijgt</p></div>
-    <div class="voorwie-card"><img src="verlatingsangst.jpg" alt="Verlatingsangst"><p><strong>Verlatingsangst</strong><br>Als je je teveel vastklampt</p></div>
-  </div>
-</section>
+  <!-- Voor wie -->
+  <section class="section" id="voorwie">
+    <h2 class="section-title reveal">Voor wie?</h2>
+    <p class="intro reveal">De situaties waarin wij ondersteuning bieden zijn herkenbaar voor velen.</p>
 
- <section class="section" id="overons">
-   <section class="section" id="hoehetwerkt">
-    <h2>Hoe het werkt</h2>
-    <ul>
-      <li>1. Je neemt contact op. Je belt ons op het moment dat jij daar behoefte aan hebt. Geen wachttijden, geen formulieren, geen verwijzing — gewoon direct contact.</li>
+    <div class="voorwie-carousel reveal" aria-label="Casussen waarvoor je kunt bellen">
+      <div class="voorwie-card"><img src="afvallen.jpg" alt="Afvallen"><p><strong>Afvallen</strong><br>Als het afvallen maar niet wil lukken</p></div>
+      <div class="voorwie-card"><img src="angststoornis.jpg" alt="Angststoornis"><p><strong>Angststoornis</strong><br>Als angsten de kwaliteit van je leven beheersen</p></div>
+      <div class="voorwie-card"><img src="bindingsangst.jpg" alt="Bindingsangst"><p><strong>Bindingsangst</strong><br>Als relaties maar niet willen lukken</p></div>
+      <div class="voorwie-card"><img src="depressie.jpg" alt="Depressie"><p><strong>Depressie</strong><br>Als het leven niet leuk meer is</p></div>
+      <div class="voorwie-card"><img src="familieruzie.jpg" alt="Familieruzie"><p><strong>Familieruzie</strong><br>Als de familiedynamiek er niet meer is</p></div>
+      <div class="voorwie-card"><img src="dementie.jpg" alt="Dementie"><p><strong>Dementie</strong><br>Als je om moet gaan met dementie</p></div>
+      <div class="voorwie-card"><img src="hsp.jpg" alt="HSP en overprikkeld"><p><strong>HSP & overprikkeld</strong><br>Als overprikkeling je leven beheerst</p></div>
+      <div class="voorwie-card"><img src="kindere.jpg" alt="Puber ruzie"><p><strong>Puber ruzie</strong><br>Als er weer met een deur gegooid wordt</p></div>
+      <div class="voorwie-card"><img src="mantelzorg.jpg" alt="Mantelzorg"><p><strong>Mantelzorg</strong><br>Als de zorg voor anderen je even te veel wordt</p></div>
+      <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="Relatieproblemen"><p><strong>Relatieproblemen</strong><br>Als je relatie niet meer loopt</p></div>
+      <div class="voorwie-card"><img src="werkstres.jpg" alt="Werkstress"><p><strong>Werkstress</strong><br>Als de werkstress te veel dreigt te worden</p></div>
+      <div class="voorwie-card"><img src="rouw.jpg" alt="Rouw"><p><strong>Rouw</strong><br>Als missen de overhand krijgt</p></div>
+      <div class="voorwie-card"><img src="verlatingsangst.jpg" alt="Verlatingsangst"><p><strong>Verlatingsangst</strong><br>Als je je teveel vastklampt</p></div>
+    </div>
+  </section>
 
-<li>2. Ik luister naar jou. Je krijgt een warm en professioneel luisterend oor. Jij deelt wat er speelt, ik luister aandachtig en zonder oordeel. Alles mag er zijn: verdriet, twijfel, frustratie, hoop. Wat jij voelt, is welkom.</li>
-
-<li>3. We praten 30 minuten gratis. Je krijgt een half uur lang de ruimte om je verhaal te doen. Gratis en vrijblijvend. Ik denk met je mee, stel vragen en bied waar nodig deskundig advies.</li>
-
-<li>4. We kijken samen naar een passend vervolg. Als jij dat wilt, kijken we samen welke zorgprofessional het beste bij jou past. Iemand die aansluit bij jouw situatie, wensen en persoonlijkheid. Jij houdt de regie — ik help je op weg.</li>
+  <!-- Hoe het werkt -->
+  <section class="section" id="hoehetwerkt">
+    <h2 class="section-title reveal">Hoe het werkt</h2>
+    <ul class="section reveal" style="text-align:left; max-width:900px;">
+      <li><strong>1. Je neemt contact op.</strong> Bel of app wanneer jij daar behoefte aan hebt. Geen wachttijden, geen formulieren — direct contact.</li><br/>
+      <li><strong>2. Ik luister naar jou.</strong> Warm, professioneel en zonder oordeel. Alles mag er zijn: verdriet, twijfel, frustratie, hoop.</li><br/>
+      <li><strong>3. 30 minuten gratis.</strong> Je krijgt een half uur om je verhaal te doen. Vrijblijvend, met meedenken en advies.</li><br/>
+      <li><strong>4. Passend vervolg.</strong> Als jij wilt, zoeken we samen de best passende professional. Jij houdt de regie — ik help je op weg.</li>
     </ul>
-    <a href="#hoehetwerkt" class="btn-primary">Bel of WhatsApp voor direct contact</a>
+    <div class="section reveal" style="text-align:center;">
+      <a href="https://wa.me/31641251757" class="btn-primary">Bel of WhatsApp voor direct contact</a>
+    </div>
   </section>
-    <h2>Over ons</h2>
-    <p> </p>
-   <ul>
-    <li>Bij Ik luister naar jou bieden we laagdrempelige eerstelijnszorg — een luisterend oor voor iedereen die het nodig heeft. Niet alleen voor mensen die “eigenlijk twee jaar geleden al hulp hadden moeten zoeken.” </li>
-    <li>Maar juist voor wie nú voelt: ik wil niet langer alleen blijven lopen met wat ik voel. </li>
-    <li>Geen wachttijd. Geen verwijzing. Geen oordeel. Gewoon een goed gesprek — vandaag nog.</li>
-    <li>En of dat gesprek bij ons blijft, of leidt naar verdere specialistische zorg? Dat bepalen we samen. </li>
-    <li>Jij houdt de regie. Wij denken mee. Soms is één goed gesprek al genoeg. En soms kijken we samen naar een passend vervolg — eventueel bij ons, of bij iemand anders die beter past bij jouw situatie.</li>
-   </ul>
- </section>
-  
+
+  <!-- Over ons -->
+  <section class="section" id="overons">
+    <h2 class="section-title reveal">Over ons</h2>
+    <ul class="section reveal" style="text-align:left; max-width:900px;">
+      <li>Bij <em>Ik luister naar jou</em> bieden we laagdrempelige eerstelijnszorg — een luisterend oor voor iedereen die het nodig heeft.</li><br/>
+      <li>Voor iedereen die voelt: ik wil niet langer alleen blijven lopen met wat ik voel.</li><br/>
+      <li>Geen wachttijd. Geen verwijzing. Geen oordeel. Gewoon een goed gesprek — vandaag nog.</li><br/>
+      <li>Of het bij ons blijft of leidt naar specialistische zorg? Dat bepalen we samen.</li><br/>
+      <li>Jij houdt de regie. Soms is één goed gesprek genoeg. Soms kijken we naar een passend vervolg — eventueel bij ons, of bij iemand anders die beter past.</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
   <section class="section faq-section" id="veel-gestelde-vragen">
-    <h2>Veel gestelde vragen</h2>
+    <h2 class="section-title">Veel gestelde vragen</h2>
 
     <div class="faq-item">
       <button class="faq-question">Moet ik bellen of mag ik ook appen?</button>
-      <div class="faq-answer">
-        <p>Beide mag! Jij kiest wat prettig voelt. We reageren snel en persoonlijk!</p>
-      </div>
+      <div class="faq-answer"><p>Beide mag! Jij kiest wat prettig voelt. We reageren snel en persoonlijk.</p></div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">Wanneer kan ik contact opnemen?</button>
-      <div class="faq-answer">
-        <p>Maandag t/m vrijdag: 08:00–20:00. Indien gewenst ook later/in het weekend beschikbaar—app gerust om dit te checken!</p>
-      </div>
+      <div class="faq-answer"><p>Maandag t/m vrijdag: 08:00–20:00. Indien gewenst ook later of in het weekend beschikbaar — app gerust om dit te checken.</p></div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">Wat gebeurt er na het gesprek?</button>
-      <div class="faq-answer">
-        <p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is, zoeken we een passende coach of therapeut uit ons netwerk. Jij beslist zelf of je verder wilt.</p>
-      </div>
+      <div class="faq-answer"><p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is, zoeken we een passende coach of therapeut. Jij beslist zelf of je verder wilt.</p></div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">Is het eerste gesprek echt gratis?</button>
-      <div class="faq-answer">
-        <p>Ja. Je krijgt een 30 minuten gratis en vertrouwelijk gesprek, zonder verplichtingen maar met gratis advies.</p>
-      </div>
+      <div class="faq-answer"><p>Ja. Je krijgt 30 minuten gratis en vertrouwelijk, zonder verplichtingen, mét advies.</p></div>
     </div>
 
-  <div class="faq-item">
-      <button class="faq-question">Kan mijn vervolgstraject ook bij jullie?</button>
-      <div class="faq-answer">
-        <p>Ja. We kijken altijd eerst naar onze eigen competenties maar wellicht past iemand beter bij jouw specifieke situatie maar ook dit spreken we samen rustig door.</p>
-      </div>
+    <div class="faq-item">
+      <button class="faq-question">Kan mijn vervolgtraject ook bij jullie?</button>
+      <div class="faq-answer"><p>Ja. We kijken altijd naar onze competenties en wat het beste bij jouw situatie past — dat spreken we samen door.</p></div>
     </div>
+
     <div class="faq-item">
       <button class="faq-question">Is het anoniem?</button>
-      <div class="faq-answer">
-        <p>Ja. Uiteraard is het volledig anoniem en gaan wij vertrouwelijk om met uw gegevens! U hoeft alleen maar informatie te delen die u wilt delen.</p>
-      </div>
+      <div class="faq-answer"><p>Ja. Volledig anoniem en vertrouwelijk. Je deelt alleen wat je wilt delen.</p></div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">Kan ik ook namens iemand anders contact opnemen?</button>
-      <div class="faq-answer">
-        <p>Ja dat mag! Bijvoorbeeld als je je zorgen maakt om een partner, collega of familielid.</p>
-      </div>
+      <div class="faq-answer"><p>Ja, dat mag — bijvoorbeeld als je je zorgen maakt om een partner, collega of familielid.</p></div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">Voor welke problemen kan ik bellen?</button>
       <div class="faq-answer">
-        <p>Voor alles waar u tegenaan loopt, bijvoorbeeld:</p>
+        <p>Voor alles waar je tegenaan loopt, bijvoorbeeld:</p>
         <ul>
           <li>💬 Ruzie met je kind</li>
           <li>💬 Stress of (bijna) burn-out</li>
@@ -610,15 +405,19 @@ nav a {
         </ul>
       </div>
     </div>
- <section class="reviews">
-    <div class="review-carousel">
+  </section>
+
+  <!-- Reviews -->
+  <section class="section reviews">
+    <h2 class="section-title reveal">Ervaringen van anderen</h2>
+    <div class="review-carousel reveal" aria-label="Review carrousel">
       <div class="review-card">
         <span class="stars">★★★★★</span>
-        <p>“heb op de app een lang gesprek gevoerd want durfde niet te bellen.”<br><strong>Sanne (32)</strong><br>heb nu de juiste hulp gevonden.</p>
+        <p>“Heb op de app een lang gesprek gevoerd want durfde niet te bellen.”<br><strong>Sanne (32)</strong><br>Heb nu de juiste hulp gevonden.</p>
       </div>
       <div class="review-card">
         <span class="stars">★★★★★</span>
-        <p>“Het was precies wat ik nodig had.”<br><strong>Mark (45)</strong><br>Geen druk, geen verkooppraatje. Gewoon iemand die met je meedenkt.</p>
+        <p>“Het was precies wat ik nodig had.”<br><strong>Mark (45)</strong><br>Geen druk, geen verkooppraatje. Gewoon iemand die meedenkt.</p>
       </div>
       <div class="review-card">
         <span class="stars">★★★★★</span>
@@ -626,105 +425,69 @@ nav a {
       </div>
       <div class="review-card">
         <span class="stars">★★★★★</span>
-        <p>“Ik zat al een tijdje met dingen waar ik niet echt uit kwam.”<br><strong>Jeroen (51)</strong><br>Kreeg meteen iemand aan de lijn. Het gesprek was gratis, fijn want ik zat niet te wachten op weer kosten.</p>
+        <p>“Ik zat al een tijdje met dingen waar ik niet echt uit kwam.”<br><strong>Jeroen (51)</strong><br>Het gratis gesprek gaf net dat zetje dat ik nodig had.</p>
       </div>
     </div>
   </section>
+
+  <!-- Footer -->
   <footer id="contact">
-    <h2>Contact</h2>
+    <h2 class="section-title">Contact</h2>
     <p>📍 Veghel, Noord-Brabant — Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom</p>
-    <p>🕒 Ma t/m vr: 08:00 – 20:00 (bij behoefte ook later of in de weekeinden neem hiervoor contact op)</p>
-    <p>📧 info@ikluisternaarjou.nl</p>
-    <p>📱 Bel of WhatsApp ons: <a href="https://wa.me/31641251757" aria-label="WhatsApp ons op 06-41251757">06-41251757</a></p>
+    <p>🕒 Ma t/m vr: 08:00 – 20:00 (bij behoefte ook later of weekenden; app even)</p>
+    <p>📧 <a href="mailto:info@ikluisternaarjou.nl">info@ikluisternaarjou.nl</a></p>
+    <p>📱 Bel of WhatsApp: <a href="https://wa.me/31641251757" aria-label="WhatsApp ons op 06-41251757">06-41251757</a></p>
   </footer>
 
+  <!-- Sticky Call -->
+  <a class="floating-call" href="tel:+31641251757" aria-label="Bel 06-41251757">Bel nu</a>
+
   <script>
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const item = button.parentElement;
-        item.classList.toggle('active');
+    // ===== FAQ Toggle =====
+    document.querySelectorAll('.faq-question').forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        btn.parentElement.classList.toggle('active');
       });
     });
 
-    const carousels = document.querySelectorAll('.review-carousel');
-    carousels.forEach(carousel => {
-      const scrollAmount = 270;
-      const intervalTime = 1700;
-      let autoScroll = setInterval(() => {
-        if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
-          carousel.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    // ===== Auto-scroll carousels =====
+    function autoScroll(el, step=260, delay=2200){
+      let timer = setInterval(()=>{
+        if(el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1){
+          el.scrollTo({left:0, behavior:'smooth'});
+        }else{
+          el.scrollBy({left: step, behavior:'smooth'});
         }
-      }, intervalTime);
-
-      carousel.addEventListener('mouseenter', () => clearInterval(autoScroll));
-      carousel.addEventListener('mouseleave', () => {
-        autoScroll = setInterval(() => {
-          if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth) {
-            carousel.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      }, delay);
+      el.addEventListener('mouseenter', ()=> clearInterval(timer));
+      el.addEventListener('mouseleave', ()=>{
+        timer = setInterval(()=>{
+          if(el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1){
+            el.scrollTo({left:0, behavior:'smooth'});
+          }else{
+            el.scrollBy({left: step, behavior:'smooth'});
           }
-        }, intervalTime);
+        }, delay);
       });
-    });
-  </script>
-    <script>
-  const voorwieCarousel = document.querySelector('.voorwie-carousel');
-  let scrollAmountVoorwie = 240;
-  let intervalVoorwie = 2500;
-
-  let autoVoorwie = setInterval(() => {
-    if (voorwieCarousel.scrollLeft + voorwieCarousel.offsetWidth >= voorwieCarousel.scrollWidth) {
-      voorwieCarousel.scrollTo({ left: 0, behavior: 'smooth' });
-    } else {
-      voorwieCarousel.scrollBy({ left: scrollAmountVoorwie, behavior: 'smooth' });
     }
-  }, intervalVoorwie);
+    document.querySelectorAll('.review-carousel, .voorwie-carousel').forEach(c=>autoScroll(c));
 
-  voorwieCarousel.addEventListener('mouseenter', () => clearInterval(autoVoorwie));
-  voorwieCarousel.addEventListener('mouseleave', () => {
-    autoVoorwie = setInterval(() => {
-      if (voorwieCarousel.scrollLeft + voorwieCarousel.offsetWidth >= voorwieCarousel.scrollWidth) {
-        voorwieCarousel.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        voorwieCarousel.scrollBy({ left: scrollAmountVoorwie, behavior: 'smooth' });
-      }
-    }, intervalVoorwie);
-  });
-</script>
+    // ===== Reveal on scroll =====
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold:.14});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+    // ===== Respect reduced motion =====
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(prefersReduced){
+      document.querySelectorAll('.review-carousel, .voorwie-carousel').forEach(c=>c.style.scrollBehavior='auto');
+    }
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
