@@ -9,359 +9,477 @@
     /* ====== Reset & Base ====== */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html, body { overflow-x: hidden; }
-    :root{
-      --bg:#fffdf8;
-      --paper:#ffffff;
-      --ink:#0d1b2a;
-      --muted:#4a4a4a;
-      --brand:#f1b400;
-      --brand-d:#d9a300;
-      --tint:#f7f4eb;
+    :root {
+      --bg: #fffdf8;
+      --paper: #ffffff;
+      --ink: #0d1b2a;
+      --muted: #4a4a4a;
+      --brand: #f1b400;
+      --brand-d: #d9a300;
+      --tint: #f7f4eb;
       --shadow: 0 8px 24px rgba(0,0,0,.08);
       --radius: 14px;
     }
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--ink);
-      line-height:1.6;
-      display:flex;
-      flex-direction:column;
-      min-height:100vh;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* ====== Header ====== */
-    header{
-      display:flex;justify-content:space-between;align-items:center;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 14px 5%;
-      background:#fff; position:sticky; top:0; z-index:1000;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,.06);
-      backdrop-filter:saturate(1.2) blur(6px);
+      backdrop-filter: saturate(1.2) blur(6px);
     }
-    .brand{
-      display:flex;gap:10px;align-items:center;
+    .brand {
+      display: flex;
+      gap: 10px;
+      align-items: center;
     }
-    .logo{
-      width:36px;height:36px;display:block;
+    .logo {
+      width: 36px;
+      height: 36px;
+      display: block;
     }
-    header h1{
+    header h1 {
       font-size: clamp(1.1rem, 3.5vw, 1.6rem);
-      font-weight:700; letter-spacing:.3px;
+      font-weight: 700;
+      letter-spacing: .3px;
     }
-    nav{ display:flex; align-items:center; gap: clamp(10px,2.5vw,22px); }
-    nav a{
-      text-decoration:none; color:var(--ink); font-weight:500;
-      font-size:clamp(.95rem, 2.5vw, 1rem); position:relative;
+    nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(10px, 2.5vw, 22px);
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 500;
+      font-size: clamp(.95rem, 2.5vw, 1rem);
+      position: relative;
       transition: color .25s ease;
     }
-    nav a:hover{ color:var(--brand); }
-    .btn-primary{
-      background:var(--brand); color:var(--ink); font-weight:700;
-      padding:10px 18px; border-radius:10px; text-decoration:none;
+    nav a:hover { color: var(--brand); }
+    .btn-primary {
+      background: var(--brand);
+      color: var(--ink);
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-decoration: none;
       transition: transform .18s ease, box-shadow .18s ease, background .2s ease;
       box-shadow: 0 6px 16px rgba(241,180,0,.25);
     }
-    .btn-primary:hover{ background:var(--brand-d); transform: translateY(-1px); }
-    .btn-primary:active{ transform: translateY(0); }
+    .btn-primary:hover {
+      background: var(--brand-d);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active { transform: translateY(0); }
 
     /* ====== Hero ====== */
-    .hero{
-      display:grid; grid-template-columns: 1.1fr .9fr;
-      gap: clamp(20px,4vw,60px);
-      align-items:center; justify-content:center;
-      padding: clamp(50px,8vw,110px) 5% clamp(30px,6vw,70px);
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: clamp(20px, 4vw, 60px);
+      align-items: center;
+      justify-content: center;
+      padding: clamp(50px, 8vw, 110px) 5% clamp(30px, 6vw, 70px);
       background: radial-gradient(1200px 600px at 10% 0%, #fff9e6 0%, #fffdf8 45%, #f7f4eb 100%);
     }
-    .hero-text h2{
-      font-family:'Playfair Display',serif;
-      font-size:clamp(2rem,6.8vw,3.4rem); line-height:1.1; margin-bottom:16px;
+    .hero-text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6.8vw, 3.4rem);
+      line-height: 1.1;
+      margin-bottom: 16px;
     }
-    .hero-text p{
-      font-size:clamp(1rem,3.2vw,1.2rem); color:var(--muted);
-      max-width: 58ch; margin-bottom:20px;
+    .hero-text p {
+      font-size: clamp(1rem, 3.2vw, 1.2rem);
+      color: var(--muted);
+      max-width: 58ch;
+      margin-bottom: 20px;
     }
-    .hero-cta{ display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-    .subtle{ font-size:.95rem; color:var(--muted); }
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .subtle {
+      font-size: .95rem;
+      color: var(--muted);
+    }
 
     /* ====== Animated Ear (SVG) ====== */
-    .ear-wrap{
-      width:100%; aspect-ratio: 1/1; max-width: 460px; margin-inline:auto;
+    .ear-wrap {
+      width: 100%;
+      aspect-ratio: 1/1;
+      max-width: 460px;
+      margin-inline: auto;
       background: conic-gradient(from 180deg at 50% 50%, #fff 0%, #fff 60%, #fff7d6 100%);
-      border-radius: 24px; box-shadow: var(--shadow);
-      display:grid; place-items:center; position:relative; overflow:hidden;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
     }
-    .ear-wrap::after{
-      content:""; position:absolute; inset:auto -20% -35% -20%;
-      height:60%; background:radial-gradient(50% 100% at 50% 0%, #ffe9a5 0%, transparent 70%);
-      filter: blur(40px); opacity:.6; pointer-events:none;
+    .ear-wrap::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -35% -20%;
+      height: 60%;
+      background: radial-gradient(50% 100% at 50% 0%, #ffe9a5 0%, transparent 70%);
+      filter: blur(40px);
+      opacity: .6;
+      pointer-events: none;
     }
-    svg.ear{
-      width: 78%; height: auto; display:block;
+    svg.ear {
+      width: 78%;
+      height: auto;
+      display: block;
     }
-    .wave{
+    .wave {
       transform-origin: left center;
       animation: wavePulse 2.2s ease-in-out infinite;
-      opacity:.9;
+      opacity: .9;
     }
-    .wave:nth-child(2){ animation-delay:.25s; opacity:.75; }
-    .wave:nth-child(3){ animation-delay:.5s; opacity:.6; }
-    @keyframes wavePulse{
-      0%,100%{ transform: scaleX(1); opacity:.55; }
-      50%{ transform: scaleX(1.06); opacity:.95; }
+    .wave:nth-child(2) { animation-delay: .25s; opacity: .75; }
+    .wave:nth-child(3) { animation-delay: .5s; opacity: .6; }
+    @keyframes wavePulse {
+      0%, 100% { transform: scaleX(1); opacity: .55; }
+      50% { transform: scaleX(1.06); opacity: .95; }
     }
-    .ear-outline{
+    .ear-outline {
       filter: drop-shadow(0 8px 16px rgba(0,0,0,.1));
       animation: gentleFloat 6s ease-in-out infinite;
       transform-origin: 50% 50%;
     }
-    @keyframes gentleFloat{
-      0%,100%{ transform: translateY(0px); }
-      50%{ transform: translateY(-6px); }
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
     }
 
     /* ====== Sections ====== */
-    section{ padding: clamp(40px, 7vw, 80px) 5%; }
-    .section{ max-width: 1100px; margin: 0 auto; text-align:center; }
-
-    .features{
-      display:grid; grid-template-columns: repeat(auto-fit, minmax(min(260px,100%), 1fr));
-      gap: 22px; margin-top: 26px;
+    section {
+      padding: clamp(40px, 7vw, 80px) 5%;
     }
-    .feature{
-      padding:22px; background:var(--paper); border-radius: var(--radius);
+    .section {
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+      gap: 22px;
+      margin-top: 26px;
+    }
+    .feature {
+      padding: 22px;
+      background: var(--paper);
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
       transition: transform .25s ease, box-shadow .25s ease;
     }
-    .feature:hover{ transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0,0,0,.1); }
-    .feature img{ height:50px; width:auto; margin-bottom:16px; }
-    h2.section-title{
+    .feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(0,0,0,.1);
+    }
+    .feature img {
+      height: 50px;
+      width: auto;
+      margin-bottom: 16px;
+    }
+    h2.section-title {
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.8rem, 5.5vw, 2.4rem);
+      margin-bottom: 16px;
+    }
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.2rem, 4.6vw, 1.5rem);
       margin-bottom: 8px;
     }
-    h3{ font-family:'Playfair Display',serif; font-size: clamp(1.2rem, 4.6vw, 1.5rem); margin-bottom:8px; }
 
     /* ====== Voor wie (carousel) ====== */
-    #voorwie .intro{ color:var(--muted); max-width: 60ch; margin: 0 auto 16px; }
-    .voorwie-carousel{
-      display:flex; flex-wrap:nowrap; overflow-x:auto;
-      scroll-snap-type:x mandatory; gap:16px; padding: 14px 2px 6px;
-      -webkit-overflow-scrolling:touch;
+    #voorwie .intro {
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0 auto 16px;
     }
-    .voorwie-carousel::-webkit-scrollbar{ height:8px; }
-    .voorwie-carousel::-webkit-scrollbar-thumb{ background:#ddd; border-radius:6px; }
-    .voorwie-card{
-      flex:0 0 auto; width:220px; scroll-snap-align:start;
-      background:var(--paper); border-radius: 12px; padding: 12px;
-      box-shadow: var(--shadow); text-align:center;
+    .voorwie-carousel {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding: 14px 2px 6px;
+      -webkit-overflow-scrolling: touch;
+    }
+    .voorwie-carousel::-webkit-scrollbar {
+      height: 8px;
+    }
+    .voorwie-carousel::-webkit-scrollbar-thumb {
+      background: #ddd;
+      border-radius: 6px;
+    }
+    .voorwie-card {
+      flex: 0 0 auto;
+      width: 220px;
+      scroll-snap-align: start;
+      background: var(--paper);
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: var(--shadow);
+      text-align: center;
       transition: transform .2s ease, box-shadow .2s ease;
     }
-    .voorwie-card:hover{ transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
-    .voorwie-card img{ width:100%; height:140px; object-fit:cover; border-radius:8px; margin-bottom:10px; }
-    .voorwie-card p{ font-size:.95rem; line-height:1.35; color:#333; }
+    .voorwie-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,.12);
+    }
+    .voorwie-card img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .voorwie-card p {
+      font-size: .95rem;
+      line-height: 1.35;
+      color: #333;
+    }
 
     /* ====== FAQ ====== */
-    .faq-section{
-      background:var(--paper); border-radius: 16px; box-shadow: var(--shadow);
-      max-width: 1100px; margin: 0 auto;
+    .faq-section {
+      background: var(--paper);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px;
     }
-    .faq-section h2{ text-align:center; margin-bottom: 20px; }
-    .faq-item{ border-bottom:1px solid #eee; padding: 10px 0; }
-    .faq-question{
-      background:none; border:none; width:100%; text-align:left;
-      font-size:clamp(1rem,3vw,1.1rem); font-weight:700; color:var(--ink);
-      padding:12px 2px; cursor:pointer; transition: color .2s ease;
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
+    .faq-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
     }
-    .faq-question:hover{ color:var(--brand); }
-    .faq-answer{ display:none; color:var(--muted); padding: 2px 2px 12px 2px; }
-    .faq-item.active .faq-answer{ display:block; }
+    .faq-item {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+    }
+    .faq-question {
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-size: clamp(1rem, 3vw, 1.1rem);
+      font-weight: 700;
+      color: var(--ink);
+      padding: 12px 2px;
+      cursor: pointer;
+      transition: color .2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .faq-question:hover { color: var(--brand); }
+    .faq-answer {
+      display: none;
+      color: var(--muted);
+      padding: 2px 2px 12px 2px;
+    }
+    .faq-item.active .faq-answer { display: block; }
 
     /* ====== Reviews ====== */
-    .reviews .review-carousel{
-      display:flex; overflow-x:auto; scroll-snap-type:x mandatory;
-      gap:16px; padding: 8px; max-width:100%; margin: 8px auto 0;
+    .reviews .review-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      padding: 8px;
+      max-width: 100%;
+      margin: 8px auto 0;
     }
-    .review-card{
-      flex:0 0 auto; width: clamp(220px, 70%, 320px);
-      background:var(--paper); border-radius: 12px; padding: 16px;
-      scroll-snap-align:start; box-shadow: var(--shadow); transition: transform .25s ease;
+    .review-card {
+      flex: 0 0 auto;
+      width: clamp(220px, 70%, 320px);
+      background: var(--paper);
+      border-radius: 12px;
+      padding: 16px;
+      scroll-snap-align: start;
+      box-shadow: var(--shadow);
+      transition: transform .25s ease;
     }
-    .review-card:hover{ transform: translateY(-4px); }
-    .stars{ color: #ffb300; font-size: 1.1rem; margin-bottom: 8px; display:block; }
+    .review-card:hover { transform: translateY(-4px); }
+    .stars {
+      color: #ffb300;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      display: block;
+    }
 
-  /* Algemene sectie */
-.section {
-  padding: 4rem 2rem;
-  background: #f9f9fb;
-  color: #333;
-  font-family: "Segoe UI", sans-serif;
-}
-
-.section-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #222;
-}
-
-/* Business offer container */
-.business-offer {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 1rem;
-  padding: 2.5rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-}
-
-/* Headings */
-.business-offer h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #1e293b;
-}
-
-.business-offer h4 {
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  color: #0f172a;
-}
-
-    .business-offer ul {
-    list-style: none; /* verwijdert bullets */
-    padding-left: 0;  /* verwijdert extra inspringing */
-}
-.business-offer li::before {
-    content: none; /* geen extra symbolen */
-}
-
-
-/* Paragraphs */
-.business-offer p {
-  line-height: 1.6;
-  margin-bottom: 1rem;
-  color: #444;
-}
-
-/* Pricing list grid */
-.pricing-list {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.pricing-list li {
-  background: #f1f5f9;
-  border-radius: 0.75rem;
-  padding: 1.5rem;
-  box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.pricing-list li:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-.pricing-list strong {
-  display: block;
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #111;
-}
-
-.price {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #2563eb;
-}
-
-.desc {
-  margin-top: 0.5rem;
-  color: #555;
-  font-size: 0.9rem;
-}
-
-/* Example aside */
-.example {
-  background: #fff7ed;
-  border-left: 4px solid #f97316;
-  padding: 1rem 1.25rem;
-  margin: 1rem 0;
-  border-radius: 0.5rem;
-  font-size: 0.95rem;
-  color: #7c2d12;
-}
-
-/* Button */
-.btn-primary {
-  display: inline-block;
-  margin-top: 2rem;
-  padding: 0.9rem 1.6rem;
-  background: #2563eb;
-  color: #fff;
-  border-radius: 0.6rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.2s ease;
-}
-
-.btn-primary:hover {
-  background: #1e40af;
-}
+    /* ====== Zakelijk aanbod ====== */
+    .business-offer {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: var(--paper);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .business-offer h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.4rem, 4vw, 1.8rem);
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+    .business-offer h4 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      margin: 16px 0 8px;
+      color: var(--ink);
+    }
+    .business-offer p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: clamp(.95rem, 2.5vw, 1rem);
+    }
+    .pricing-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+      padding: 0;
+      list-style: none;
+    }
+    .pricing-list li {
+      background: var(--tint);
+      border-radius: 10px;
+      padding: 16px;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .pricing-list li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(0,0,0,.12);
+    }
+    .pricing-list strong {
+      display: block;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    .price {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--brand);
+    }
+    .desc {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    .example {
+      background: #fff7ed;
+      border-left: 4px solid var(--brand);
+      padding: 12px;
+      margin: 16px 0;
+      border-radius: 8px;
+      font-size: .95rem;
+      color: var(--muted);
+    }
+    .business-offer .btn-primary {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
 
     /* ====== Footer ====== */
-    footer{
-      background:var(--tint); text-align:center;
-      padding: clamp(36px, 7vw, 60px) 5%; margin-top:auto;
+    footer {
+      background: var(--tint);
+      text-align: center;
+      padding: clamp(36px, 7vw, 60px) 5%;
+      margin-top: auto;
     }
-    footer p{ margin-bottom:8px; }
-    footer a{ color:#0067c5; text-decoration:none; }
-    footer a:hover{ text-decoration:underline; }
+    footer p {
+      margin-bottom: 8px;
+    }
+    footer a {
+      color: #0067c5;
+      text-decoration: none;
+    }
+    footer a:hover { text-decoration: underline; }
 
     /* ====== Reveal on scroll ====== */
-    .reveal{ opacity:0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.in{ opacity:1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ====== Sticky Call Button ====== */
-    .floating-call{
-      position: fixed; right: 18px; bottom: 18px; z-index: 1100;
-      background: var(--brand); color: var(--ink);
-      border-radius: 999px; padding: 12px 18px; font-weight:800;
+    .floating-call {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1100;
+      background: var(--brand);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 800;
       box-shadow: 0 14px 30px rgba(241,180,0,.35);
-      text-decoration:none; transition: transform .2s ease;
+      text-decoration: none;
+      transition: transform .2s ease;
     }
-    .floating-call:hover{ transform: translateY(-2px) scale(1.015); }
+    .floating-call:hover {
+      transform: translateY(-2px) scale(1.015);
+    }
 
     /* ====== Mobile ====== */
-    @media (max-width: 980px){
-      .hero{ grid-template-columns: 1fr; text-align:center; }
-      .hero-cta{ justify-content:center; }
-      .ear-wrap{ order: -1; }
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-cta { justify-content: center; }
+      .ear-wrap { order: -1; }
     }
-    @media (max-width: 520px){
-      .voorwie-card{ width:170px; }
-      .voorwie-card img{ height:110px; }
+    @media (max-width: 520px) {
+      .voorwie-card { width: 170px; }
+      .voorwie-card img { height: 110px; }
     }
 
     /* ====== Reduced Motion ====== */
-    @media (prefers-reduced-motion: reduce){
-      .wave, .ear-outline, .reveal{ animation:none !important; transition: none !important; }
+    @media (prefers-reduced-motion: reduce) {
+      .wave, .ear-outline, .reveal { animation: none !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
-
   <!-- Header -->
   <header>
     <div class="brand">
-      <!-- Minimal ear logo -->
       <svg class="logo" viewBox="0 0 64 64" aria-hidden="true">
         <path d="M32 6c-9.4 0-17 7.6-17 17 0 5.2 2.3 9.2 5.2 12.7 2.4 2.8 4.1 5.9 4.1 9.9 0 6 5 11 11 11s11-5 11-11c0-5.1-2.8-8.2-6-10.8-2.8-2.3-4.8-4.6-4.8-8.8 0-5.6 4.7-10 10.5-10 2.6 0 5 .9 7 .9" fill="none" stroke="#0d1b2a" stroke-width="3" stroke-linecap="round"/>
       </svg>
@@ -380,23 +498,19 @@
   <section class="hero">
     <div class="hero-text reveal">
       <h2>Van stress naar rust, van twijfel naar richting</h2>
-      <p>Mentale druk,  Stress, onzekerheid, burn-out of prestatiedruk het zijn belangrijke signalen. Als mentale coach begeleid ik mensen die vastlopen, twijfelen of opbranden.</p>
+      <p>Mentale druk, stress, onzekerheid, burn-out of prestatiedruk zijn belangrijke signalen. Als mentale coach begeleid ik mensen die vastlopen, twijfelen of opbranden.</p>
       <div class="hero-cta">
         <a href="https://wa.me/31641251757" class="btn-primary" aria-label="WhatsApp voor direct contact">Bel / App nu – gratis 30 min</a>
         <span class="subtle">Zonder wachttijd • Vertrouwelijk • Gericht op sporters & bedrijven</span>
       </div>
     </div>
-
     <div class="ear-wrap reveal" aria-hidden="true">
-      <!-- Animated listening ear with waves -->
       <svg class="ear" viewBox="0 0 400 400">
-        <!-- Sound waves -->
         <g>
           <path class="wave" d="M60,200 C120,120 120,280 180,200" fill="none" stroke="#f1b400" stroke-width="10" stroke-linecap="round"/>
           <path class="wave" d="M40,200 C120,90 120,310 200,200" fill="none" stroke="#f1b400" stroke-width="7" stroke-linecap="round"/>
           <path class="wave" d="M20,200 C120,60 120,340 220,200" fill="none" stroke="#f1b400" stroke-width="4" stroke-linecap="round"/>
         </g>
-        <!-- Ear outline -->
         <g class="ear-outline">
           <path d="M250,85c-62,0-112,50-112,112 0,33 15,58 33,80 16,19 27,39 27,65 0,39 32,71 71,71s71-32 71-71c0-33-18-53-39-70-18-15-31-29-31-56 0-36 30-64 67-64 16,0 30,5 42,5" fill="none" stroke="#0d1b2a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M261,152c-25,11-38,31-38,57 0,35 28,51 49,69 13,11 22,23 22,42 0,20-16,36-36,36" fill="none" stroke="#0d1b2a" stroke-width="8" stroke-linecap="round"/>
@@ -417,7 +531,7 @@
       <div class="feature">
         <img src="https://img.icons8.com/ios-filled/50/briefcase.png" alt="Stress en burnout risico?">
         <h3>Stress en burnout risico?</h3>
-        <p>Begeleiding bij stress, burn-out en onzekerheid in de zakelijke wereld of gewoon in je prive leven.</p>
+        <p>Begeleiding bij stress, burn-out en onzekerheid in de zakelijke wereld of privéleven.</p>
       </div>
       <div class="feature">
         <img src="https://img.icons8.com/ios-filled/50/business-network.png" alt="Voor bedrijven">
@@ -436,145 +550,123 @@
   <section class="section" id="voorwie">
     <h2 class="section-title reveal">Herkent u dit?</h2>
     <p class="intro reveal">Ik help sporters en professionals met mentale uitdagingen zoals stress, onzekerheid en burn-out.</p>
-
     <div class="voorwie-carousel reveal" aria-label="Casussen waarvoor je kunt bellen">
       <div class="voorwie-card"><img src="depressie.jpg" alt="Uw personeel"><p><strong>Uw personeel</strong><br>"Als iemand uitvalt is het te laat, we moeten beter luisteren naar ons personeel"</p></div>
       <div class="voorwie-card"><img src="werkstres.jpg" alt="Burn-out"><p><strong>Burn-out</strong><br>"Net terug van vakantie, maar nog steeds uitgeput."</p></div>
       <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="Relaties en koppels"><p><strong>Relaties en koppels</strong><br>"We praten nog wel maar we luisteren niet meer"</p></div>
       <div class="voorwie-card"><img src="rouw.jpg" alt="Rouw in sport"><p><strong>Rouw in sport</strong><br>"Mijn hele weekend verpest door een verloren wedstrijd."</p></div>
       <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="Prestatiedruk"><p><strong>Prestatiedruk</strong><br>"Iedereen verwacht dat ik presteer maar ik voel alleen maar druk."</p></div>
-      <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="Wil ik wel door?"><p><strong>Wil ik wel door?</strong><br>"Vind ik mijn werk of sport uberhaupt nog wel leuk?"</p></div>
-      <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="jongleren"><p><strong>Hooghouden</strong><br>"Het voelt alsof ik de hele alle ballen aan het hooghouden ben"</p></div>
-
+      <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="Wil ik wel door?"><p><strong>Wil ik wel door?</strong><br>"Vind ik mijn werk of sport überhaupt nog wel leuk?"</p></div>
+      <div class="voorwie-card"><img src="relatieproblemen.jpg" alt="jongleren"><p><strong>Hooghouden</strong><br>"Het voelt alsof ik alle ballen aan het hooghouden ben"</p></div>
     </div>
   </section>
 
   <!-- Hoe het werkt -->
   <section class="section" id="hoehetwerkt">
     <h2 class="section-title reveal">Hoe het werkt</h2>
-    <ul class="section reveal" style="text-align:left; max-width:900px;">
-      <li><strong>1. Neem contact op.</strong> Bel of app voor directe mentale ondersteuning, speciaal voor sporters en professionals.</li><br/>
-      <li><strong>2. Ik luister en begeleid.</strong> Praktisch advies over stress, burn-out en onzekerheid, afgestemd op jouw situatie.</li><br/>
-      <li><strong>3. Gratis 30 minuten.</strong> Vrijblijvend gesprek met concrete tips voor mentale veerkracht.</li><br/>
-      <li><strong>4. Vervolg op maat.</strong> Individuele sessies of zakelijke pakketten voor langdurige ondersteuning.</li>
+    <ul class="section reveal" style="text-align: left; max-width: 900px; margin: 0 auto; padding: 0; list-style: none;">
+      <li style="margin-bottom: 12px;"><strong>1. Neem contact op.</strong> Bel of app voor directe mentale ondersteuning, speciaal voor sporters en professionals.</li>
+      <li style="margin-bottom: 12px;"><strong>2. Ik luister en begeleid.</strong> Praktisch advies over stress, burn-out en onzekerheid, afgestemd op jouw situatie.</li>
+      <li style="margin-bottom: 12px;"><strong>3. Gratis 30 minuten.</strong> Vrijblijvend gesprek met concrete tips voor mentale veerkracht.</li>
+      <li style="margin-bottom: 12px;"><strong>4. Vervolg op maat.</strong> Individuele sessies of zakelijke pakketten voor langdurige ondersteuning.</li>
     </ul>
-    <div class="section reveal" style="text-align:center;">
+    <div class="section reveal" style="text-align: center;">
       <a href="https://wa.me/31641251757" class="btn-primary">Bel of WhatsApp voor direct contact</a>
     </div>
   </section>
 
- <!-- Zakelijk aanbod -->
-<section class="section" id="zakelijk">
-  <h2 class="section-title reveal">Zakelijk aanbod voor bedrijven</h2>
-
-  <article class="business-offer reveal" style="background:transparent; padding:16px 12px; margin:0 auto 16px auto; box-shadow:none; border-radius:0;">
-    <header>
-      <h3 style="margin-bottom:8px; font-size:1.2rem;">Preventieve mentale zorg – Voorkom burn-out</h3>
-      <p style="margin-bottom:8px; line-height:1.4;">
-        Burn-outs kosten bedrijven gemiddeld <strong>€60.000</strong> per geval aan verzuim en productiviteitsverlies. Investeer in mentale gezondheid met onze flexibele urenkaarten, te gebruiken op afroepbasis.
-      </p>
-    </header>
-
-    <section class="offer-cards">
-      <h4 style="margin-bottom:6px;">Flexibele urenkaarten</h4>
-      <p style="margin-bottom:6px;">Koop vooraf sessies die je medewerkers op elk moment kunnen gebruiken voor coaching of therapie bij stress of beginnende burn-out. Jij bepaalt wie en wanneer.</p>
-      <ul class="pricing-list" style="list-style:none; padding-left:0; margin-bottom:10px;">
-        <li style="margin-bottom:6px;">
-          <strong>Basis (10 uur)</strong>  
-          <span class="price">€1.000</span>  
-          <p class="desc" style="margin:2px 0;">Voor incidentele 1-op-1 ondersteuning.</p>
-        </li>
-        <li style="margin-bottom:6px;">
-          <strong>Plus (25 uur)</strong>  
-          <span class="price">€2.250</span>  
-          <p class="desc" style="margin:2px 0;">Prioriteitssessies binnen 48 uur en geanonimiseerde rapportage.</p>
-        </li>
-        <li style="margin-bottom:6px;">
-          <strong>Premium (50 uur)</strong>  
-          <span class="price">€4.000</span>  
-          <p class="desc" style="margin:2px 0;">Inclusief workshops en preventieadvies.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section class="stress-signals">
-      <h4 style="margin-bottom:6px;">Stress herkennen bij je team</h4>
-      <p style="margin-bottom:6px;">Vroege signalen van stress herkennen voorkomt langdurig verzuim. Let op:</p>
-      <ul style="list-style:none; padding-left:0; margin-bottom:6px;">
-        <li>Prikkelbaarheid, vermoeidheid of concentratieproblemen</li>
-        <li>Fysieke klachten zoals hoofdpijn of slaapproblemen</li>
-        <li>Minder productiviteit of vaker kort verzuim</li>
-      </ul>
-      <aside class="example" style="margin-bottom:10px;">
-        <p style="margin:0;">
-          <strong>Voorbeeld:</strong> Een medewerker wordt kortaf, vergeet deadlines en klaagt over vermoeidheid. Wacht niet tot een burn-out hem drie maanden uitschakelt. Met een urenkaart krijgt hij snel coaching.
-        </p>
-      </aside>
-    </section>
-
-    <section class="benefits" style="margin-bottom:10px;">
-      <h4 style="margin-bottom:6px;">Waarom preventie?</h4>
-      <p style="margin:0;">Snelle ondersteuning bespaart kosten, verhoogt productiviteit en versterkt je team. Neem contact op voor maatwerk of een vrijblijvend advies.</p>
-    </section>
-
-    <footer style="margin-top:8px;">
-      <a href="https://wa.me/31641251757" class="btn-primary" style="display:inline-block; margin-top:6px;">Informeer naar opties</a>
-    </footer>
-  </article>
-</section>
-
+  <!-- Zakelijk aanbod -->
+  <section class="section" id="zakelijk">
+    <h2 class="section-title reveal">Zakelijk aanbod voor bedrijven</h2>
+    <article class="business-offer reveal">
+      <header>
+        <h3>Preventieve mentale zorg – Voorkom burn-out</h3>
+        <p>Burn-outs kosten bedrijven gemiddeld <strong>€60.000</strong> per geval aan verzuim en productiviteitsverlies. Investeer in mentale gezondheid met onze flexibele urenkaarten, te gebruiken op afroepbasis.</p>
+      </header>
+      <section class="offer-cards">
+        <h4>Flexibele urenkaarten</h4>
+        <p>Koop vooraf sessies die je medewerkers op elk moment kunnen gebruiken voor coaching of therapie bij stress of beginnende burn-out. Jij bepaalt wie en wanneer.</p>
+        <ul class="pricing-list">
+          <li>
+            <strong>Basis (10 uur)</strong>
+            <span class="price">€1.000</span>
+            <p class="desc">Voor incidentele 1-op-1 ondersteuning.</p>
+          </li>
+          <li>
+            <strong>Plus (25 uur)</strong>
+            <span class="price">€2.250</span>
+            <p class="desc">Prioriteitssessies binnen 48 uur en geanonimiseerde rapportage.</p>
+          </li>
+          <li>
+            <strong>Premium (50 uur)</strong>
+            <span class="price">€4.000</span>
+            <p class="desc">Inclusief workshops en preventieadvies.</p>
+          </li>
+        </ul>
+      </section>
+      <section class="stress-signals">
+        <h4>Stress herkennen bij je team</h4>
+        <p>Vroege signalen van stress herkennen voorkomt langdurig verzuim. Let op:</p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 12px;">
+          <li style="margin-bottom: 8px;">Prikkelbaarheid, vermoeidheid of concentratieproblemen</li>
+          <li style="margin-bottom: 8px;">Fysieke klachten zoals hoofdpijn of slaapproblemen</li>
+          <li style="margin-bottom: 8px;">Minder productiviteit of vaker kort verzuim</li>
+        </ul>
+        <aside class="example">
+          <p><strong>Voorbeeld:</strong> Een medewerker wordt kortaf, vergeet deadlines en klaagt over vermoeidheid. Wacht niet tot een burn-out hem drie maanden uitschakelt. Met een urenkaart krijgt hij snel coaching.</p>
+        </aside>
+      </section>
+      <section class="benefits">
+        <h4>Waarom preventie?</h4>
+        <p>Snelle ondersteuning bespaart kosten, verhoogt productiviteit en versterkt je team. Neem contact op voor maatwerk of een vrijblijvend advies.</p>
+      </section>
+      <a href="https://wa.me/31641251757" class="btn-primary">Informeer naar opties</a>
+    </article>
+  </section>
 
   <!-- Over ons -->
   <section class="section" id="overons">
     <h2 class="section-title reveal">Over ons</h2>
-    <ul class="section reveal" style="text-align:left; max-width:900px;">
-      <li>Bij <em>Ik luister naar jou</em> specialiseren we in mentale begeleiding voor sporters en zakelijke professionals.</li><br/>
-      <li>We richten ons op stress, burn-out, onzekerheid en prestatiedruk – thema's die in sport en werk overlappen.</li><br/>
-      <li>Geen wachttijd, vertrouwelijk en praktisch. Voor individuen en bedrijven.</li><br/>
-      <li>We bieden maatwerk: van eenmalige gesprekken tot urenkaarten voor teams.</li><br/>
-      <li>Jij houdt de regie. Samen bouwen we aan mentale kracht voor betere prestaties.</li>
+    <ul class="section reveal" style="text-align: left; max-width: 900px; margin: 0 auto; padding: 0; list-style: none;">
+      <li style="margin-bottom: 12px;">Bij <em>Ik luister naar jou</em> specialiseren we in mentale begeleiding voor sporters en zakelijke professionals.</li>
+      <li style="margin-bottom: 12px;">We richten ons op stress, burn-out, onzekerheid en prestatiedruk – thema's die in sport en werk overlappen.</li>
+      <li style="margin-bottom: 12px;">Geen wachttijd, vertrouwelijk en praktisch. Voor individuen en bedrijven.</li>
+      <li style="margin-bottom: 12px;">We bieden maatwerk: van eenmalige gesprekken tot urenkaarten voor teams.</li>
+      <li style="margin-bottom: 12px;">Jij houdt de regie. Samen bouwen we aan mentale kracht voor betere prestaties.</li>
     </ul>
   </section>
 
   <!-- FAQ -->
   <section class="section faq-section" id="veel-gestelde-vragen">
     <h2 class="section-title">Veel gestelde vragen</h2>
-
     <div class="faq-item">
       <button class="faq-question">Moet ik bellen of mag ik ook appen?</button>
       <div class="faq-answer"><p>Beide mag! Jij kiest wat prettig voelt. We reageren snel en persoonlijk.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">Wanneer kan ik contact opnemen?</button>
       <div class="faq-answer"><p>Maandag t/m vrijdag: 08:00–20:00. Indien gewenst ook later of in het weekend beschikbaar — app gerust om dit te checken.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">Wat gebeurt er na het gesprek?</button>
       <div class="faq-answer"><p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is, zoeken we een passende aanpak, inclusief zakelijke opties.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">Is het eerste gesprek echt gratis?</button>
       <div class="faq-answer"><p>Ja. Je krijgt 30 minuten gratis en vertrouwelijk, zonder verplichtingen, mét advies over mentale uitdagingen.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">Kan mijn vervolgtraject ook bij jullie?</button>
       <div class="faq-answer"><p>Ja. We bieden individuele sessies of urenkaarten voor bedrijven, afgestemd op sport of zakelijke behoeften.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">Is het anoniem?</button>
       <div class="faq-answer"><p>Ja. Volledig anoniem en vertrouwelijk. Je deelt alleen wat je wilt delen.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">Kan ik ook namens iemand anders contact opnemen?</button>
       <div class="faq-answer"><p>Ja, dat mag — bijvoorbeeld als je je zorgen maakt om een sporter, collega of medewerker.</p></div>
     </div>
-
     <div class="faq-item">
       <button class="faq-question">Voor welke problemen kan ik bellen?</button>
       <div class="faq-answer">
@@ -630,65 +722,50 @@
 
   <script>
     // ===== FAQ Toggle =====
-    document.querySelectorAll('.faq-question').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
         btn.parentElement.classList.toggle('active');
       });
     });
 
     // ===== Auto-scroll carousels =====
-    function autoScroll(el, step=260, delay=2200){
-      let timer = setInterval(()=>{
-        if(el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1){
-          el.scrollTo({left:0, behavior:'smooth'});
-        }else{
-          el.scrollBy({left: step, behavior:'smooth'});
+    function autoScroll(el, step = 260, delay = 2200) {
+      let timer = setInterval(() => {
+        if (el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1) {
+          el.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          el.scrollBy({ left: step, behavior: 'smooth' });
         }
       }, delay);
-      el.addEventListener('mouseenter', ()=> clearInterval(timer));
-      el.addEventListener('mouseleave', ()=>{
-        timer = setInterval(()=>{
-          if(el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1){
-            el.scrollTo({left:0, behavior:'smooth'});
-          }else{
-            el.scrollBy({left: step, behavior:'smooth'});
+      el.addEventListener('mouseenter', () => clearInterval(timer));
+      el.addEventListener('mouseleave', () => {
+        timer = setInterval(() => {
+          if (el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1) {
+            el.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            el.scrollBy({ left: step, behavior: 'smooth' });
           }
         }, delay);
       });
     }
-    document.querySelectorAll('.review-carousel, .voorwie-carousel').forEach(c=>autoScroll(c));
+    document.querySelectorAll('.review-carousel, .voorwie-carousel').forEach(c => autoScroll(c));
 
     // ===== Reveal on scroll =====
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
           e.target.classList.add('in');
           io.unobserve(e.target);
         }
       });
-    }, {threshold:.14});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    }, { threshold: .14 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
     // ===== Respect reduced motion =====
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if(prefersReduced){
-      document.querySelectorAll('.review-carousel, .voorwie-carousel').forEach(c=>c.style.scrollBehavior='auto');
+    if (prefersReduced) {
+      document.querySelectorAll('.review-carousel, .voorwie-carousel').forEach(c => c.style.scrollBehavior = 'auto');
     }
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
