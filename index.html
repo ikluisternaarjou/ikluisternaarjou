@@ -1,735 +1,500 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Erwin Nooter Coaching - Mentale Begeleiding voor Sporters en Professionals</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 <style>
-    /* ====== Reset & Base ====== */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { overflow-x: hidden; }
-    :root {
-      --bg: #fffdf8;
-      --paper: #ffffff;
-      --ink: #0d1b2a;
-      --muted: #4a4a4a;
-      --brand: #f1b400;
-      --brand-d: #d9a300;
-      --tint: #f7f4eb;
-      --shadow: 0 8px 24px rgba(0,0,0,.08);
-      --radius: 14px;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* ====== Header ====== */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 5%;
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,.06);
-      backdrop-filter: saturate(1.2) blur(6px);
-    }
-    .brand {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .logo {
-      width: 36px;
-      height: 36px;
-      display: block;
-    }
-    header h1 {
-      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
-      font-weight: 700;
-      letter-spacing: .3px;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(10px, 2.5vw, 22px);
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 500;
-      font-size: clamp(.95rem, 2.5vw, 1rem);
-      position: relative;
-      transition: color .25s ease;
-    }
-    nav a:hover { color: var(--brand); }
-    .btn-primary {
-      background: var(--brand);
-      color: var(--ink);
-      font-weight: 700;
-      padding: 10px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: transform .18s ease, box-shadow .18s ease, background .2s ease;
-      box-shadow: 0 6px 16px rgba(241,180,0,.25);
-    }
-    .btn-primary:hover {
-      background: var(--brand-d);
-      transform: translateY(-1px);
-    }
-    .btn-primary:active { transform: translateY(0); }
-
-    /* ====== Hero ====== */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: clamp(20px, 4vw, 60px);
-      align-items: center;
-      justify-content: center;
-      padding: clamp(50px, 8vw, 110px) 5% clamp(30px, 6vw, 70px);
-      background: radial-gradient(1200px 600px at 10% 0%, #fff9e6 0%, #fffdf8 45%, #f7f4eb 100%);
-    }
-    .hero-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 6.8vw, 3.4rem);
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .hero-text p {
-      font-size: clamp(1rem, 3.2vw, 1.2rem);
-      color: var(--muted);
-      max-width: 58ch;
-      margin-bottom: 20px;
-    }
-    .hero-cta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .subtle {
-      font-size: .95rem;
-      color: var(--muted);
-    }
-
-    /* ====== Animated Ear (SVG) ====== */
-    .ear-wrap {
-      width: 100%;
-      aspect-ratio: 1/1;
-      max-width: 460px;
-      margin-inline: auto;
-      background: conic-gradient(from 180deg at 50% 50%, #fff 0%, #fff 60%, #fff7d6 100%);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .ear-wrap::after {
-      content: "";
-      position: absolute;
-      inset: auto -20% -35% -20%;
-      height: 60%;
-      background: radial-gradient(50% 100% at 50% 0%, #ffe9a5 0%, transparent 70%);
-      filter: blur(40px);
-      opacity: .6;
-      pointer-events: none;
-    }
-    svg.ear {
-      width: 78%;
-      height: auto;
-      display: block;
-    }
-    .wave {
-      transform-origin: left center;
-      animation: wavePulse 2.2s ease-in-out infinite;
-      opacity: .9;
-    }
-    .wave:nth-child(2) { animation-delay: .25s; opacity: .75; }
-    .wave:nth-child(3) { animation-delay: .5s; opacity: .6; }
-    @keyframes wavePulse {
-      0%, 100% { transform: scaleX(1); opacity: .55; }
-      50% { transform: scaleX(1.06); opacity: .95; }
-    }
-    .ear-outline {
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,.1));
-      animation: gentleFloat 6s ease-in-out infinite;
-      transform-origin: 50% 50%;
-    }
-    @keyframes gentleFloat {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
-    }
-
-    /* ====== Sections ====== */
-    section {
-      padding: clamp(40px, 7vw, 80px) 5%;
-    }
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    
-.features {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  margin-top: 26px;
-}
-@media (max-width: 600px) {
-  .features {
-    grid-template-columns: 1fr;
+  /* ====== Reset & Base ====== */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  html, body { overflow-x: hidden; }
+  :root {
+    --bg: #fffdf8;
+    --paper: #ffffff;
+    --ink: #0d1b2a;
+    --muted: #4a4a4a;
+    --brand: #f1b400;
+    --brand-d: #d9a300;
+    --tint: #f7f4eb;
+    --shadow: 0 8px 24px rgba(0,0,0,.08);
+    --radius: 14px;
   }
-}
-.feature {
-  padding: 22px;
-  background: var(--paper);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  transition: transform .25s ease, box-shadow .25s ease;
-  min-height: 200px; /* To make them more square-like */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 
-    .feature:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 28px rgba(0,0,0,.1);
-    }
-    .feature img {
-      height: 50px;
-      width: auto;
-      margin-bottom: 16px;
-    }
-    h2.section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 5.5vw, 2.4rem);
-      margin-bottom: 16px;
-    }
-    h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.2rem, 4.6vw, 1.5rem);
-      margin-bottom: 8px;
-    }
+  /* ====== Header ====== */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 5%;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,.06);
+    backdrop-filter: saturate(1.2) blur(6px);
+  }
+  .brand {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .logo { width: 36px; height: 36px; display: block; }
+  header h1 {
+    font-size: clamp(1.1rem, 3.5vw, 1.6rem);
+    font-weight: 700;
+    letter-spacing: .3px;
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 2.5vw, 22px);
+    position: relative;
+  }
+  nav a, nav button {
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 500;
+    font-size: clamp(.95rem, 2.5vw, 1rem);
+    position: relative;
+    transition: color .25s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  nav a:hover, nav button:hover { color: var(--brand); }
+  .btn-primary {
+    background: var(--brand);
+    color: var(--ink);
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease, background .2s ease;
+    box-shadow: 0 6px 16px rgba(241,180,0,.25);
+  }
+  .btn-primary:hover { background: var(--brand-d); transform: translateY(-1px); }
 
-  
-    /* ====== FAQ ====== */
-    .faq-section {
-      background: var(--paper);
-      border-radius: 16px;
-      box-shadow: var(--shadow);
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px;
-    }
-    .faq-section h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .faq-item {
-      border-bottom: 1px solid #eee;
-      padding: 10px 0;
-    }
-    .faq-question {
-      background: none;
-      border: none;
-      width: 100%;
-      text-align: left;
-      font-size: clamp(1rem, 3vw, 1.1rem);
-      font-weight: 700;
-      color: var(--ink);
-      padding: 12px 2px;
-      cursor: pointer;
-      transition: color .2s ease;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .faq-question:hover { color: var(--brand); }
-    .faq-answer {
-      display: none;
-      color: var(--muted);
-      padding: 2px 2px 12px 2px;
-    }
-    .faq-item.active .faq-answer { display: block; }
+  /* ===== Dropdown (Onze pakketten) ===== */
+  .nav-item { position: relative; }
+  .dropdown {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    background: var(--paper);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.12);
+    padding: 8px;
+    display: none;
+    min-width: 220px;
+    z-index: 1200;
+  }
+  .dropdown a {
+    display: block;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: var(--ink);
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  .dropdown a:hover { background: var(--tint); color: var(--brand); }
+  /* show dropdown on hover and focus-within for accessibility */
+  .nav-item:hover .dropdown,
+  .nav-item:focus-within .dropdown { display: block; }
 
-    /* ====== Reviews ====== */
-    .reviews .review-carousel {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 16px;
-      padding: 8px;
-      max-width: 100%;
-      margin: 8px auto 0;
-    }
-    .review-card {
-      flex: 0 0 auto;
-      width: clamp(220px, 70%, 320px);
-      background: var(--paper);
-      border-radius: 12px;
-      padding: 16px;
-      scroll-snap-align: start;
-      box-shadow: var(--shadow);
-      transition: transform .25s ease;
-    }
-    .review-card:hover { transform: translateY(-4px); }
-    .stars {
-      color: #ffb300;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      display: block;
-    }
+  /* ====== Hero ====== */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    gap: clamp(20px, 4vw, 60px);
+    align-items: center;
+    justify-content: center;
+    padding: clamp(50px, 8vw, 110px) 5% clamp(30px, 6vw, 70px);
+    background: radial-gradient(1200px 600px at 10% 0%, #fff9e6 0%, #fffdf8 45%, #f7f4eb 100%);
+  }
+  .hero-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 6.8vw, 3.4rem);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .hero-text p {
+    font-size: clamp(1rem, 3.2vw, 1.2rem);
+    color: var(--muted);
+    max-width: 58ch;
+    margin-bottom: 20px;
+  }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .subtle { font-size: .95rem; color: var(--muted); }
 
-    /* ====== Zakelijk aanbod ====== */
-    .business-offer {
-      max-width: 1100px;
-      margin: 0 auto;
-      background: var(--paper);
-      border-radius: var(--radius);
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-    .business-offer h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 4vw, 1.8rem);
-      margin-bottom: 12px;
-      color: var(--ink);
-    }
-    .business-offer h4 {
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
-      margin: 16px 0 8px;
-      color: var(--ink);
-    }
-    .business-offer p {
-      color: var(--muted);
-      margin-bottom: 12px;
-      font-size: clamp(.95rem, 2.5vw, 1rem);
-    }
-    .pricing-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
-      margin: 16px 0;
-      padding: 0;
-      list-style: none;
-    }
-    .pricing-list li {
-      background: var(--tint);
-      border-radius: 10px;
-      padding: 16px;
-      transition: transform .2s ease, box-shadow .2s ease;
-    }
-    .pricing-list li:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 24px rgba(0,0,0,.12);
-    }
-    .pricing-list strong {
-      display: block;
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: var(--ink);
-    }
-    .price {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--brand);
-    }
-    .desc {
-      margin-top: 8px;
-      color: var(--muted);
-      font-size: .95rem;
-    }
-    .example {
-      background: #fff7ed;
-      border-left: 4px solid var(--brand);
-      padding: 12px;
-      margin: 16px 0;
-      border-radius: 8px;
-      font-size: .95rem;
-      color: var(--muted);
-    }
-    .business-offer .btn-primary {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 10px 20px;
-      font-size: 1rem;
-    }
+  /* Ear */
+  .ear-wrap { width: 100%; aspect-ratio: 1/1; max-width: 460px; margin-inline: auto; background: conic-gradient(from 180deg at 50% 50%, #fff 0%, #fff 60%, #fff7d6 100%); border-radius: 24px; box-shadow: var(--shadow); display: grid; place-items: center; position: relative; overflow: hidden; }
+  .ear-wrap::after { content: ""; position: absolute; inset: auto -20% -35% -20%; height: 60%; background: radial-gradient(50% 100% at 50% 0%, #ffe9a5 0%, transparent 70%); filter: blur(40px); opacity: .6; pointer-events: none; }
+  svg.ear { width: 78%; height: auto; display: block; }
+  .wave { transform-origin: left center; animation: wavePulse 2.2s ease-in-out infinite; opacity: .9; }
+  .wave:nth-child(2) { animation-delay: .25s; opacity: .75; }
+  .wave:nth-child(3) { animation-delay: .5s; opacity: .6; }
+  @keyframes wavePulse { 0%, 100% { transform: scaleX(1); opacity: .55; } 50% { transform: scaleX(1.06); opacity: .95; } }
+  .ear-outline { filter: drop-shadow(0 8px 16px rgba(0,0,0,.1)); animation: gentleFloat 6s ease-in-out infinite; transform-origin: 50% 50%; }
+  @keyframes gentleFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
 
-    /* ====== Footer ====== */
-    footer {
-      background: var(--tint);
-      text-align: center;
-      padding: clamp(36px, 7vw, 60px) 5%;
-      margin-top: auto;
-    }
-    footer p {
-      margin-bottom: 8px;
-    }
-    footer a {
-      color: #0067c5;
-      text-decoration: none;
-    }
-    footer a:hover { text-decoration: underline; }
+  /* ====== Sections ====== */
+  section { padding: clamp(40px, 7vw, 80px) 5%; }
+  .section { max-width: 1100px; margin: 0 auto; text-align: center; }
+  h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5.5vw, 2.4rem); margin-bottom: 16px; }
 
-    /* ====== Reveal on scroll ====== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .reveal.in {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  /* ====== Hoe het werkt spacing (aanpassing) ====== */
+  #hoehetwerkt p {
+    margin-bottom: 14px;
+    color: var(--muted);
+    font-size: clamp(.98rem, 2.8vw, 1.05rem);
+    line-height: 1.85; /* ruimere regelafstand voor betere leesbaarheid */
+    max-width: 70ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #hoehetwerkt p strong { line-height: 1.9; }
 
-    /* ====== Sticky Call Button ====== */
-    .floating-call {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 1100;
-      background: var(--brand);
-      color: var(--ink);
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-weight: 800;
-      box-shadow: 0 14px 30px rgba(0,0,0,.35);
-      text-decoration: none;
-      transition: transform .2s ease;
-    }
-    .floating-call:hover {
-      transform: translateY(-2px) scale(1.015);
-    }
+  /* ====== Pakketten grid ====== */
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 20px;
+    align-items: stretch;
+  }
+  @media (max-width: 980px) { .packages-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .packages-grid { grid-template-columns: 1fr; } }
 
-    /* ====== Mobile ====== */
-    @media (max-width: 980px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-cta { justify-content: center; }
-      .ear-wrap { order: -1; }
-    }
-    @media (max-width: 520px) {
-      .voorwie-card { width: 170px; }
-      .voorwie-card img { height: 110px; }
-    }
+  .package-card {
+    display: block; /* anchor as block to make whole card clickable */
+    background: var(--paper);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 18px;
+    text-align: left;
+    color: var(--ink);
+    text-decoration: none;
+    transition: transform .18s ease, box-shadow .18s ease;
+    min-height: 160px;
+    position: relative;
+  }
+  .package-card:hover { transform: translateY(-6px); box-shadow: 0 18px 36px rgba(0,0,0,.14); }
+  .package-card h4 { font-family: 'Playfair Display', serif; margin-bottom: 8px; font-size: 1.15rem; }
+  .package-card p.desc { color: var(--muted); font-size: .95rem; margin-bottom: 12px; }
+  .package-card .price { font-weight: 800; color: var(--brand); position: absolute; right: 16px; bottom: 16px; }
 
-    /* ====== Reduced Motion ====== */
-    @media (prefers-reduced-motion: reduce) {
-      .wave, .ear-outline, .reveal { animation: none !important; transition: none !important; }
-    }
-  </style>
+  /* small badge */
+  .badge { display:inline-block; background: var(--tint); padding:6px 10px; border-radius:999px; font-size:.85rem; color:var(--muted); margin-top:8px; }
+
+  /* ====== FAQ, Reviews, etc (kept similar) ====== */
+  .faq-section { background: var(--paper); border-radius: 16px; box-shadow: var(--shadow); max-width: 1100px; margin: 0 auto; padding: 24px; }
+  .faq-question { cursor: pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 2px; width:100%; background:none; border:none; text-align:left; font-weight:700;}
+  .faq-answer { display:none; color:var(--muted); padding:2px 2px 12px 2px; }
+  .faq-item.active .faq-answer { display:block; }
+
+  .review-carousel { display:flex; overflow-x:auto; gap:16px; padding:8px; margin:8px auto 0; }
+  .review-card { flex: 0 0 auto; width: clamp(220px, 70%, 320px); background: var(--paper); border-radius: 12px; padding: 16px; box-shadow: var(--shadow); }
+
+  /* ====== Footer ====== */
+  footer { background: var(--tint); text-align: center; padding: clamp(36px, 7vw, 60px) 5%; margin-top: auto; }
+  footer p { margin-bottom: 8px; }
+  footer a { color: #0067c5; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* ====== Reveal on scroll ====== */
+  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+
+  /* Sticky call */
+  .floating-call { position: fixed; right: 18px; bottom: 18px; z-index: 1100; background: var(--brand); color: var(--ink); border-radius: 999px; padding: 12px 18px; font-weight: 800; box-shadow: 0 14px 30px rgba(0,0,0,.35); text-decoration: none; transition: transform .2s ease; }
+  .floating-call:hover { transform: translateY(-2px) scale(1.015); }
+
+  /* Mobile tweaks */
+  @media (max-width: 980px) { .hero { grid-template-columns: 1fr; text-align:center; } .ear-wrap { order:-1; } nav { gap: 12px; } .dropdown { left: auto; right: 0; } }
+  @media (prefers-reduced-motion: reduce) { .wave, .ear-outline, .reveal { animation: none !important; transition: none !important; } }
+</style>
 </head>
 <body>
 <!-- Header -->
 <header>
-<div class="brand">
-<svg aria-hidden="true" class="logo" viewbox="0 0 64 64">
-<path d="M32 6c-9.4 0-17 7.6-17 17 0 5.2 2.3 9.2 5.2 12.7 2.4 2.8 4.1 5.9 4.1 9.9 0 6 5 11 11 11s11-5 11-11c0-5.1-2.8-8.2-6-10.8-2.8-2.3-4.8-4.6-4.8-8.8 0-5.6 4.7-10 10.5-10 2.6 0 5 .9 7 .9" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-width="3"></path>
-</svg>
-<h1>Erwin Nooter Coaching</h1>
-</div>
-<nav>
-<a href="#voorwie">Onze pakketten</a>
-<a href="#hoehetwerkt">Hoe het werkt</a>
-<a href="#zakelijk">Zakelijk aanbod</a>
-<a href="#overons">Waar wij voor staan?</a>
-<a aria-label="Bel nu" class="btn-primary" href="#contact">Bel nu!</a>
-</nav>
+  <div class="brand">
+    <svg aria-hidden="true" class="logo" viewBox="0 0 64 64">
+      <path d="M32 6c-9.4 0-17 7.6-17 17 0 5.2 2.3 9.2 5.2 12.7 2.4 2.8 4.1 5.9 4.1 9.9 0 6 5 11 11 11s11-5 11-11c0-5.1-2.8-8.2-6-10.8-2.8-2.3-4.8-4.6-4.8-8.8 0-5.6 4.7-10 10.5-10 2.6 0 5 .9 7 .9" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-width="3"></path>
+    </svg>
+    <h1>Erwin Nooter Coaching</h1>
+  </div>
+
+  <nav>
+    <div class="nav-item">
+      <button aria-haspopup="true" aria-expanded="false">Onze pakketten</button>
+      <div class="dropdown" role="menu" aria-label="Onze pakketten submenu">
+        <a href="#onze-pakketten">Bekijk alle pakketten</a>
+        <a href="stress-naar-rust.html">Van stress naar rust</a>
+        <a href="zelfbeeld.html">Beter zelfbeeld</a>
+        <a href="rouw-verlies.html">Rouw &amp; Verlies</a>
+        <a href="hsp.html">HSP-traject</a>
+        <a href="topsport.html">Topsport: Mentale kracht</a>
+        <a href="relaties.html">Zelfvertrouwen in relaties</a>
+      </div>
+    </div>
+
+    <a href="#hoehetwerkt">Hoe het werkt</a>
+    <a href="#zakelijk">Zakelijk aanbod</a>
+    <a href="#overons">Waar wij voor staan?</a>
+    <a aria-label="Bel nu" class="btn-primary" href="#contact">Bel nu!</a>
+  </nav>
 </header>
 
-    
 <!-- Hero -->
 <section class="hero">
-<div class="hero-text reveal">
-<h2>Van stress naar rust, van twijfel naar richting</h2>
-<p>Mentale druk, stress, onzekerheid, burn-out of prestatiedruk zijn belangrijke signalen. Als mentale coach begeleid ik mensen die vastlopen, twijfelen of opbranden.</p>
-<div class="hero-cta">
-<a aria-label="WhatsApp voor direct contact" class="btn-primary" href="https://wa.me/31641251757">Bel / App nu – gratis 30 min</a>
-<span class="subtle">Zonder wachttijd • Vertrouwelijk • Voor iedereen</span>
-</div>
-</div>
-<div aria-hidden="true" class="ear-wrap reveal">
-<svg class="ear" viewbox="0 0 400 400">
-<g>
-<path class="wave" d="M60,200 C120,120 120,280 180,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="10"></path>
-<path class="wave" d="M40,200 C120,90 120,310 200,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="7"></path>
-<path class="wave" d="M20,200 C120,60 120,340 220,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="4"></path>
-</g>
-<g class="ear-outline">
-<path d="M250,85c-62,0-112,50-112,112 0,33 15,58 33,80 16,19 27,39 27,65 0,39 32,71 71,71s71-32 71-71c0-33-18-53-39-70-18-15-31-29-31-56 0-36 30-64 67-64 16,0 30,5 42,5" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
-<path d="M261,152c-25,11-38,31-38,57 0,35 28,51 49,69 13,11 22,23 22,42 0,20-16,36-36,36" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-width="8"></path>
-</g>
-</svg>
-</div>
-</section>
-    
+  <div class="hero-text reveal">
+    <h2>Van stress naar rust, van twijfel naar richting</h2>
+    <p>Mentale druk, stress, onzekerheid, burn-out of prestatiedruk zijn belangrijke signalen. Als mentale coach begeleid ik mensen die vastlopen, twijfelen of opbranden.</p>
+    <div class="hero-cta">
+      <a aria-label="WhatsApp voor direct contact" class="btn-primary" href="https://wa.me/31641251757">Bel / App nu – gratis 30 min</a>
+      <span class="subtle">Zonder wachttijd • Vertrouwelijk • Voor iedereen</span>
+    </div>
+  </div>
 
-
-    
+  <div aria-hidden="true" class="ear-wrap reveal">
+    <svg class="ear" viewBox="0 0 400 400">
+      <g>
+        <path class="wave" d="M60,200 C120,120 120,280 180,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="10"></path>
+        <path class="wave" d="M40,200 C120,90 120,310 200,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="7"></path>
+        <path class="wave" d="M20,200 C120,60 120,340 220,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="4"></path>
+      </g>
+      <g class="ear-outline">
+        <path d="M250,85c-62,0-112,50-112,112 0,33 15,58 33,80 16,19 27,39 27,65 0,39 32,71 71,71s71-32 71-71c0-33-18-53-39-70-18-15-31-29-31-56 0-36 30-64 67-64 16,0 30,5 42,5" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
+        <path d="M261,152c-25,11-38,31-38,57 0,35 28,51 49,69 13,11 22,23 22,42 0,20-16,36-36,36" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-width="8"></path>
+      </g>
+    </svg>
+  </div>
 </section>
+
 <!-- Hoe het werkt -->
 <section class="section" id="hoehetwerkt">
-<h2 class="section-title reveal">Hoe het werkt</h2>
-<p> Coaching bij mij betekent samenwerken. Jij brengt je vragen, ervaringen en inzet mee — ik bied structuur, richting en praktische handvatten.</p>
-<p>We starten met een intake waarin we samen jouw doelen scherpstellen.</p>
-<p>Daarna werken we in een pakket met een duidelijk tijdskader (bijv. 6 of 8 weken).</p>
-<p>Elke sessie is een gezamenlijke stap: jij doet het werk, ik begeleid en spiegel.</p>
-<p>Je krijgt opdrachten en oefeningen om zelf mee aan de slag te gaan.</p>
-<p>Aan het einde kijken we samen terug: wat heb je bereikt, wat zijn je vervolgstappen?</p>
-<p></p>
-<p><strong>Het is geen rittenkaart, maar een traject waarin we samen bouwen aan verandering. Jij bepaalt het tempo, ik loop naast je mee.</strong></p>
-<br></br>
-    
-    <div class="section reveal" style="text-align: center;">
-<a class="btn-primary" href="https://wa.me/31641251757">Bel of WhatsApp voor direct contact</a>
-</div>
+  <h2 class="section-title reveal">Hoe het werkt</h2>
+  <p class="reveal">Coaching bij mij betekent samenwerken. Jij brengt je vragen, ervaringen en inzet mee — ik bied structuur, richting en praktische handvatten.</p>
+  <p class="reveal">We starten met een intake waarin we samen jouw doelen scherpstellen.</p>
+  <p class="reveal">Daarna werken we in een pakket met een duidelijk tijdskader (bijv. 6 of 8 weken).</p>
+  <p class="reveal">Elke sessie is een gezamenlijke stap: jij doet het werk, ik begeleid en spiegel.</p>
+  <p class="reveal">Je krijgt opdrachten en oefeningen om zelf mee aan de slag te gaan.</p>
+  <p class="reveal">Aan het einde kijken we samen terug: wat heb je bereikt, wat zijn je vervolgstappen?</p>
+  <p class="reveal"><strong>Het is geen rittenkaart, maar een traject waarin we samen bouwen aan verandering. Jij bepaalt het tempo, ik loop naast je mee.</strong></p>
 
-
-
-    
+  <div style="text-align:center; margin-top:22px;" class="reveal">
+    <a class="btn-primary" href="https://wa.me/31641251757">Bel of WhatsApp voor direct contact</a>
+  </div>
 </section>
+
 <!-- Onze pakketten-->
-<section class="section" id="Onze pakketten">
-<h2 class="section-title reveal">Welk pakket past bij jou?</h2>
-<article class="business-offer reveal">
-<header>
-<h3>Iedereen kan af en toe wat wel wat hulp gebruiken</h3>
-<p>Nederland is wereldwijd koploper! Wij hebben namelijk de meeste burnouts ter wereld!</p>
-</header>
-<section class="offer-cards">
-<h4>Wat zit er in een pakket</h4>
-<p>Een pakket is gewoon een traject waarin jij aan de slag gaat en ik ernaast loop. We beginnen met een intake, zodat we weten waar je staat en wat je wilt bereiken. Daarna spreken we elkaar wekelijks, je krijgt opdrachten en oefeningen mee om thuis te doen. Soms gaat dat soepel, soms loop je vast, en dan kijken we samen hoe je weer verder komt.
-</p>
-<p><strong>Aan het einde van het traject kijken we terug: </strong>wat heb je opgepakt, wat werkt voor jou, en wat neem je mee voor de toekomst. Het is dus geen strippenkaart of losse sessies, maar echt samenwerken met richting en structuur. Jij zet de stappen, ik help je onderweg.</p>
-<ul class="pricing-list">
-<li>
-<strong>Van stress naar rust in 6 weken</strong>
-<span class="price">€499</span>
-<p class="desc">In 6 weken leer je stress verminderen en meer rust ervaren – compleet traject voor €499.</p>
-</li>
-    
-<li>
-<strong>In 4 weken naar een beter zelfbeeld </strong>
-<span class="price">€349</span>
-<p class="desc">In 4 weken werk je aan meer zelfvertrouwen en een positiever zelfbeeld – compleet traject voor €349.</p>
-</li>
-    
-<li>
-<strong>Rouw & Verlies in 6 weken </strong>
-<span class="price">€539</span>
-<p class="desc">In 6 weken leer je omgaan met rouw en verlies en hervind je balans – compleet traject voor €539</p>
-</li>
-    
-<li>
-<strong>HSP-traject: Omgaan met prikkels in 6 weken </strong>
-<span class="price">€539</span>
-<p class="desc">In 6 weken leer je beter omgaan met overprikkeling en behoud je energie – compleet traject voor €599.</p>
-</li>
+<section class="section" id="onze-pakketten">
+  <h2 class="section-title reveal">Welk pakket past bij jou?</h2>
+  <article class="business-offer reveal" style="text-align:left;">
+    <header>
+      <h3>Iedereen kan af en toe wat hulp gebruiken</h3>
+      <p style="color:var(--muted)">Een pakket = intake, wekelijkse sessies, opdrachten & afronding met duidelijke vervolgstappen.</p>
+    </header>
 
-<li>
-<strong>Topsport: Mentale kracht in 5 weken.</strong>
-<span class="price">€539</span>
-<p class="desc">In 5 weken versterk je je mentale kracht en leer je beter presteren onder druk – compleet traject voor €449.</p>
-</li>
+    <div class="packages-grid reveal" aria-label="Pakketten">
+      <a class="package-card" href="stress-naar-rust.html" aria-label="Van stress naar rust in 6 weken">
+        <h4>Van stress naar rust in 6 weken</h4>
+        <p class="desc">In 6 weken leer je stress verminderen en meer rust ervaren – compleet traject.</p>
+        <span class="badge">6 weken</span>
+        <span class="price">€499</span>
+      </a>
 
-<li>
-<strong>Zelf vertrouwen in relaties in 5 weken</strong>
-<span class="price">€449</span>
-<p class="desc">In 5 weken leer je sterker en zelfverzekerder in relaties te staan – compleet traject voor €449.</p>
-</li>
+      <a class="package-card" href="zelfbeeld.html" aria-label="In 4 weken naar een beter zelfbeeld">
+        <h4>In 4 weken naar een beter zelfbeeld</h4>
+        <p class="desc">Werk aan meer zelfvertrouwen en een positiever zelfbeeld in 4 overzichtelijke stappen.</p>
+        <span class="badge">4 weken</span>
+        <span class="price">€349</span>
+      </a>
 
-    
-</ul>
+      <a class="package-card" href="rouw-verlies.html" aria-label="Rouw & Verlies in 6 weken">
+        <h4>Rouw &amp; Verlies in 6 weken</h4>
+        <p class="desc">Omgaan met verlies en hervinden van balans, met empathie en structuur.</p>
+        <span class="badge">6 weken</span>
+        <span class="price">€539</span>
+      </a>
+
+      <a class="package-card" href="hsp.html" aria-label="HSP-traject: Omgaan met prikkels in 6 weken">
+        <h4>HSP-traject: Omgaan met prikkels in 6 weken</h4>
+        <p class="desc">Beter omgaan met prikkels en je energie behouden - praktisch en persoonlijk.</p>
+        <span class="badge">6 weken</span>
+        <span class="price">€599</span>
+      </a>
+
+      <a class="package-card" href="topsport.html" aria-label="Topsport: Mentale kracht in 5 weken">
+        <h4>Topsport: Mentale kracht in 5 weken</h4>
+        <p class="desc">Verbeter je mentale veerkracht en presteer beter onder druk.</p>
+        <span class="badge">5 weken</span>
+        <span class="price">€449</span>
+      </a>
+
+      <a class="package-card" href="relaties.html" aria-label="Zelf vertrouwen in relaties in 5 weken">
+        <h4>Zelf vertrouwen in relaties in 5 weken</h4>
+        <p class="desc">Sterker en zelfverzekerder in relaties staan, met concrete oefeningen.</p>
+        <span class="badge">5 weken</span>
+        <span class="price">€449</span>
+      </a>
+    </div>
+  </article>
 </section>
 
-    
-    
 <!-- Over ons -->
-<section class="section" id="Waar wij voor staan?">
-<h2 class="section-title reveal">Waar wij voor staan?</h2>
-<p>Bij Erwin Nooter Coaching draait het om mensen. Of je nu sporter bent, worstelt met stress of burn-out, werkt binnen een bedrijf of zoekt meer verbinding in je relatie — we kijken samen naar wat jij nodig hebt.</p>
-<p>We gebruiken verschillende praktische methodes, zoals ACT, cognitieve gedragstherapie en ademhalingsoefeningen. Geen ingewikkelde theorie, maar tools die je direct kunt toepassen in je dagelijks leven.</p>
-<p>Wat ons kenmerkt? We combineren kennis en ervaring met een nuchtere aanpak. We luisteren scherp, maar altijd met compassie. Zo werken we samen aan richting, veerkracht en blijvende verandering.</p>
+<section class="section" id="overons">
+  <h2 class="section-title reveal">Waar wij voor staan?</h2>
+  <p class="reveal">Bij Erwin Nooter Coaching draait het om mensen. Of je nu sporter bent, worstelt met stress of burn-out, werkt binnen een bedrijf of zoekt meer verbinding in je relatie — we kijken samen naar wat jij nodig hebt.</p>
+  <p class="reveal">We gebruiken verschillende praktische methodes, zoals ACT, cognitieve gedragstherapie en ademhalingsoefeningen. Geen ingewikkelde theorie, maar tools die je direct kunt toepassen in je dagelijks leven.</p>
+  <p class="reveal">Wat ons kenmerkt? We combineren kennis en ervaring met een nuchtere aanpak. We luisteren scherp, maar altijd met compassie. Zo werken we samen aan richting, veerkracht en blijvende verandering.</p>
 </section>
 
-    
 <!-- FAQ -->
 <section class="section faq-section" id="veel-gestelde-vragen">
-<h2 class="section-title">Veel gestelde vragen</h2>
-<div class="faq-item">
-<button class="faq-question">Moet ik bellen of mag ik ook appen?</button>
-<div class="faq-answer"><p>Beide mag! Jij kiest wat prettig voelt. We reageren snel en persoonlijk.</p></div>
-</div>
-<div class="faq-item">
-<button class="faq-question">Wanneer kan ik contact opnemen?</button>
-<div class="faq-answer"><p>Maandag t/m vrijdag: 08:00–20:00. Indien gewenst ook later of in het weekend beschikbaar — app gerust om dit te checken.</p></div>
-</div>
-<div class="faq-item">
-<button class="faq-question">Wat gebeurt er na het gesprek?</button>
-<div class="faq-answer"><p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is, zoeken we een passende aanpak, inclusief zakelijke opties.</p></div>
-</div>
-<div class="faq-item">
-<button class="faq-question">Is het eerste gesprek echt gratis?</button>
-<div class="faq-answer"><p>Ja. Je krijgt 30 minuten gratis en vertrouwelijk, zonder verplichtingen, mét advies over mentale uitdagingen.</p></div>
-</div>
-<div class="faq-item">
-<button class="faq-question">Kan mijn vervolgtraject ook bij jullie?</button>
-<div class="faq-answer"><p>Ja. We bieden individuele sessies of urenkaarten voor bedrijven, afgestemd op sport of zakelijke behoeften of particulier natuurlijk.</p></div>
-</div>
-<div class="faq-item">
-<button class="faq-question">Is het anoniem?</button>
-<div class="faq-answer"><p>Ja. Volledig anoniem en vertrouwelijk. Je deelt alleen wat je wilt delen.</p></div>
-</div>
-<div class="faq-item">
-<button class="faq-question">Kan ik ook namens iemand anders contact opnemen?</button>
-<div class="faq-answer"><p>Ja, dat mag — bijvoorbeeld als je je zorgen maakt om een sporter, collega of medewerker.</p></div>
-</div>
-<div class="faq-item">
-<button class="faq-question">Voor welke problemen kan ik bellen?</button>
-<div class="faq-answer">
-<p>Voor mentale uitdagingen in sport en werk, bijvoorbeeld:</p>
-<ul>
-<li>🏅 Prestatiedruk bij sporters</li>
-<li>💼 Stress of burn-out op werk</li>
-<li>🤔 Onzekerheid en twijfel</li>
-<li>🧠 Mentale herstel na blessures</li>
-<li>👥 Teamdynamiek en relaties</li>
-<li>⚖️ Balans werk/privé</li>
-<li>😔 Rouw of verlies</li>
-<li>🗣️ Gewoon even sparren over prestaties</li>
-</ul>
-</div>
-</div>
+  <h2 class="section-title">Veel gestelde vragen</h2>
+  <div class="faq-item">
+    <button class="faq-question">Moet ik bellen of mag ik ook appen?</button>
+    <div class="faq-answer"><p>Beide mag! Jij kiest wat prettig voelt. We reageren snel en persoonlijk.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Wanneer kan ik contact opnemen?</button>
+    <div class="faq-answer"><p>Maandag t/m vrijdag: 08:00–20:00. Indien gewenst ook later of in het weekend beschikbaar — app gerust om dit te checken.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Wat gebeurt er na het gesprek?</button>
+    <div class="faq-answer"><p>We bespreken samen wat je nodig hebt. Als vervolgbegeleiding wenselijk is, zoeken we een passende aanpak, inclusief zakelijke opties.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Is het eerste gesprek echt gratis?</button>
+    <div class="faq-answer"><p>Ja. Je krijgt 30 minuten gratis en vertrouwelijk, zonder verplichtingen, mét advies over mentale uitdagingen.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Kan mijn vervolgtraject ook bij jullie?</button>
+    <div class="faq-answer"><p>Ja. We bieden individuele sessies of urenkaarten voor bedrijven, afgestemd op sport of zakelijke behoeften of particulier natuurlijk.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Is het anoniem?</button>
+    <div class="faq-answer"><p>Ja. Volledig anoniem en vertrouwelijk. Je deelt alleen wat je wilt delen.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Kan ik ook namens iemand anders contact opnemen?</button>
+    <div class="faq-answer"><p>Ja, dat mag — bijvoorbeeld als je je zorgen maakt om een sporter, collega of medewerker.</p></div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Voor welke problemen kan ik bellen?</button>
+    <div class="faq-answer">
+      <p>Voor mentale uitdagingen in sport en werk, bijvoorbeeld:</p>
+      <ul style="text-align:left; margin-left:18px;">
+        <li>🏅 Prestatiedruk bij sporters</li>
+        <li>💼 Stress of burn-out op werk</li>
+        <li>🤔 Onzekerheid en twijfel</li>
+        <li>🧠 Mentale herstel na blessures</li>
+        <li>👥 Teamdynamiek en relaties</li>
+        <li>⚖️ Balans werk/privé</li>
+        <li>😔 Rouw of verlies</li>
+        <li>🗣️ Gewoon even sparren over prestaties</li>
+      </ul>
+    </div>
+  </div>
 </section>
+
 <!-- Reviews -->
 <section class="section reviews">
-<h2 class="section-title reveal">Ervaringen van anderen</h2>
-<div aria-label="Review carrousel" class="review-carousel reveal">
-<div class="review-card">
-<span class="stars">★★★★★</span>
-<p>“Dankzij de mentale coaching kon ik mijn focus terugvinden in de sport.”<br/><strong>Tom (29, atleet)</strong><br/>Nu presteer ik beter dan ooit.</p>
-</div>
-<div class="review-card">
-<span class="stars">★★★★★</span>
-<p>“Helpende hand bij mijn burn-out – zakelijk en praktisch.”<br/><strong>Anna (42, manager)</strong><br/>Geen druk, puur ondersteuning.</p>
-</div>
-<div class="review-card">
-<span class="stars">★★★★★</span>
-<p>“De urenkaarten zijn ideaal voor ons team.”<br/><strong>Bedrijf X</strong><br/>Voorkomt uitval en bespaart kosten.</p>
-</div>
-<div class="review-card">
-<span class="stars">★★★★★</span>
-<p>“Overwon mijn onzekerheid op het veld.”<br/><strong>Sophie (25, sporter)</strong><br/>Het gratis gesprek gaf het zetje.</p>
-</div>
-</div>
+  <h2 class="section-title reveal">Ervaringen van anderen</h2>
+  <div aria-label="Review carrousel" class="review-carousel reveal">
+    <div class="review-card"><span class="stars">★★★★★</span><p>“Dankzij de mentale coaching kon ik mijn focus terugvinden in de sport.”<br/><strong>Tom (29, atleet)</strong><br/>Nu presteer ik beter dan ooit.</p></div>
+    <div class="review-card"><span class="stars">★★★★★</span><p>“Helpende hand bij mijn burn-out – zakelijk en praktisch.”<br/><strong>Anna (42, manager)</strong><br/>Geen druk, puur ondersteuning.</p></div>
+    <div class="review-card"><span class="stars">★★★★★</span><p>“De urenkaarten zijn ideaal voor ons team.”<br/><strong>Bedrijf X</strong><br/>Voorkomt uitval en bespaart kosten.</p></div>
+    <div class="review-card"><span class="stars">★★★★★</span><p>“Overwon mijn onzekerheid op het veld.”<br/><strong>Sophie (25, sporter)</strong><br/>Het gratis gesprek gaf het zetje.</p></div>
+  </div>
 </section>
+
 <!-- Footer -->
 <footer id="contact">
-<h2 class="section-title">Contact</h2>
-<p>📍 Veghel, Noord-Brabant — Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom</p>
-<p>🕒 Ma t/m vr: 08:00 – 20:00 (bij behoefte ook later of weekenden; app even)</p>
-<p>📧 <a href="mailto:info@ikluisternaarjou.nl">info@ikluisternaarjou.nl</a></p>
-<p>📱 Bel of WhatsApp: <a aria-label="WhatsApp ons op 06-41251757" href="https://wa.me/31641251757">06-41251757</a></p>
+  <h2 class="section-title">Contact</h2>
+  <p>📍 Veghel, Noord-Brabant — Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom</p>
+  <p>🕒 Ma t/m vr: 08:00 – 20:00 (bij behoefte ook later of weekenden; app even)</p>
+  <p>📧 <a href="mailto:info@ikluisternaarjou.nl">info@ikluisternaarjou.nl</a></p>
+  <p>📱 Bel of WhatsApp: <a aria-label="WhatsApp ons op 06-41251757" href="https://wa.me/31641251757">06-41251757</a></p>
 </footer>
+
 <!-- Sticky Call -->
 <a aria-label="Bel 06-41251757" class="floating-call" href="tel:+31641251757">Bel nu</a>
-<script>
-    // ===== FAQ Toggle =====
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.parentElement.classList.toggle('active');
-      });
-    });
 
-    // ===== Auto-scroll carousels =====
-    function autoScroll(el, step = 260, delay = 2200) {
-      let timer = setInterval(() => {
+<script>
+  // ===== FAQ Toggle =====
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('active');
+    });
+  });
+
+  // ===== Auto-scroll carousels (reviews) =====
+  function autoScroll(el, step = 260, delay = 2200) {
+    if (!el) return;
+    let timer = setInterval(() => {
+      if (el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1) {
+        el.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        el.scrollBy({ left: step, behavior: 'smooth' });
+      }
+    }, delay);
+    el.addEventListener('mouseenter', () => clearInterval(timer));
+    el.addEventListener('mouseleave', () => {
+      timer = setInterval(() => {
         if (el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1) {
           el.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
           el.scrollBy({ left: step, behavior: 'smooth' });
         }
       }, delay);
-      el.addEventListener('mouseenter', () => clearInterval(timer));
-      el.addEventListener('mouseleave', () => {
-        timer = setInterval(() => {
-          if (el.scrollLeft + el.offsetWidth >= el.scrollWidth - 1) {
-            el.scrollTo({ left: 0, behavior: 'smooth' });
-          } else {
-            el.scrollBy({ left: step, behavior: 'smooth' });
-          }
-        }, delay);
-      });
-    }
-    document.querySelectorAll('.review-carousel, .voorwie-carousel').forEach(c => autoScroll(c));
+    });
+  }
+  document.querySelectorAll('.review-carousel').forEach(c => autoScroll(c));
 
-    // ===== Reveal on scroll =====
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: .14 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // ===== Reveal on scroll =====
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: .14 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-    // ===== Respect reduced motion =====
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce').matches;
-    if (prefersReduced) {
-      document.querySelectorAll('.review-carousel, .voorwie-carousel').forEach(c => c.style.scrollBehavior = 'auto');
-    }
-  </script>
+  // ===== Respect reduced motion =====
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReduced) {
+    document.querySelectorAll('.review-carousel').forEach(c => c.style.scrollBehavior = 'auto');
+  }
+
+  // Make dropdown accessible: toggle aria-expanded on click
+  document.querySelectorAll('.nav-item > button').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      // If clicked on small screens, toggle the dropdown display
+      const dd = btn.nextElementSibling;
+      if (dd) {
+        dd.style.display = expanded ? 'none' : 'block';
+      }
+    });
+  });
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
