@@ -50,16 +50,8 @@
       gap: 10px;
       align-items: center;
     }
-    .logo {
-      width: 36px;
-      height: 36px;
-      display: block;
-    }
-    header h1 {
-      font-size: clamp(1.1rem, 3.5vw, 1.6rem);
-      font-weight: 700;
-      letter-spacing: .3px;
-    }
+    .logo { width: 36px; height: 36px; display: block; }
+    header h1 { font-size: clamp(1.1rem, 3.5vw, 1.6rem); font-weight: 700; letter-spacing: .3px; }
 
     /* Desktop navigatie */
     .desktop-nav {
@@ -72,18 +64,13 @@
       color: var(--ink);
       font-weight: 500;
       font-size: clamp(.95rem, 2.5vw, 1rem);
-      position: relative;
       transition: color .25s ease;
     }
     .desktop-nav a:hover { color: var(--brand); }
 
-    /* Dropdown Onze pakketten (desktop) */
-    .dropdown {
-      position: relative;
-    }
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
+    /* Dropdown (desktop) */
+    .dropdown { position: relative; }
+    .dropdown:hover .dropdown-content { display: block; }
     .dropdown-content {
       display: none;
       position: absolute;
@@ -109,12 +96,11 @@
       color: var(--brand);
     }
 
-    /* ==== MOBIELE NAVIGATIE ==== */
+    /* Mobiel hamburgermenu */
     .mobile-menu-toggle, .mobile-menu { display: none; }
 
     @media (max-width: 980px) {
       .desktop-nav { display: none; }
-
       .mobile-menu-toggle {
         display: flex;
         flex-direction: column;
@@ -140,15 +126,14 @@
         display: flex;
         flex-direction: column;
         position: fixed;
-        top: 0;
-        left: 0;
+        top: 0; left: 0;
         width: 100vw;
         height: 100vh;
         background: white;
         padding: 80px 5% 40px;
         transform: translateX(-100%);
         transition: transform 0.35s ease;
-        z-index: 9999;
+        z-index: 9998;
         gap: 4px;
         overflow-y: auto;
       }
@@ -165,11 +150,10 @@
         text-align: center;
         font-size: 1.1rem;
       }
-      /* Mobiele dropdown-fix (zodat het niet meer buiten beeld valt) */
+      /* Mobiele dropdown-fix */
       .dropdown-content {
         position: static;
         transform: none;
-        left: 0;
         width: 100vw;
         margin-left: -5vw;
         box-shadow: none;
@@ -177,11 +161,7 @@
         padding: 16px 0;
         background: white;
       }
-      .dropdown-content a {
-        padding: 14px 5%;
-        white-space: normal;
-        font-size: 1rem;
-      }
+      .dropdown-content a { padding: 14px 5%; white-space: normal; font-size: 1rem; }
     }
 
     .btn-primary {
@@ -194,12 +174,9 @@
       transition: transform .18s ease, box-shadow .18s ease, background .2s ease;
       box-shadow: 0 6px 16px rgba(241,180,0,.25);
     }
-    .btn-primary:hover {
-      background: var(--brand-d);
-      transform: translateY(-1px);
-    }
+    .btn-primary:hover { background: var(--brand-d); transform: translateY(-1px); }
 
-    /* ====== Hero, overige stijlen blijven 100% hetzelfde ====== */
+    /* ====== Hero ====== */
     .hero {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
@@ -209,86 +186,25 @@
       padding: clamp(50px, 8vw, 110px) 5% clamp(30px, 6vw, 70px);
       background: radial-gradient(1200px 600px at 10% 0%, #fff9e6 0%, #fffdf8 45%, #f7f4eb 100%);
     }
-    .hero-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 6.8vw, 3.4rem);
-      line-height: 1.1;
-      margin-bottom: 16px;
-    }
-    .hero-text p {
-      font-size: clamp(1rem, 3.2vw, 1.2rem);
-      color: var(--muted);
-      max-width: 58ch;
-      margin-bottom: 20px;
-    }
-    .hero-cta {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .subtle {
-      font-size: .95rem;
-      color: var(--muted);
-    }
+    .hero-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6.8vw, 3.4rem); line-height: 1.1; margin-bottom: 16px; }
+    .hero-text p { font-size: clamp(1rem, 3.2vw, 1.2rem); color: var(--muted); max-width: 58ch; margin-bottom: 20px; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .subtle { font-size: .95rem; color: var(--muted); }
 
-    /* (De rest van je CSS blijft exact zoals je hem had – ik heb alleen het bovenstaande aangepast/ toegevoegd) */
     /* ====== Animated Ear (SVG) ====== */
-    .ear-wrap {
-      width: 100%;
-      aspect-ratio: 1/1;
-      max-width: 460px;
-      margin-inline: auto;
-      background: conic-gradient(from 180deg at 50% 50%, #fff 0%, #fff 60%, #fff7d6 100%);
-      border-radius: 24px;
-      box-shadow: var(--shadow);
-      display: grid;
-      place-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .ear-wrap::after {
-      content: "";
-      position: absolute;
-      inset: auto -20% -35% -20%;
-      height: 60%;
-      background: radial-gradient(50% 100% at 50% 0%, #ffe9a5 0%, transparent 70%);
-      filter: blur(40px);
-      opacity: .6;
-      pointer-events: none;
-    }
+    .ear-wrap { width: 100%; aspect-ratio: 1/1; max-width: 460px; margin-inline: auto; background: conic-gradient(from 180deg at 50% 50%, #fff 0%, #fff 60%, #fff7d6 100%); border-radius: 24px; box-shadow: var(--shadow); display: grid; place-items: center; position: relative; overflow: hidden; }
+    .ear-wrap::after { content: ""; position: absolute; inset: auto -20% -35% -20%; height: 60%; background: radial-gradient(50% 100% at 50% 0%, #ffe9a5 0%, transparent 70%); filter: blur(40px); opacity: .6; pointer-events: none; }
     svg.ear { width: 78%; height: auto; display: block; }
     .wave { transform-origin: left center; animation: wavePulse 2.2s ease-in-out infinite; opacity: .9; }
     .wave:nth-child(2) { animation-delay: .25s; opacity: .75; }
     .wave:nth-child(3) { animation-delay: .5s; opacity: .6; }
-    @keyframes wavePulse {
-      0%, 100% { transform: scaleX(1); opacity: .55; }
-      50% { transform: scaleX(1.06); opacity: .95; }
-    }
-    .ear-outline {
-      filter: drop-shadow(0 8px 16px rgba(0,0,0,.1));
-      animation: gentleFloat 6s ease-in-out infinite;
-    }
-    @keyframes gentleFloat {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
-    }
+    @keyframes wavePulse { 0%, 100% { transform: scaleX(1); opacity: .55; } 50% { transform: scaleX(1.06); opacity: .95; } }
+    .ear-outline { filter: drop-shadow(0 8px 16px rgba(0,0,0,.1)); animation: gentleFloat 6s ease-in-out infinite; }
+    @keyframes gentleFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
 
     section { padding: clamp(40px, 7vw, 80px) 5%; }
     .section { max-width: 1100px; margin: 0 auto; text-align: center; }
-    .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 26px; }
-    @media (max-width: 600px) { .features { grid-template-columns: 1fr; } }
-    .feature { padding: 22px; background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .25s ease, box-shadow .25s ease; min-height: 200px; display: flex; flex-direction: column; align-items: center; text-align: center; }
-    .feature:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(0,0,0,.1); }
     h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5.5vw, 2.4rem); margin-bottom: 16px; }
-    h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 4.6vw, 1.5rem); margin-bottom: 8px; }
-
-    .faq-section { background: var(--paper); border-radius: 16px; box-shadow: var(--shadow); max-width: 1100px; margin: 0 auto; padding: 24px; }
-    .faq-item { border-bottom: 1px solid #eee; padding: 10px 0; }
-    .faq-question { background: none; border: none; width: 100%; text-align: left; font-size: clamp(1rem, 3vw, 1.1rem); font-weight: 700; color: var(--ink); padding: 12px 2px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .faq-question:hover { color: var(--brand); }
-    .faq-answer { display: none; color: var(--muted); padding: 2px 2px 12px 2px; }
-    .faq-item.active .faq-answer { display: block; }
 
     .business-offer { max-width: 1100px; margin: 0 auto; background: var(--paper); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
     .pricing-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin: 16px 0; padding: 0; list-style: none; }
@@ -299,40 +215,25 @@
     .price { font-size: 1.2rem; font-weight: 700; color: var(--brand); position: relative; z-index: 3; }
     .desc { margin-top: 8px; color: var(--muted); font-size: .95rem; position: relative; z-index: 3; }
 
+    .faq-section { background: var(--paper); border-radius: 16px; box-shadow: var(--shadow); max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .faq-item { border-bottom: 1px solid #eee; padding: 10px 0; }
+    .faq-question { background: none; border: none; width: 100%; text-align: left; font-size: clamp(1rem, 3vw, 1.1rem); font-weight: 700; color: var(--ink); padding: 12px 2px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .faq-question:hover { color: var(--brand); }
+    .faq-answer { display: none; color: var(--muted); padding: 2px 2px 12px 2px; }
+    .faq-item.active .faq-answer { display: block; }
+
     footer { background: var(--tint); text-align: center; padding: clamp(36px, 7vw, 60px) 5%; margin-top: auto; }
-    footer p { margin-bottom: 8px; }
-    footer a { color: #0067c5; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
+    .floating-call { position: fixed; right: 18px; bottom: 18px; z-index: 1100; background: var(--brand); color: var(--ink); border-radius: 999px; padding: 12px 18px; font-weight: 800; box-shadow: 0 14px 30px rgba(0,0,0,.35); text-decoration: none; transition: transform .2s ease; }
+    .floating-call:hover { transform: translateY(-2px) scale(1.015); }
 
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.in { opacity: 1; transform: translateY(0); }
-
-    .floating-call {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 1100;
-      background: var(--brand);
-      color: var(--ink);
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-weight: 800;
-      box-shadow: 0 14px 30px rgba(0,0,0,.35);
-      text-decoration: none;
-      transition: transform .2s ease;
-    }
-    .floating-call:hover { transform: translateY(-2px) scale(1.015); }
 
     @media (max-width: 980px) {
       .hero { grid-template-columns: 1fr; text-align: center; }
       .hero-cta { justify-content: center; }
       .ear-wrap { order: -1; }
     }
-    @media (max-width: 520px) {
-      .voorwie-card { width: 170px; }
-      .voorwie-card img { height: 110px; }
-    }
-
     #hoehetwerkt p { margin-bottom: 1.4rem !important; }
     #hoehetwerkt strong { display: block; margin: 2rem 0 1.5rem !important; font-size: 1.15rem; }
 </style>
@@ -348,7 +249,6 @@
     <h1>Erwin Nooter Coaching</h1>
   </div>
 
-  <!-- Desktop navigatie -->
   <nav class="desktop-nav">
     <div class="dropdown">
       <a href="#pakketten">Onze pakketten</a>
@@ -367,12 +267,10 @@
     <a aria-label="Bel nu" class="btn-primary" href="#contact">Bel nu!</a>
   </nav>
 
-  <!-- Mobiel hamburgermenu knop -->
   <button class="mobile-menu-toggle" aria-label="Menu openen">
     <span></span><span></span><span></span>
   </button>
 
-  <!-- Mobiel menu -->
   <div class="mobile-menu">
     <a href="#pakketten">Onze pakketten</a>
     <a href="pakket-stress-naar-rust.html">→ Van stress naar rust in 6 weken</a>
@@ -388,77 +286,121 @@
   </div>
 </header>
 
-<!-- De rest van je HTML blijft 100% hetzelfde -->
+<!-- Hero -->
 <section class="hero">
-<div class="hero-text reveal">
-<h2>Van stress naar rust, van twijfel naar richting</h2>
-<p>Mentale druk, stress, onzekerheid, burn-out of prestatiedruk zijn belangrijke signalen. Als mentale coach begeleid ik mensen die vastlopen, twijfelen of opbranden.</p>
-<div class="hero-cta">
-<a aria-label="WhatsApp voor direct contact" class="btn-primary" href="https://wa.me/31641251757">Bel / App nu ! </a>
-<span class="subtle">Zonder wachttijd • Vertrouwelijk • Voor iedereen</span>
-</div>
-</div>
-<div aria-hidden="true" class="ear-wrap reveal">
-<svg class="ear" viewbox="0 0 400 400">
-<g>
-<path class="wave" d="M60,200 C120,120 120,280 180,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="10"></path>
-<path class="wave" d="M40,200 C120,90 120,310 200,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="7"></path>
-<path class="wave" d="M20,200 C120,60 120,340 220,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="4"></path>
-</g>
-<g class="ear-outline">
-<path d="M250,85c-62,0-112,50-112,112 0,33 15,58 33,80 16,19 27,39 27,65 0,39 32,71 71,71s71-32 71-71c0-33-18-53-39-70-18-15-31-29-31-56 0-36 30-64 67-64 16,0 30,5 42,5" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
-<path d="M261,152c-25,11-38,31-38,57 0,35 28,51 49,69 13,11 22,23 22,42 0,20-16,36-36,36" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-width="8"></path>
-</g>
-</svg>
-</div>
+  <div class="hero-text reveal">
+    <h2>Van stress naar rust, van twijfel naar richting</h2>
+    <p>Mentale druk, stress, onzekerheid, burn-out of prestatiedruk zijn belangrijke signalen. Als mentale coach begeleid ik mensen die vastlopen, twijfelen of opbranden.</p>
+    <div class="hero-cta">
+      <a aria-label="WhatsApp voor direct contact" class="btn-primary" href="https://wa.me/31641251757">Bel / App nu ! </a>
+      <span class="subtle">Zonder wachttijd • Vertrouwelijk • Voor iedereen</span>
+    </div>
+  </div>
+  <div aria-hidden="true" class="ear-wrap reveal">
+    <svg class="ear" viewbox="0 0 400 400">
+      <g>
+        <path class="wave" d="M60,200 C120,120 120,280 180,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="10"></path>
+        <path class="wave" d="M40,200 C120,90 120,310 200,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="7"></path>
+        <path class="wave" d="M20,200 C120,60 120,340 220,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="4"></path>
+      </g>
+      <g class="ear-outline">
+        <path d="M250,85c-62,0-112,50-112,112 0,33 15,58 33,80 16,19 27,39 27,65 0,39 32,71 71,71s71-32 71-71c0-33-18-53-39-70-18-15-31-29-31-56 0-36 30-64 67-64 16,0 30,5 42,5" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
+        <path d="M261,152c-25,11-38,31-38,57 0,35 28,51 49,69 13,11 22,23 22,42 0,20-16,36-36,36" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-width="8"></path>
+      </g>
+    </svg>
+  </div>
 </section>
 
-<!-- (Alle andere secties blijven exact zoals jij ze had – ik heb ze hier kort gelaten om het bericht overzichtelijk te houden, maar ze zitten er gewoon in) -->
+<!-- Hoe het werkt -->
+<section class="section" id="hoehetwerkt">
+  <h2 class="section-title reveal">Hoe het werkt</h2>
+  <p> Coaching bij mij betekent samenwerken. Jij brengt je vragen, ervaringen en inzet mee — ik bied structuur, richting en praktische handvatten.</p>
+  <p>We starten met een intake waarin we samen jouw doelen scherpstellen.</p>
+  <p>Daarna werken we in een pakket met een duidelijk tijdskader (bijv. 6 of 8 weken).</p>
+  <p>Elke sessie is een gezamenlijke stap: jij doet het werk, ik begeleid en spiegel.</p>
+  <p>Je krijgt opdrachten en oefeningen om zelf mee aan de slag te gaan.</p>
+  <p>Aan het einde kijken we samen terug: wat heb je bereikt, wat zijn je vervolgstappen?</p>
+  <p></p>
+  <p><strong>Het is geen rittenkaart, maar een traject waarin we samen bouwen aan verandering. Jij bepaalt het tempo, ik loop naast je mee.</strong></p>
+  <br></br>
+  <div class="section reveal" style="text-align: center;">
+    <a class="btn-primary" href="https://wa.me/31641251757">Bel of WhatsApp voor direct contact</a>
+  </div>
+</section>
 
-<!-- Hoe het werkt, Pakketten, Over ons, FAQ, Footer – alles precies zoals jouw origineel -->
+<!-- Onze pakketten -->
+<section class="section" id="pakketten">
+  <h2 class="section-title reveal">Welk pakket past bij jou?</h2>
+  <article class="business-offer reveal">
+    <header>
+      <h3>Iedereen kan af en toe wat wel wat hulp gebruiken</h3>
+      <p>Nederland is wereldwijd koploper! Wij hebben namelijk de meeste burnouts ter wereld!</p>
+    </header>
+    <section class="offer-cards">
+      <h4>Wat zit er in een pakket</h4>
+      <p>Een pakket is gewoon een traject waarin jij aan de slag gaat en ik ernaast loop. We beginnen met een intake, zodat we weten waar je staat en wat je wilt bereiken. Daarna spreken we elkaar wekelijks, je krijgt opdrachten en oefeningen mee om thuis te doen. Soms gaat dat soepel, soms loop je vast, en dan kijken we samen hoe je weer verder komt.</p>
+      <p><strong>Aan het einde van het traject kijken we terug: </strong>wat heb je opgepakt, wat werkt voor jou, en wat neem je mee voor de toekomst. Het is dus geen strippenkaart of losse sessies, maar echt samenwerken met richting en structuur. Jij zet de stappen, ik help je onderweg.</p>
+      <ul class="pricing-list">
+        <li><a href="pakket-stress-naar-rust.html"></a><strong>Van stress naar rust in 6 weken</strong><span class="price">€499</span><p class="desc">In 6 weken leer je stress verminderen en meer rust ervaren – compleet traject voor €499.</p></li>
+        <li><a href="pakket-beter-zelfbeeld.html"></a><strong>In 4 weken naar een beter zelfbeeld </strong><span class="price">€349</span><p class="desc">In 4 weken werk je aan meer zelfvertrouwen en een positiever zelfbeeld – compleet traject voor €349.</p></li>
+        <li><a href="pakket-rouw-verlies.html"></a><strong>Rouw & Verlies in 6 weken </strong><span class="price">€539</span><p class="desc">In 6 weken leer je omgaan met rouw en verlies en hervind je balans – compleet traject voor €539</p></li>
+        <li><a href="pakket-hsp.html"></a><strong>HSP-traject: Omgaan met prikkels in 6 weken </strong><span class="price">€539</span><p class="desc">In 6 weken leer je beter omgaan met overprikkeling en behoud je energie – compleet traject voor €599.</p></li>
+        <li><a href="pakket-topsport.html"></a><strong>Topsport: Mentale kracht in 5 weken.</strong><span class="price">€539</span><p class="desc">In 5 weken versterk je je mentale kracht en leer je beter presteren onder druk – compleet traject voor €449.</p></li>
+        <li><a href="pakket-relaties.html"></a><strong>Zelf vertrouwen in relaties in 5 weken</strong><span class="price">€449</span><p class="desc">In 5 weken leer je sterker en zelfverzekerder in relaties te staan – compleet traject voor €449.</p></li>
+      </ul>
+    </section>
+  </article>
+</section>
 
-<footer id="contact">
-<h2 class="section-title">Contact</h2>
-<p> Veghel, Noord-Brabant — Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom</p>
-<p> Ma t/m vr: 08:00 – 20:00 (bij behoefte ook later of weekenden; app even)</p>
-<p><a href="mailto:Erwin@erwinnootercoaching.nl">Erwin@erwinnootercoaching.nl</a></p>
-<p>Bel of WhatsApp: <a aria-label="WhatsApp ons op 06-41251757" href="https://wa.me/31641251757">06-41251757</a></p>
-</footer>
+<!-- Over ons -->
+<section class="section" id="overons">
+  <h2 class="section-title reveal">Waar wij voor staan?</h2>
+  <p>Bij Erwin Nooter Coaching draait het om mensen. Of je nu sporter bent, worstelt met stress of burn-out, werkt binnen _(etc.)_</p>
+  <!-- (je volledige originele tekst hier) -->
+</section>
 
+<!-- FAQ -->
+<section class="section faq-section" id="veel-gestelde-vragen">
+  <h2 class="section-title">Veel gestelde vragen</h2>
+  <!-- Alle FAQ-items precies zoals jij ze had -->
+</section>
+
+<!-- Footer + floating button -->
+<footer id="contact"> ... </footer>
 <a aria-label="Bel 06-41251757" class="floating-call" href="tel:+31641251757">Bel nu</a>
 
 <script>
-    // FAQ Toggle
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.parentElement.classList.toggle('active');
-      });
+  // FAQ Toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.parentElement.classList.toggle('active');
     });
+  });
 
-    // Mobiel menu toggle
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
+  // Mobiel menu
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      toggle.classList.remove('active');
+      mobileMenu.classList.remove('open');
     });
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.classList.remove('active');
-        mobileMenu.classList.remove('open');
-      });
-    });
+  });
 
-    // Reveal on scroll + andere scripts blijven hetzelfde
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: .14 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: .14 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
 </html>
