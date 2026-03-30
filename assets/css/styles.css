@@ -3,7 +3,7 @@
   --bg: #F6F1EA;          /* warm off-white */
   --surface: #FFFFFF;
   --surface2: #FBF7F1;
-  --text: #163234;        /* diepe warm-teal (niet koud) */
+  --text: #163234;        /* diepe warm-teal */
   --muted: #4B6162;
   --muted2:#6D7E7F;
 
@@ -77,17 +77,21 @@ img{max-width:100%; display:block}
   align-items:center;
   gap:12px;
   text-decoration:none;
-  min-width:220px;
+  min-width:260px;
 }
+
+/* LOGO 50% groter */
 .logo{
-  width:74px;
-  height:40px;
+  width: 112px;     /* was ~74 */
+  height: 54px;     /* was ~40 */
   display:inline-flex;
-  border-radius:14px;
+  border-radius:16px;
   background: linear-gradient(180deg, rgba(22,50,52,.05), rgba(22,50,52,.02));
   border:1px solid rgba(22,50,52,.10);
-  padding:6px 10px;
+  padding:6px 8px;
 }
+.logo svg{width:100%; height:100%; display:block}
+
 .brand-text strong{
   display:block;
   font-size:14px;
@@ -170,19 +174,27 @@ img{max-width:100%; display:block}
 
 .hero{
   position:relative;
-  padding: 40px 0 18px;
+  padding: 44px 0 18px;
   overflow:hidden;
 }
 .hero-bg{
   position:absolute;
   inset:-60px -40px auto -40px;
-  height:230px;
+  height:240px;
   background:
     radial-gradient(900px 320px at 35% 40%, rgba(192,138,101,.18), transparent 55%),
     radial-gradient(900px 320px at 75% 30%, rgba(47,126,117,.16), transparent 55%);
   pointer-events:none;
 }
-.hero-inner{max-width: 920px}
+.hero-inner{max-width: 960px}
+
+.brandline{
+  margin:0 0 8px;
+  font-weight:650;
+  letter-spacing:.2px;
+  color: rgba(22,50,52,.86);
+}
+
 .eyebrow{
   display:inline-flex;
   gap:10px;
@@ -264,8 +276,8 @@ h2{
   padding: 16px;
   box-shadow: var(--shadow2);
 }
-.panel.small{padding:14px}
 .panel h3{margin: 0 0 8px; font-size:16px}
+.placeholder h3{font-size:15px}
 
 .checklist, .bullets{
   margin:0;
@@ -274,7 +286,7 @@ h2{
 }
 
 .callout{
-  margin-top: 16px;
+  margin-top: 18px;
   border-radius: var(--radius2);
   border: 1px solid rgba(192,138,101,.22);
   background:
@@ -290,12 +302,6 @@ h2{
   align-items:center;
   justify-content:space-between;
   flex-wrap:wrap;
-}
-
-.soft-divider{
-  height:1px;
-  background: rgba(22,50,52,.10);
-  margin: 18px 0;
 }
 
 .timeline{display:grid; gap:12px}
@@ -333,23 +339,34 @@ h2{
 }
 .cta-actions{display:flex; gap:10px; flex-wrap:wrap}
 
+/* === ABOUT LAYOUT FIX === */
 .about-grid{
   display:grid;
-  grid-template-columns: .9fr 1.1fr;
+  grid-template-columns: .92fr 1.08fr;
   gap:18px;
   align-items:start;
 }
-.about-photo img{
+.about-left{display:grid; gap:12px}
+.about-photo{
+  margin:0;
   border-radius: var(--radius2);
+  overflow:hidden;
   border: 1px solid rgba(22,50,52,.12);
   box-shadow: var(--shadow);
   background: rgba(255,255,255,.75);
 }
+.about-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.about-right p{margin:0 0 12px}
 .facts{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr; /* naast placeholder, dus onder elkaar */
   gap:12px;
-  margin-top: 14px;
+  margin-top: 10px;
 }
 .fact{
   border-radius: var(--radius);
@@ -371,10 +388,7 @@ h2{
   margin-bottom:10px;
   box-shadow: var(--shadow2);
 }
-.faq summary{
-  cursor:pointer;
-  font-weight:600;
-}
+.faq summary{cursor:pointer; font-weight:600}
 .faq p{margin:10px 0 0; color:var(--muted)}
 
 .contact-grid{
@@ -515,14 +529,11 @@ input:focus, textarea:focus{
 
 @media (max-width: 980px){
   .header-cta{display:none}
-
   .grid-3{grid-template-columns: 1fr}
   .grid-2{grid-template-columns: 1fr}
-  .facts{grid-template-columns: 1fr}
   .about-grid{grid-template-columns: 1fr}
   .contact-grid{grid-template-columns: 1fr}
   .contact-cards{grid-template-columns: 1fr}
-
   .footer-inner{grid-template-columns: 1fr}
   .footer-links{justify-content:flex-start}
 
@@ -531,10 +542,10 @@ input:focus, textarea:focus{
     display:none;
     position:absolute;
     right:20px;
-    top:68px;
+    top:76px;
     flex-direction:column;
     align-items:stretch;
-    width:min(340px, calc(100vw - 40px));
+    width:min(360px, calc(100vw - 40px));
     padding:10px;
     border-radius: 18px;
     background: rgba(246,241,234,.92);
