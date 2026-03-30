@@ -22,7 +22,7 @@
   }
 
   // Active section highlight
-  const sections = ["wie-ben-ik","relatietherapie","specialisaties","werkwijze","faq","contact"]
+  const sections = ["wie-ben-ik","relatietherapie","individueel","specialisaties","werkwijze","faq","contact"]
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
@@ -55,7 +55,7 @@
       const email = (data.get("email") || "").toString().trim();
       const msg = (data.get("message") || "").toString().trim();
 
-      const subject = encodeURIComponent("Kennismaking relatietherapie — " + (name || "aanvraag"));
+      const subject = encodeURIComponent("Kennismaking coaching — " + (name || "aanvraag"));
       const body = encodeURIComponent(
         `Naam: ${name}\nE-mail: ${email}\n\nBericht:\n${msg}\n\n— Verzonden via de website`
       );
