@@ -22,7 +22,7 @@
   }
 
   // Active section highlight
-  const sections = ["relatietherapie","specialisaties","werkwijze","wie-ben-ik","faq","contact"]
+  const sections = ["wie-ben-ik","relatietherapie","specialisaties","werkwijze","faq","contact"]
     .map(id => document.getElementById(id))
     .filter(Boolean);
 
