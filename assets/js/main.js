@@ -45,7 +45,7 @@
     sections.forEach(s => obs.observe(s));
   }
 
-  // Contact form -> mailto (GitHub Pages friendly)
+  // Contact form -> mailto
   const form = document.getElementById("contactForm");
   if (form) {
     form.addEventListener("submit", (ev) => {
