@@ -1,14 +1,12 @@
 :root{
-  /* Warm, rustig palet */
-  --bg: #F6F1EA;          /* warm off-white */
+  --bg: #F6F1EA;
   --surface: #FFFFFF;
-  --surface2: #FBF7F1;
-  --text: #163234;        /* diepe warm-teal */
+  --text: #163234;
   --muted: #4B6162;
   --muted2:#6D7E7F;
 
-  --brand: #C08A65;       /* warm koper */
-  --brand2:#2F7E75;       /* salie/teal */
+  --brand: #C08A65;
+  --brand2:#2F7E75;
   --line: rgba(22,50,52,.12);
 
   --shadow: 0 20px 40px rgba(22,50,52,.12);
@@ -80,10 +78,10 @@ img{max-width:100%; display:block}
   min-width:260px;
 }
 
-/* LOGO 50% groter */
+/* Logo groter */
 .logo{
-  width: 112px;     /* was ~74 */
-  height: 54px;     /* was ~40 */
+  width: 112px;
+  height: 54px;
   display:inline-flex;
   border-radius:16px;
   background: linear-gradient(180deg, rgba(22,50,52,.05), rgba(22,50,52,.02));
@@ -125,11 +123,6 @@ img{max-width:100%; display:block}
   color:var(--text);
   background: rgba(192,138,101,.12);
   border:1px solid rgba(192,138,101,.22);
-}
-.nav-cta{
-  color:var(--text)!important;
-  background: rgba(47,126,117,.10);
-  border: 1px solid rgba(47,126,117,.18);
 }
 
 .header-cta{display:flex; gap:10px; align-items:center}
@@ -258,6 +251,7 @@ h2{
   letter-spacing:-.2px;
 }
 
+/* panels / grids */
 .grid-3{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -277,7 +271,6 @@ h2{
   box-shadow: var(--shadow2);
 }
 .panel h3{margin: 0 0 8px; font-size:16px}
-.placeholder h3{font-size:15px}
 
 .checklist, .bullets{
   margin:0;
@@ -304,6 +297,60 @@ h2{
   flex-wrap:wrap;
 }
 
+/* === WIE BEN IK: boven (foto + tekst) === */
+.about-top{
+  display:grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap:18px;
+  align-items:start;
+  margin-top: 14px;
+}
+.about-photo{
+  margin:0;
+  border-radius: var(--radius2);
+  overflow:hidden;
+  border: 1px solid rgba(22,50,52,.12);
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.75);
+}
+.about-photo img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.about-text p{margin:0 0 12px}
+
+/* === WIE BEN IK: onder (placeholder links + 3 blokken rechts) === */
+.about-bottom{
+  margin-top: 14px;
+  display:grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap:18px;
+  align-items: stretch; /* belangrijk: placeholder wordt even hoog als rechterkolom */
+}
+.placeholder{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+}
+.facts-vertical{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:12px;
+}
+.fact{
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(22,50,52,.10);
+  padding: 12px;
+  box-shadow: var(--shadow2);
+}
+.fact h3{margin:0 0 6px; font-size:14px}
+
+.muted{color:var(--muted)}
+.small{font-size:13px}
+
+/* timeline / cta band */
 .timeline{display:grid; gap:12px}
 .t-item{
   display:grid;
@@ -339,47 +386,7 @@ h2{
 }
 .cta-actions{display:flex; gap:10px; flex-wrap:wrap}
 
-/* === ABOUT LAYOUT FIX === */
-.about-grid{
-  display:grid;
-  grid-template-columns: .92fr 1.08fr;
-  gap:18px;
-  align-items:start;
-}
-.about-left{display:grid; gap:12px}
-.about-photo{
-  margin:0;
-  border-radius: var(--radius2);
-  overflow:hidden;
-  border: 1px solid rgba(22,50,52,.12);
-  box-shadow: var(--shadow);
-  background: rgba(255,255,255,.75);
-}
-.about-photo img{
-  width:100%;
-  height:auto;
-  display:block;
-}
-
-.about-right p{margin:0 0 12px}
-.facts{
-  display:grid;
-  grid-template-columns: 1fr; /* naast placeholder, dus onder elkaar */
-  gap:12px;
-  margin-top: 10px;
-}
-.fact{
-  border-radius: var(--radius);
-  background: rgba(255,255,255,.82);
-  border: 1px solid rgba(22,50,52,.10);
-  padding: 12px;
-  box-shadow: var(--shadow2);
-}
-.fact h3{margin:0 0 6px; font-size:14px}
-
-.muted{color:var(--muted)}
-.small{font-size:13px}
-
+/* FAQ */
 .faq details{
   border-radius: var(--radius);
   border:1px solid rgba(22,50,52,.10);
@@ -391,13 +398,13 @@ h2{
 .faq summary{cursor:pointer; font-weight:600}
 .faq p{margin:10px 0 0; color:var(--muted)}
 
+/* contact */
 .contact-grid{
   display:grid;
   grid-template-columns: 1fr 1fr;
   gap:16px;
   align-items:start;
 }
-
 .contact-cards{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -424,7 +431,6 @@ h2{
   background: rgba(192,138,101,.14);
   border: 1px solid rgba(192,138,101,.22);
 }
-
 .contact-info p{margin: 6px 0; color: var(--muted)}
 
 .card{
@@ -468,6 +474,7 @@ input:focus, textarea:focus{
   background: rgba(255,255,255,.70);
 }
 
+/* footer */
 .footer{
   padding: 26px 0;
   border-top: 1px solid rgba(22,50,52,.10);
@@ -498,6 +505,7 @@ input:focus, textarea:focus{
   background: linear-gradient(90deg, var(--brand), var(--brand2));
 }
 
+/* accessibility */
 .sr-only{
   position:absolute!important;
   width:1px;height:1px;
@@ -506,7 +514,7 @@ input:focus, textarea:focus{
   white-space:nowrap;border:0;
 }
 
-/* Mobile nav */
+/* mobile nav */
 .nav-toggle{
   display:none;
   border:1px solid rgba(22,50,52,.14);
@@ -531,7 +539,8 @@ input:focus, textarea:focus{
   .header-cta{display:none}
   .grid-3{grid-template-columns: 1fr}
   .grid-2{grid-template-columns: 1fr}
-  .about-grid{grid-template-columns: 1fr}
+  .about-top{grid-template-columns: 1fr}
+  .about-bottom{grid-template-columns: 1fr}
   .contact-grid{grid-template-columns: 1fr}
   .contact-cards{grid-template-columns: 1fr}
   .footer-inner{grid-template-columns: 1fr}
