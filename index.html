@@ -1,382 +1,524 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Erwin Nooter Coaching - Mentale Begeleiding voor Sporters en Professionals</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
-<style>
-    /* ====== Reset & Base ====== */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { overflow-x: hidden; }
-    :root {
-      --bg: #fffdf8;
-      --paper: #ffffff;
-      --ink: #0d1b2a;
-      --muted: #4a4a4a;
-      --brand: #f1b400;
-      --brand-d: #d9a300;
-      --tint: #f7f4eb;
-      --shadow: 0 8px 24px rgba(0,0,0,.08);
-      --radius: 14px;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0F2A2E" />
+  <title>Erwin Nooter Coaching | Relatietherapie met rust, helderheid en diepgang</title>
+  <meta name="description" content="Relatietherapie in Veghel (ook online). Specialisatie in HSP, ADHD, autisme en trauma. Professioneel, nuchter en met aandacht voor veiligheid, verbinding en praktische stappen." />
+  <link rel="canonical" href="https://www.erwinnootercoaching.nl/" />
 
-    /* ====== Header ====== */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 5%;
-      background: #fff;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,.06);
-      backdrop-filter: saturate(1.2) blur(6px);
-    }
-    .brand {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .logo { width: 36px; height: 36px; display: block; }
-    header h1 { font-size: clamp(1.1rem, 3.5vw, 1.6rem); font-weight: 700; letter-spacing: .3px; }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Erwin Nooter Coaching | Relatietherapie met rust, helderheid en diepgang" />
+  <meta property="og:description" content="Relatietherapie in Veghel (ook online). Specialisatie in HSP, ADHD, autisme en trauma." />
+  <meta property="og:url" content="https://www.erwinnootercoaching.nl/" />
+  <meta property="og:image" content="assets/img/og-cover.jpg" />
 
-    /* Desktop navigatie */
-    .desktop-nav {
-      display: flex;
-      align-items: center;
-      gap: clamp(10px, 2.5vw, 22px);
-    }
-    .desktop-nav a {
-      text-decoration: none;
-      color: var(--ink);
-      font-weight: 500;
-      font-size: clamp(.95rem, 2.5vw, 1rem);
-      transition: color .25s ease;
-    }
-    .desktop-nav a:hover { color: var(--brand); }
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%230F2A2E' d='M12 40c10-2 14-18 20-18s10 16 20 18v6H12z'/%3E%3Cpath fill='none' stroke='%2359C3B3' stroke-width='3' d='M12 18h40M18 12v40M46 12v40'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
-    /* Dropdown desktop */
-    .dropdown { position: relative; }
-    .dropdown:hover .dropdown-content { display: block; }
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background: white;
-      min-width: 300px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.15);
-      border-radius: 12px;
-      padding: 12px 0;
-      z-index: 9999;
-    }
-    .dropdown-content a {
-      display: block;
-      padding: 10px 20px;
-      font-size: .95rem;
-      color: var(--ink);
-      white-space: nowrap;
-    }
-    .dropdown-content a:hover {
-      background: var(--tint);
-      color: var(--brand);
-    }
-
-    /* Mobiel hamburgermenu */
-    .mobile-menu-toggle, .mobile-menu { display: none; }
-
-    @media (max-width: 980px) {
-      .desktop-nav { display: none; }
-      .mobile-menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-        z-index: 1001;
-      }
-      .mobile-menu-toggle span {
-        width: 28px;
-        height: 3px;
-        background: var(--ink);
-        border-radius: 3px;
-        transition: all 0.3s ease;
-      }
-      .mobile-menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
-      .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
-      .mobile-menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-
-      .mobile-menu {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: white;
-        padding: 80px 5% 40px;
-        transform: translateX(-100%);
-        transition: transform 0.35s ease;
-        z-index: 9998;
-        gap: 4px;
-        overflow-y: auto;
-      }
-      .mobile-menu.open { transform: translateX(0); }
-      .mobile-menu a {
-        padding: 16px 0;
-        font-size: 1.15rem;
-        color: var(--ink);
-        text-decoration: none;
-        border-bottom: 1px solid #eee;
-      }
-      .mobile-menu a.btn-primary {
-        margin-top: 30px;
-        text-align: center;
-        font-size: 1.1rem;
-      }
-    }
-
-    .btn-primary {
-      background: var(--brand);
-      color: var(--ink);
-      font-weight: 700;
-      padding: 10px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: transform .18s ease, box-shadow .18s ease, background .2s ease;
-      box-shadow: 0 6px 16px rgba(241,180,0,.25);
-    }
-    .btn-primary:hover { background: var(--brand-d); transform: translateY(-1px); }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: clamp(20px, 4vw, 60px);
-      align-items: center;
-      justify-content: center;
-      padding: clamp(50px, 8vw, 110px) 5% clamp(30px, 6vw, 70px);
-      background: radial-gradient(1200px 600px at 10% 0%, #fff9e6 0%, #fffdf8 45%, #f7f4eb 100%);
-    }
-    .hero-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 6.8vw, 3.4rem); line-height: 1.1; margin-bottom: 16px; }
-    .hero-text p { font-size: clamp(1rem, 3.2vw, 1.2rem); color: var(--muted); max-width: 58ch; margin-bottom: 20px; }
-    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    .subtle { font-size: .95rem; color: var(--muted); }
-
-    .ear-wrap { width: 100%; aspect-ratio: 1/1; max-width: 460px; margin-inline: auto; background: conic-gradient(from 180deg at 50% 50%, #fff 0%, #fff 60%, #fff7d6 100%); border-radius: 24px; box-shadow: var(--shadow); display: grid; place-items: center; position: relative; overflow: hidden; }
-    .ear-wrap::after { content: ""; position: absolute; inset: auto -20% -35% -20%; height: 60%; background: radial-gradient(50% 100% at 50% 0%, #ffe9a5 0%, transparent 70%); filter: blur(40px); opacity: .6; pointer-events: none; }
-    svg.ear { width: 78%; height: auto; display: block; }
-    .wave { transform-origin: left center; animation: wavePulse 2.2s ease-in-out infinite; opacity: .9; }
-    .wave:nth-child(2) { animation-delay: .25s; opacity: .75; }
-    .wave:nth-child(3) { animation-delay: .5s; opacity: .6; }
-    @keyframes wavePulse { 0%, 100% { transform: scaleX(1); opacity: .55; } 50% { transform: scaleX(1.06); opacity: .95; } }
-    .ear-outline { filter: drop-shadow(0 8px 16px rgba(0,0,0,.1)); animation: gentleFloat 6s ease-in-out infinite; }
-    @keyframes gentleFloat { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-6px); } }
-
-    section { padding: clamp(40px, 7vw, 80px) 5%; }
-    .section { max-width: 1100px; margin: 0 auto; text-align: center; }
-    h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 5.5vw, 2.4rem); margin-bottom: 16px; }
-
-    .business-offer { max-width: 1100px; margin: 0 auto; background: var(--paper); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); overflow: hidden; }
-    .pricing-list { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-      gap: 16px; 
-      margin: 16px 0; 
-      padding: 0; 
-      list-style: none;
-      width: 100%;
-      overflow: hidden;
-    }
-    .pricing-list li { 
-      background: var(--tint); 
-      border-radius: 10px; 
-      padding: 16px; 
-      transition: transform .2s ease, box-shadow .2s ease; 
-      position: relative; 
-      overflow: hidden;
-      width: 100%;
-    }
-    .pricing-list li:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,0,0,.12); }
-    .pricing-list a { position: absolute; inset: 0; z-index: 2; }
-    .pricing-list strong { display: block; font-size: 1.1rem; margin-bottom: 8px; color: var(--ink); position: relative; z-index: 3; }
-    .price { font-size: 1.2rem; font-weight: 700; color: var(--brand); position: relative; z-index: 3; }
-    .desc { margin-top: 8px; color: var(--muted); font-size: .95rem; position: relative; z-index: 3; }
-
-    .faq-section { background: var(--paper); border-radius: 16px; box-shadow: var(--shadow); max-width: 1100px; margin: 0 auto; padding: 24px; overflow: hidden; }
-    .faq-item { border-bottom: 1px solid #eee; padding: 10px 0; }
-    .faq-question { background: none; border: none; width: 100%; text-align: left; font-size: clamp(1rem, 3vw, 1.1rem); font-weight: 700; color: var(--ink); padding: 12px 2px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .faq-question:hover { color: var(--brand); }
-    .faq-answer { display: none; color: var(--muted); padding: 2px 2px 12px 2px; }
-    .faq-item.active .faq-answer { display: block; }
-
-    footer { background: var(--tint); text-align: center; padding: clamp(36px, 7vw, 60px) 5%; margin-top: auto; }
-    footer p { margin-bottom: 8px; }
-    footer a { color: #0067c5; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-
-    .floating-call { position: fixed; right: 18px; bottom: 18px; z-index: 1100; background: var(--brand); color: var(--ink); border-radius: 999px; padding: 12px 18px; font-weight: 800; box-shadow: 0 14px 30px rgba(0,0,0,.35); text-decoration: none; transition: transform .2s ease; }
-    .floating-call:hover { transform: translateY(-2px) scale(1.015); }
-
-    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
-    .reveal.in { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 980px) {
-      .hero { grid-template-columns: 1fr; text-align: center; }
-      .hero-cta { justify-content: center; }
-      .ear-wrap { order: -1; }
-    }
-    @media (max-width: 520px) {
-      .voorwie-card { width: 170px; }
-      .voorwie-card img { height: 110px; }
-    }
-
-    #hoehetwerkt p { margin-bottom: 1.4rem !important; }
-    #hoehetwerkt strong { display: block; margin: 2rem 0 1.5rem !important; font-size: 1.15rem; }
-
-    /* FIX: voorkom horizontale scroll op mobiel */
-    body, html, section, .section, .business-offer, .pricing-list, .pricing-list li {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-</style>
+  <!-- Structured data (zonder straat: alleen plaats/regio) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Erwin Nooter Coaching",
+    "areaServed":"Veghel, Noord-Brabant",
+    "telephone":"+31641251757",
+    "email":"Erwin@erwinnootercoaching.nl",
+    "url":"https://www.erwinnootercoaching.nl/",
+    "serviceType":[
+      "Relatietherapie",
+      "Coaching bij HSP",
+      "Begeleiding bij ADHD en autisme",
+      "Trauma-sensitieve begeleiding"
+    ]
+  }
+  </script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Direct naar inhoud</a>
 
-<!-- Header met hamburgermenu -->
-<header>
-  <div class="brand">
-    <svg aria-hidden="true" class="logo" viewbox="0 0 64 64">
-      <path d="M32 6c-9.4 0-17 7.6-17 17 0 5.2 2.3 9.2 5.2 12.7 2.4 2.8 4.1 5.9 4.1 9.9 0 6 5 11 11 11s11-5 11-11c0-5.1-2.8-8.2-6-10.8-2.8-2.3-4.8-4.6-4.8-8.8 0-5.6 4.7-10 10.5-10 2.6 0 5 .9 7 .9" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-width="3"></path>
-    </svg>
-    <h1>Erwin Nooter Coaching</h1>
-  </div>
+  <!-- Topbar -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Naar boven">
+        <!-- Minimalistisch lijn-logo (inline SVG) -->
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 180 44" role="img" focusable="false">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#59C3B3"/>
+                <stop offset="1" stop-color="#7AA7FF"/>
+              </linearGradient>
+            </defs>
+            <!-- Lijnen: stabiliteit + verbinding -->
+            <path d="M12 22h64" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M44 8v28" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+            <path d="M76 8v28" fill="none" stroke="#1C3C41" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+            <!-- “knoop” symbool: relatie/verbinding -->
+            <path d="M92 22c8-10 18-10 26 0s18 10 26 0" fill="none" stroke="#1C3C41" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+            <circle cx="118" cy="22" r="3.5" fill="#59C3B3"/>
+            <circle cx="144" cy="22" r="3.5" fill="#7AA7FF"/>
+          </svg>
+        </span>
+        <span class="brand-text">
+          <strong>Erwin Nooter</strong>
+          <span>Coaching</span>
+        </span>
+      </a>
 
-  <nav class="desktop-nav">
-    <div class="dropdown">
-      <a href="#pakketten">Onze pakketten</a>
-      <div class="dropdown-content">
-        <a href="pakket-stress-naar-rust.html">Van stress naar rust in 6 weken</a>
-        <a href="pakket-beter-zelfbeeld.html">In 4 weken naar een beter zelfbeeld</a>
-        <a href="pakket-rouw-verlies.html">Rouw & Verlies in 6 weken</a>
-        <a href="pakket-hsp.html">HSP-traject: Omgaan met prikkels in 6 weken</a>
-        <a href="pakket-topsport.html">Topsport: Mentale kracht in 5 weken</a>
-        <a href="pakket-relaties.html">Zelfvertrouwen in relaties in 5 weken</a>
+      <nav class="nav" aria-label="Hoofdmenu">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="navlinks">
+          <span class="sr-only">Menu</span>
+          <span aria-hidden="true" class="burger"></span>
+        </button>
+
+        <div class="navlinks" id="navlinks">
+          <a href="#relatietherapie">Relatietherapie</a>
+          <a href="#specialisaties">Specialisaties</a>
+          <a href="#werkwijze">Werkwijze</a>
+          <a href="#wie-ben-ik">Wie ben ik</a>
+          <a href="#faq">FAQ</a>
+          <a class="nav-cta" href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="header-cta">
+        <a class="btn btn-ghost" href="tel:+31641251757">Bel 06‑41251757</a>
+        <a class="btn btn-primary" href="https://wa.me/31641251757" target="_blank" rel="noopener">App direct</a>
       </div>
     </div>
-    <a href="#hoehetwerkt">Hoe het werkt</a>
-    <a href="#zakelijk">Zakelijk aanbod</a>
-    <a href="#overons">Waar wij voor staan?</a>
-    <a aria-label="Bel nu" class="btn-primary" href="#contact">Bel nu!</a>
-  </nav>
+  </header>
 
-  <button class="mobile-menu-toggle" aria-label="Menu openen">
-    <span></span><span></span><span></span>
-  </button>
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Relatietherapie • Veghel & online</p>
+          <h1>Van <span class="accent">vastlopen</span> naar <span class="accent">verbinding</span> — met rust, helderheid en diepgang.</h1>
+          <p class="lead">
+            Voor stellen (en individuen) die niet op zoek zijn naar “praatjes”, maar naar een veilige setting,
+            scherpe inzichten en concrete stappen. Extra aandacht voor <strong>HSP</strong>, <strong>ADHD</strong>,
+            <strong>autisme</strong> en <strong>trauma</strong> — omdat dynamieken dan anders werken.
+          </p>
 
-  <div class="mobile-menu">
-    <a href="#pakketten">Onze pakketten</a>
-    <a href="pakket-stress-naar-rust.html">→ Van stress naar rust in 6 weken</a>
-    <a href="pakket-beter-zelfbeeld.html">→ In 4 weken naar een beter zelfbeeld</a>
-    <a href="pakket-rouw-verlies.html">→ Rouw & Verlies in 6 weken</a>
-    <a href="pakket-hsp.html">→ HSP-traject: Omgaan met prikkels</a>
-    <a href="pakket-topsport.html">→ Topsport: Mentale kracht</a>
-    <a href="pakket-relaties.html">→ Zelfvertrouwen in relaties</a>
-    <a href="#hoehetwerkt">Hoe het werkt</a>
-    <a href="#zakelijk">Zakelijk aanbod</a>
-    <a href="#overons">Waar wij voor staan?</a>
-    <a class="btn-primary" href="#contact">Bel nu!</a>
-  </div>
-</header>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Plan een kennismaking</a>
+            <a class="btn btn-ghost" href="#werkwijze">Zo werk ik</a>
+          </div>
 
-<!-- Hero -->
-<section class="hero">
-  <div class="hero-text reveal">
-    <h2>Een nieuwe website komt eraan!</h2>
-    <p>Wij zijn druk bezig om een vernieuwde website te maken!</p>
-    <div class="hero-cta">
-      <a aria-label="WhatsApp voor direct contact" class="btn-primary" href="https://wa.me/31641251757">Bel / App nu ! </a>
-      <span class="subtle">Zonder wachttijd • Vertrouwelijk • Voor iedereen</span>
-    </div>
-  </div>
-  <div aria-hidden="true" class="ear-wrap reveal">
-    <svg class="ear" viewbox="0 0 400 400">
-      <g>
-        <path class="wave" d="M60,200 C120,120 120,280 180,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="10"></path>
-        <path class="wave" d="M40,200 C120,90 120,310 200,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="7"></path>
-        <path class="wave" d="M20,200 C120,60 120,340 220,200" fill="none" stroke="#f1b400" stroke-linecap="round" stroke-width="4"></path>
-      </g>
-      <g class="ear-outline">
-        <path d="M250,85c-62,0-112,50-112,112 0,33 15,58 33,80 16,19 27,39 27,65 0,39 32,71 71,71s71-32 71-71c0-33-18-53-39-70-18-15-31-29-31-56 0-36 30-64 67-64 16,0 30,5 42,5" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"></path>
-        <path d="M261,152c-25,11-38,31-38,57 0,35 28,51 49,69 13,11 22,23 22,42 0,20-16,36-36,36" fill="none" stroke="#0d1b2a" stroke-linecap="round" stroke-width="8"></path>
-      </g>
-    </svg>
-  </div>
-</section>
+          <ul class="trust-row" aria-label="Kernbeloftes">
+            <li><span class="dot"></span> Vertrouwelijk</li>
+            <li><span class="dot"></span> Nuchter & professioneel</li>
+            <li><span class="dot"></span> Praktisch én diepgaand</li>
+          </ul>
 
+          <div class="micro-proof">
+            <p><strong>Beschikbaar:</strong> ma t/m vr 08:00–20:00 (bij behoefte ook later of weekend; app even).<br />
+              <strong>Locatie:</strong> Veghel, Noord‑Brabant. Eerste gesprekken telefonisch of online; vervolg in persoon of via Zoom.</p>
+          </div>
+        </div>
 
-<!-- Footer -->
-<footer id="contact">
-  <h2 class="section-title">Contact</h2>
-  <p> Veghel, Noord-Brabant — Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom</p>
-  <p> Ma t/m vr: 08:00 – 20:00 (bij behoefte ook later of weekenden; app even)</p>
-  <p><a href="mailto:Erwin@erwinnootercoaching.nl">Erwin@erwinnootercoaching.nl</a></p>
-  <p>Bel of WhatsApp: <a aria-label="WhatsApp ons op 06-41251757" href="https://wa.me/31641251757">06-41251757</a></p>
-</footer>
+        <div class="hero-card" aria-label="Snelle route naar contact">
+          <div class="card">
+            <h2>Snelle start</h2>
+            <p class="muted">In 3 stappen helderheid en richting.</p>
+            <ol class="steps">
+              <li><strong>Kennismaken</strong> — korte intake: waar loopt het vast?</li>
+              <li><strong>Patroon in beeld</strong> — communicatie, hechting, prikkels, stress, triggers.</li>
+              <li><strong>Plan van aanpak</strong> — wat je deze week al anders kunt doen.</li>
+            </ol>
+            <div class="card-actions">
+              <a class="btn btn-primary btn-block" href="#contact">Kennismaking aanvragen</a>
+              <a class="btn btn-link btn-block" href="mailto:Erwin@erwinnootercoaching.nl?subject=Kennismaking%20relatietherapie">Mail liever</a>
+            </div>
+            <p class="fineprint">Geen wachtrij-beloftes, wel: snel en duidelijk terugkoppeling.</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg" aria-hidden="true"></div>
+    </section>
 
-<!-- Sticky Call -->
-<a aria-label="Bel 06-41251757" class="floating-call" href="tel:+31641251757">Bel nu</a>
+    <!-- Relatietherapie -->
+    <section class="section" id="relatietherapie">
+      <div class="container">
+        <div class="section-head">
+          <h2>Relatietherapie zonder omwegen</h2>
+          <p class="lead">
+            Niet “wie heeft gelijk”, maar: <strong>wat gebeurt er tussen jullie</strong> — en hoe krijgen jullie weer
+            veiligheid, begrip en samenwerking terug.
+          </p>
+        </div>
 
-<script>
-    // FAQ Toggle
-    document.querySelectorAll('.faq-question').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.parentElement.classList.toggle('active');
-      });
-    });
+        <div class="grid-3">
+          <article class="panel">
+            <h3>Wanneer is dit helpend?</h3>
+            <ul class="checklist">
+              <li>Steeds dezelfde ruzie / discussie, andere woorden — zelfde pijn.</li>
+              <li>Afstand, stiltes, vermijden, of juist escalatie.</li>
+              <li>Vertrouwen onder druk (liegen, grenzen, (online) contact, jaloezie).</li>
+              <li>Intimiteit loopt vast door stress, prikkels of spanning.</li>
+            </ul>
+          </article>
 
-    // Mobiel menu toggle
-    const toggle = document.querySelector('.mobile-menu-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
-    if (toggle && mobileMenu) {
-      toggle.addEventListener('click', () => {
-        toggle.classList.toggle('active');
-        mobileMenu.classList.toggle('open');
-      });
-      document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          toggle.classList.remove('active');
-          mobileMenu.classList.remove('open');
-        });
-      });
-    }
+          <article class="panel">
+            <h3>Waar werken we aan?</h3>
+            <ul class="checklist">
+              <li>Veilige communicatie: duidelijk, respectvol, to-the-point.</li>
+              <li>Triggers herkennen (en stoppen vóór escalatie).</li>
+              <li>Grenzen en behoeften uitspreken zónder strijd.</li>
+              <li>Herstel na conflict: reparatiegesprekken die echt landen.</li>
+            </ul>
+          </article>
 
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: .14 });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
+          <article class="panel">
+            <h3>Resultaat (realistisch)</h3>
+            <ul class="checklist">
+              <li>Meer rust in huis en in je hoofd.</li>
+              <li>Sneller uit conflict, langer in verbinding.</li>
+              <li>Concrete afspraken die haalbaar zijn in het echte leven.</li>
+              <li>Meer begrip voor elkaars “bedieningshandleiding”.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="callout">
+          <div class="callout-inner">
+            <p><strong>Belangrijk:</strong> bij HSP/ADHD/autisme/trauma zijn patronen vaak intenser (prikkelbelasting, misinterpretaties, shutdowns, hyperfocus, triggers). Dat vraagt om een aanpak die zowel <em>relationeel</em> als <em>neuro-sensitief</em> is.</p>
+            <a class="btn btn-ghost" href="#specialisaties">Lees hoe ik dat aanpak</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialisaties -->
+    <section class="section alt" id="specialisaties">
+      <div class="container">
+        <div class="section-head">
+          <h2>Specialisaties: waar veel mis gaat — en waar veel winst ligt</h2>
+          <p class="lead">
+            Als neurodiversiteit en trauma meespelen, is “gewoon beter communiceren” vaak niet genoeg.
+            Dan heb je ook <strong>prikkelregulatie</strong>, <strong>veiligheid</strong> en <strong>heldere afspraken</strong> nodig.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>HSP (hooggevoeligheid)</h3>
+            <p class="muted">
+              Sneller overprikkeld → sneller kort lontje of juist terugtrekken. We maken samen een plan:
+              signalen herkennen, pauzes afspreken, en “nazorg” na spanning.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>ADHD</h3>
+            <p class="muted">
+              Impulsiviteit, vergeetachtigheid, emotionele intensiteit en een volle agenda kunnen relatie-ruis geven.
+              We bouwen structuur die niet verstikt maar wél helpt.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Autisme</h3>
+            <p class="muted">
+              Letterlijk nemen, detailfocus, behoefte aan voorspelbaarheid: dit kan botsen met impliciete verwachtingen.
+              We vertalen naar expliciete afspraken en “taal” die beide partners begrijpt.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Trauma (en chronische stress)</h3>
+            <p class="muted">
+              Triggers, alertheid, controle of juist dissociatie beïnvloeden intimiteit en conflict. We werken
+              trauma‑sensitief: eerst veiligheid, dan verdieping.
+            </p>
+          </article>
+        </div>
+
+        <div class="soft-divider" aria-hidden="true"></div>
+
+        <div class="grid-3">
+          <article class="panel small">
+            <h3>Wat je van mij mag verwachten</h3>
+            <ul class="bullets">
+              <li>Rust en regie in het gesprek</li>
+              <li>Doorvragen tot het helder wordt</li>
+              <li>Concrete oefeningen voor thuis</li>
+            </ul>
+          </article>
+
+          <article class="panel small">
+            <h3>Wat ik níet doe</h3>
+            <ul class="bullets">
+              <li>Zweverige beloftes</li>
+              <li>“Kies een kant” of oordeel</li>
+              <li>Jullie laten zwemmen zonder plan</li>
+            </ul>
+          </article>
+
+          <article class="panel small">
+            <h3>Andere thema’s (ook mogelijk)</h3>
+            <ul class="bullets">
+              <li>Stress & burn-out</li>
+              <li>Rouw & verlies</li>
+              <li>Zelfbeeld & zelfvertrouwen</li>
+              <li>Mentale begeleiding (werk/sport)</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Werkwijze -->
+    <section class="section" id="werkwijze">
+      <div class="container">
+        <div class="section-head">
+          <h2>Werkwijze: duidelijk, veilig en doelgericht</h2>
+          <p class="lead">
+            Eén pagina, één route. Geen doolhof aan submenu’s — wél snel naar wat je nodig hebt.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <div class="t-item">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-content">
+              <h3>1) Kennismaking (telefonisch / online)</h3>
+              <p>We verhelderen het probleem: wat gebeurt er, hoe lang speelt het, en wat is al geprobeerd? Je krijgt meteen eerste handvatten.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-content">
+              <h3>2) Patroonanalyse</h3>
+              <p>We maken het patroon zichtbaar: triggers, prikkels, miscommunicatie, rollen en beschermingsmechanismen (aanvallen/terugtrekken).</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-content">
+              <h3>3) Interventies + thuisopdrachten</h3>
+              <p>Elke sessie sluit af met een klein, haalbaar experiment voor thuis. Zo ontstaat verandering buiten de kamer, niet alleen erin.</p>
+            </div>
+          </div>
+          <div class="t-item">
+            <div class="t-dot" aria-hidden="true"></div>
+            <div class="t-content">
+              <h3>4) Borging</h3>
+              <p>We leggen vast wat werkt: gespreksscripts, pauze‑afspraken, prikkelplan, en herstelrituelen na conflict.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Twijfel je of dit past?</h3>
+            <p class="muted">Stuur kort: “waar lopen we op vast + wat wil je terug”. Dan reageer ik met de beste eerste stap.</p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://wa.me/31641251757" target="_blank" rel="noopener">App je situatie</a>
+            <a class="btn btn-ghost" href="#contact">Of neem contact op</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wie ben ik -->
+    <section class="section alt" id="wie-ben-ik">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <!-- Zet jouw foto in assets/img/erwin.jpg -->
+          <img src="assets/img/erwin.jpg" alt="Portretfoto van Erwin Nooter" loading="lazy" />
+        </div>
+        <div class="about-copy">
+          <h2>Wie ben ik</h2>
+          <p class="lead">
+            Ik ben <strong>Erwin Nooter</strong>. Ik help mensen en stellen om uit vastgelopen patronen te komen
+            en weer rust en verbinding te ervaren — met nuchterheid, diepgang en praktische stappen.
+          </p>
+
+          <div class="facts">
+            <div class="fact">
+              <h3>Stijl</h3>
+              <p>Helder, respectvol en zonder omwegen. We praten niet om te praten: we werken toe naar verandering.</p>
+            </div>
+            <div class="fact">
+              <h3>Veiligheid</h3>
+              <p>We bouwen eerst stabiliteit. Pas daarna gaan we de diepte in. Dat is essentieel bij stress, prikkels en trauma.</p>
+            </div>
+            <div class="fact">
+              <h3>Focus</h3>
+              <p>Relatiepatronen + neurodiversiteit + trauma-sensitief werken. Zodat adviezen wérken in jullie realiteit.</p>
+            </div>
+          </div>
+
+          <p class="muted small">
+            Tip: voeg hier later 3–5 regels toe over jouw achtergrond/opleiding/registraties (alleen wat je écht wilt vermelden).
+            Dat geeft extra vertrouwen zonder dat het “opschepperig” wordt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews / vertrouwen (placeholders) -->
+    <section class="section" id="ervaringen">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ervaringen</h2>
+          <p class="lead">Plaats hier later echte, korte quotes (anoniem). Korte zinnen werken het best.</p>
+        </div>
+
+        <div class="grid-3">
+          <figure class="quote">
+            <blockquote>“Er kwam rust in onze gesprekken. We wisten weer wat we aan elkaar hadden.”</blockquote>
+            <figcaption>— Stel, anoniem</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“Eindelijk concreet. Kleine opdrachten, groot effect in huis.”</blockquote>
+            <figcaption>— Cliënt, anoniem</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>“Neurodiversiteit werd niet ‘het probleem’, maar juist onderdeel van de oplossing.”</blockquote>
+            <figcaption>— Stel, anoniem</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section alt" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Veelgestelde vragen</h2>
+          <p class="lead">Kort en duidelijk. Klik open.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Doen jullie ook online sessies?</summary>
+            <p>Ja. Eerste gesprekken kunnen telefonisch of online. Vervolgtrajecten kunnen persoonlijk of via Zoom.</p>
+          </details>
+
+          <details>
+            <summary>Moet je altijd met z’n tweeën komen?</summary>
+            <p>Nee. Soms start je samen, soms juist individueel (bijv. om patronen te begrijpen of bij stress/trauma). We kiezen wat het meest effectief is.</p>
+          </details>
+
+          <details>
+            <summary>Wat als één van ons sneller overprikkeld is?</summary>
+            <p>Dan maken we prikkelbelasting bespreekbaar en zetten we concrete pauze‑afspraken en herstelmomenten neer, zodat gesprekken veilig blijven.</p>
+          </details>
+
+          <details>
+            <summary>Wat kost het?</summary>
+            <p>Tariefinformatie kun je hier later toevoegen. (Tip: zet een “vanaf” of “per sessie” neer, of vraag contact op voor een passend traject.)</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <h2>Contact</h2>
+          <p class="lead">Laagdrempelig starten. Appen mag ook.</p>
+
+          <div class="contact-cards">
+            <a class="contact-card" href="tel:+31641251757">
+              <span class="icon" aria-hidden="true">☎</span>
+              <span>
+                <strong>Bel</strong><br />
+                06‑41251757
+              </span>
+            </a>
+            <a class="contact-card" href="https://wa.me/31641251757" target="_blank" rel="noopener">
+              <span class="icon" aria-hidden="true">💬</span>
+              <span>
+                <strong>WhatsApp</strong><br />
+                Direct bericht sturen
+              </span>
+            </a>
+            <a class="contact-card" href="mailto:Erwin@erwinnootercoaching.nl?subject=Kennismaking%20relatietherapie">
+              <span class="icon" aria-hidden="true">✉</span>
+              <span>
+                <strong>E‑mail</strong><br />
+                Erwin@erwinnootercoaching.nl
+              </span>
+            </a>
+          </div>
+
+          <div class="contact-info">
+            <p><strong>Locatie:</strong> Veghel, Noord‑Brabant.</p>
+            <p><strong>Beschikbaarheid:</strong> ma t/m vr 08:00–20:00 (bij behoefte ook later of weekend; app even).</p>
+            <p class="muted small">Vertrouwelijk • Voor iedereen</p>
+          </div>
+        </div>
+
+        <div class="card form-card">
+          <h3>Stuur je vraag (zonder gedoe)</h3>
+          <p class="muted">Dit formulier opent je e‑mail (geen server nodig op GitHub Pages).</p>
+
+          <form id="contactForm">
+            <label>
+              Naam
+              <input name="name" type="text" autocomplete="name" required />
+            </label>
+            <label>
+              E‑mail
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Waar loop je op vast?
+              <textarea name="message" rows="5" required placeholder="Kort: situatie + wat je graag terug wilt."></textarea>
+            </label>
+            <button class="btn btn-primary btn-block" type="submit">Verstuur</button>
+            <p class="fineprint">
+              Liever direct? App naar <strong>06‑41251757</strong>.
+            </p>
+          </form>
+
+          <div class="note">
+            <p><strong>Pro‑tip (later):</strong> Wil je “echt” inzenden zonder mailclient? Koppel dit formulier aan Formspree of Netlify Forms. (Ik heb het alvast zo opgebouwd dat dat later heel makkelijk is.)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>
+          <div class="footer-brand">
+            <span class="mini-mark" aria-hidden="true"></span>
+            <strong>Erwin Nooter Coaching</strong>
+          </div>
+          <p class="muted">
+            Veghel, Noord‑Brabant — Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#top">Naar boven</a>
+          <a href="#relatietherapie">Relatietherapie</a>
+          <a href="#specialisaties">Specialisaties</a>
+          <a href="#werkwijze">Werkwijze</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-legal">
+          <p class="muted small">© <span id="year"></span> Erwin Nooter Coaching • <a href="mailto:Erwin@erwinnootercoaching.nl">Erwin@erwinnootercoaching.nl</a> • <a href="tel:+31641251757">06‑41251757</a></p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
-
+``
