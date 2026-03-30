@@ -44,23 +44,4 @@
 
     sections.forEach(s => obs.observe(s));
   }
-
-  // Contact form -> mailto
-  const form = document.getElementById("contactForm");
-  if (form) {
-    form.addEventListener("submit", (ev) => {
-      ev.preventDefault();
-      const data = new FormData(form);
-      const name = (data.get("name") || "").toString().trim();
-      const email = (data.get("email") || "").toString().trim();
-      const msg = (data.get("message") || "").toString().trim();
-
-      const subject = encodeURIComponent("Kennismaking coaching — " + (name || "aanvraag"));
-      const body = encodeURIComponent(
-        `Naam: ${name}\nE-mail: ${email}\n\nBericht:\n${msg}\n\n— Verzonden via de website`
-      );
-
-      window.location.href = `mailto:Erwin@erwinnootercoaching.nl?subject=${subject}&body=${body}`;
-    });
-  }
 })();
