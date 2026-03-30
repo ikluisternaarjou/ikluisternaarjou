@@ -4,16 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#163234" />
-  <title>Erwin Nooter Coaching | Relatietherapie met rust, helderheid en diepgang</title>
 
-  <meta name="description" content="Relatietherapie in Veghel (ook online). Specialisatie in HSP, ADHD, autisme en trauma. Nuchter, professioneel en trauma-sensitief: van vastlopen naar verbinding." />
+  <title>Erwin Nooter Coaching | Relatietherapie & individuele coaching</title>
+  <meta name="description" content="Erwin Nooter Coaching — relatietherapie én individuele coaching in Veghel (ook online). Specialisatie in HSP, ADHD, autisme en trauma. Professioneel, nuchter en trauma-sensitief." />
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Erwin Nooter Coaching | Relatietherapie met rust, helderheid en diepgang" />
-  <meta property="og:description" content="Relatietherapie in Veghel (ook online). Specialisatie in HSP, ADHD, autisme en trauma." />
+  <meta property="og:title" content="Erwin Nooter Coaching | Relatietherapie & individuele coaching" />
+  <meta property="og:description" content="Relatietherapie en individuele coaching in Veghel (ook online). HSP, ADHD, autisme en trauma." />
   <meta property="og:url" content="https://www.erwinnootercoaching.nl/" />
   <meta property="og:image" content="assets/img/og-cover.jpg" />
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23163234' d='M12 40c10-2 14-18 20-18s10 16 20 18v6H12z'/%3E%3Cpath fill='none' stroke='%23C08A65' stroke-width='3' d='M12 18h40M18 12v40M46 12v40'/%3E%3C/svg%3E" />
+  <!-- Favicon (simpel, inline) -->
+  <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23163234' d='M10 40c11-3 16-18 22-18s11 15 22 18v8H10z'/%3E%3Ccircle cx='22' cy='22' r='5' fill='%23C08A65'/%3E%3Ccircle cx='42' cy='22' r='5' fill='%232F7E75'/%3E%3C/svg%3E" />
+
   <link rel="stylesheet" href="assets/css/styles.css" />
 
   <!-- Structured data -->
@@ -28,12 +33,15 @@
     "url":"https://www.erwinnootercoaching.nl/",
     "serviceType":[
       "Relatietherapie",
+      "Individuele coaching",
       "Coaching bij HSP",
       "Begeleiding bij ADHD en autisme",
       "Trauma-sensitieve begeleiding"
     ]
   }
   </script>
+
+  <script src="assets/js/main.js" defer></script>
 </head>
 
 <body>
@@ -41,24 +49,33 @@
 
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Erwin Nooter Coaching (naar boven)">
+      <a class="brand" href="#top" aria-label="Naar boven">
         <span class="logo" aria-hidden="true">
-          <!-- Warm, rustig lijn-logo (inline SVG) -->
-          <svg viewBox="0 0 180 44" role="img" focusable="false" aria-hidden="true">
+          <!-- Nieuw logo: twee mensen/relatie als abstracte verbinding + veilige basis -->
+          <svg viewBox="0 0 220 72" role="img" focusable="false" aria-hidden="true">
             <defs>
               <linearGradient id="g" x1="0" x2="1">
                 <stop offset="0" stop-color="#C08A65"/>
                 <stop offset="1" stop-color="#2F7E75"/>
               </linearGradient>
             </defs>
-            <path d="M12 22h64" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
-            <path d="M44 8v28" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
-            <path d="M76 8v28" fill="none" stroke="#163234" stroke-width="3" stroke-linecap="round" opacity=".40"/>
-            <path d="M92 22c8-10 18-10 26 0s18 10 26 0" fill="none" stroke="#163234" stroke-width="3" stroke-linecap="round" opacity=".40"/>
-            <circle cx="118" cy="22" r="3.5" fill="#C08A65"/>
-            <circle cx="144" cy="22" r="3.5" fill="#2F7E75"/>
+
+            <!-- basis -->
+            <path d="M22 52c14-6 26-28 40-28s26 22 40 28" fill="none" stroke="#163234" stroke-opacity=".22" stroke-width="6" stroke-linecap="round"/>
+
+            <!-- twee ‘figuren’ als cirkels -->
+            <circle cx="76" cy="20" r="8" fill="#C08A65"/>
+            <circle cx="116" cy="20" r="8" fill="#2F7E75"/>
+
+            <!-- verbinding (overlap/brug) -->
+            <path d="M74 34c12-14 32-14 44 0" fill="none" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
+
+            <!-- subtiele kaderlijn voor rust -->
+            <rect x="8" y="8" width="204" height="56" rx="18" ry="18"
+                  fill="none" stroke="#163234" stroke-opacity=".10" stroke-width="2"/>
           </svg>
         </span>
+
         <span class="brand-text">
           <strong>Erwin Nooter</strong>
           <span>Coaching</span>
@@ -74,10 +91,11 @@
         <div class="navlinks" id="navlinks">
           <a href="#wie-ben-ik">Wie ben ik</a>
           <a href="#relatietherapie">Relatietherapie</a>
+          <a href="#individueel">Individuele coaching</a>
           <a href="#specialisaties">Specialisaties</a>
           <a href="#werkwijze">Werkwijze</a>
           <a href="#faq">FAQ</a>
-          <a href="#contact" class="nav-cta">Contact</a>
+          <a class="nav-cta" href="#contact">Contact</a>
         </div>
       </nav>
 
@@ -89,14 +107,17 @@
   </header>
 
   <main id="main">
-    <!-- Rustige, kleine intro (niet overladen) -->
-    <section class="hero">
+    <!-- Rustige binnenkomst + subtiele merknaam -->
+    <section class="hero" aria-label="Intro">
       <div class="container hero-inner">
-        <p class="eyebrow">Relatietherapie • Veghel & online</p>
-        <h1>Rust en richting als het tussen jullie vastloopt.</h1>
+        <p class="brandline">Erwin Nooter Coaching</p>
+        <p class="eyebrow">Relatietherapie • Individuele coaching • Veghel & online</p>
+
+        <h1>Rust en richting als je vastloopt — samen of alleen.</h1>
+
         <p class="lead">
-          Nuchter, professioneel en trauma‑sensitief. Met extra kennis van <strong>HSP</strong>, <strong>ADHD</strong>,
-          <strong>autisme</strong> en <strong>trauma</strong> — zodat de aanpak past bij jullie werkelijkheid.
+          Professioneel, nuchter en trauma‑sensitief. Met extra kennis van <strong>HSP</strong>, <strong>ADHD</strong>,
+          <strong>autisme</strong> en <strong>trauma</strong> — zodat begeleiding past bij jouw werkelijkheid.
         </p>
 
         <div class="hero-actions">
@@ -105,68 +126,90 @@
         </div>
 
         <p class="micro-proof">
-          <strong>Beschikbaar:</strong> ma t/m vr 08:00–20:00 (bij behoefte ook later of weekenden; app even). [1](https://onedrive.live.com/?id=55b97db5-b58b-4a86-b400-9479e4130a00&cid=941eea39bc14c145&web=1)
+          <strong>Beschikbaar:</strong> ma t/m vr 08:00–20:00 (bij behoefte ook later of weekenden; app even).
         </p>
       </div>
       <div class="hero-bg" aria-hidden="true"></div>
     </section>
 
-    <!-- Wie ben ik (nu als eerste echte contentblok) -->
+    <!-- WIE BEN IK -->
     <section class="section" id="wie-ben-ik">
-      <div class="container about-grid">
-        <div class="about-photo">
-          <img src="assets/img/erwin.jpg" alt="Portretfoto van Erwin Nooter" loading="lazy" />
-        </div>
-
-        <div class="about-copy">
+      <div class="container">
+        <div class="section-head">
           <h2>Wie ben ik</h2>
           <p class="lead">
-            Ik ben <strong>Erwin Nooter</strong>. Ik help stellen (en individuen) die merken dat ze elkaar kwijt zijn geraakt —
-            niet omdat de liefde weg is, maar omdat stress, prikkels, misverstanden of oud zeer ertussen zijn gaan zitten.
+            Ik ben <strong>Erwin Nooter</strong>. Ik help mensen en stellen om uit vastgelopen patronen te komen
+            en weer rust, helderheid en verbinding te ervaren.
           </p>
+        </div>
 
-          <p>
-            Vaak zie ik twee mensen die het <em>allebei</em> goed bedoelen, maar toch in hetzelfde rondje terechtkomen:
-            de één gaat harder duwen (meer woorden, meer argumenten), de ander gaat dichter (stil, afstand, terugtrekken).
-            En hoe harder jullie proberen, hoe verder je soms uit elkaar lijkt te gaan.
-          </p>
+        <div class="about-grid">
+          <!-- Links: foto + placeholder onder de foto -->
+          <div class="about-left">
+            <figure class="about-photo">
+              <img src="assets/img/erwin.jpg" alt="Erwin Nooter" loading="lazy" />
+            </figure>
 
-          <p>
-            Mijn stijl is rustig en duidelijk. We maken snel helder: <strong>wat gebeurt er precies</strong>,
-            <strong>waarom gebeurt het</strong> (ook vanuit prikkels/overbelasting, neurodiversiteit of triggers),
-            en <strong>wat is de eerstvolgende stap</strong> die direct lucht geeft.
-          </p>
-
-          <div class="facts">
-            <div class="fact">
-              <h3>Wat je krijgt</h3>
-              <p>Rust en regie in het gesprek, scherpe vragen, en concrete oefeningen voor thuis.</p>
-            </div>
-            <div class="fact">
-              <h3>Waar ik op let</h3>
-              <p>Veiligheid, prikkelbelasting, en de onderlaag: behoefte, hechting, en (oude) pijnpunten.</p>
-            </div>
-            <div class="fact">
-              <h3>Wat ik vermijd</h3>
-              <p>Geen zweverigheid. Geen oordeel. Geen eindeloze sessies zonder richting.</p>
+            <!-- Placeholder staat nu ONDER de foto (zoals jij vroeg) -->
+            <div class="panel placeholder">
+              <h3>Placeholder (pas jij later aan)</h3>
+              <p class="muted">
+                Vul hier later je achtergrond/opleiding/registraties in. Bijvoorbeeld:
+                “Ik werk als coach/therapeut met een nuchtere stijl: veilig, helder en doelgericht.
+                Mijn achtergrond: [VUL AAN]. Waar cliënten mij vaak om waarderen: rust, scherpte en concrete stappen.”
+              </p>
+              <p class="muted small">
+                Je kunt hier ook 3 korte bullets zetten (bijv. “trauma-sensitief”, “neurodiversiteit”, “praktische oefeningen”).
+              </p>
             </div>
           </div>
 
-          <div class="callout">
-            <div class="callout-inner">
-              <p class="muted">
-                <strong>Placeholder (pas jij later aan):</strong> “Ik werk vanuit een combinatie van evidence‑based therapie/coaching
-                en praktische communicatie‑tools. Mijn achtergrond/opleiding/registraties: [VUL AAN]. Wat mij typeert:
-                betrokken, nuchter, en scherp op patronen.”
-              </p>
-              <a class="btn btn-ghost" href="#contact">Contact opnemen</a>
+          <!-- Rechts: tekst + 3 kopjes naast de placeholder op dezelfde hoogte -->
+          <div class="about-right">
+            <p>
+              Vaak zie ik mensen die het goed bedoelen, maar die toch telkens in hetzelfde rondje belanden.
+              In relaties: de één gaat duwen (meer woorden, meer argumenten), de ander sluit (stil, afstand, terugtrekken).
+              Individueel: je blijft ‘aan’ staan, raakt overprikkeld, of je loopt vast in werk, grenzen of zelfbeeld.
+            </p>
+
+            <p>
+              Mijn stijl is rustig en duidelijk. We maken snel helder: <strong>wat gebeurt er precies</strong>,
+              <strong>waarom gebeurt het</strong> (ook vanuit prikkels/overbelasting of triggers),
+              en <strong>wat is de eerstvolgende stap</strong> die direct lucht geeft.
+            </p>
+
+            <div class="facts">
+              <div class="fact">
+                <h3>Wat je krijgt</h3>
+                <p>Rust en regie, scherpe vragen, en praktische handvatten die je meteen kunt toepassen.</p>
+              </div>
+
+              <div class="fact">
+                <h3>Waar ik op let</h3>
+                <p>Veiligheid, prikkelbelasting, communicatiepatronen en de onderlaag: behoefte, hechting en stress.</p>
+              </div>
+
+              <div class="fact">
+                <h3>Wat ik vermijd</h3>
+                <p>Geen zweverigheid. Geen oordeel. Geen eindeloos praten zonder richting of concrete acties.</p>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="callout-inner">
+            <p>
+              <strong>Goed om te weten:</strong> als HSP/ADHD/autisme/trauma meespelen, is “gewoon beter communiceren”
+              vaak niet genoeg. Dan heb je ook prikkelregulatie, veiligheid en duidelijke afspraken nodig.
+            </p>
+            <a class="btn btn-ghost" href="#specialisaties">Bekijk de specialisaties</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Relatietherapie -->
+    <!-- RELATIETHERAPIE -->
     <section class="section alt" id="relatietherapie">
       <div class="container">
         <div class="section-head">
@@ -181,9 +224,9 @@
           <article class="panel">
             <h3>Wanneer is dit helpend?</h3>
             <ul class="checklist">
-              <li>Steeds dezelfde ruzie / discussie, andere woorden — zelfde pijn.</li>
+              <li>Steeds dezelfde ruzie, andere woorden — zelfde pijn.</li>
               <li>Afstand, stiltes, vermijden, of juist escalatie.</li>
-              <li>Vertrouwen onder druk (grenzen, eerlijkheid, jaloezie, herstel).</li>
+              <li>Vertrouwen onder druk (grenzen, eerlijkheid, herstel).</li>
               <li>Intimiteit loopt vast door stress, prikkels of spanning.</li>
             </ul>
           </article>
@@ -194,7 +237,7 @@
               <li>Veilige communicatie: duidelijk, respectvol, to‑the‑point.</li>
               <li>Triggers herkennen (en stoppen vóór escalatie).</li>
               <li>Grenzen en behoeften uitspreken zónder strijd.</li>
-              <li>Herstel na conflict: reparatiegesprekken die echt landen.</li>
+              <li>Herstel na conflict: reparatiegesprekken die landen.</li>
             </ul>
           </article>
 
@@ -204,31 +247,70 @@
               <li>Meer rust in huis en in je hoofd.</li>
               <li>Sneller uit conflict, langer in verbinding.</li>
               <li>Concrete afspraken die haalbaar zijn.</li>
-              <li>Meer begrip voor elkaars “bedieningshandleiding”.</li>
+              <li>Meer begrip voor elkaars “handleiding”.</li>
             </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDIVIDUELE COACHING -->
+    <section class="section" id="individueel">
+      <div class="container">
+        <div class="section-head">
+          <h2>Individuele coaching</h2>
+          <p class="lead">
+            Soms is de beste stap eerst individueel: om overzicht te krijgen, grenzen helder te maken,
+            stress te reguleren of patronen te doorbreken — in je werk, relatie of in jezelf.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="panel">
+            <h3>HSP & overprikkeling</h3>
+            <p class="muted">
+              Je hoofd staat altijd aan. Je raakt sneller leeg of geïrriteerd. We bouwen een prikkel‑ en herstelplan
+              dat wérkt in jouw dag (werk, gezin, agenda).
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Trauma & stress</h3>
+            <p class="muted">
+              Triggers, alertheid, controle of juist ‘uit’ gaan beïnvloeden je leven. Trauma‑sensitief:
+              eerst veiligheid en stabiliteit, daarna pas verdieping.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Vastlopen op werk / burn‑out</h3>
+            <p class="muted">
+              Grenzen, verantwoordelijkheidsgevoel, perfectionisme, pleasen of druk. We brengen oorzaken in kaart,
+              maken keuzes, en zetten een herstelroute neer met haalbare stappen.
+            </p>
           </article>
         </div>
 
         <div class="callout">
           <div class="callout-inner">
-            <p>
-              <strong>Belangrijk:</strong> bij HSP/ADHD/autisme/trauma zijn patronen vaak intenser (prikkelbelasting,
-              shutdowns, hyperfocus, triggers). Dat vraagt om een aanpak die ook <em>neuro‑sensitief</em> is.
+            <p class="muted">
+              <strong>Ook mogelijk:</strong> rouw & verlies, zelfbeeld/zelfvertrouwen, piekeren, besluiteloosheid,
+              conflictvaardigheden, (werk)stress, en het terugvinden van richting.
             </p>
-            <a class="btn btn-ghost" href="#specialisaties">Lees hoe ik dat aanpak</a>
+            <a class="btn btn-primary" href="#contact">Bespreek jouw situatie</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Specialisaties -->
-    <section class="section" id="specialisaties">
+    <!-- SPECIALISATIES -->
+    <section class="section alt" id="specialisaties">
       <div class="container">
         <div class="section-head">
-          <h2>Specialisaties: waar veel mis gaat — en waar veel winst ligt</h2>
+          <h2>Specialisaties</h2>
           <p class="lead">
-            Als neurodiversiteit en trauma meespelen, is “gewoon beter communiceren” vaak niet genoeg.
-            Dan heb je ook <strong>prikkelregulatie</strong>, <strong>veiligheid</strong> en <strong>heldere afspraken</strong> nodig.
+            Als neurodiversiteit en trauma meespelen, is “gewoon beter communiceren” of “gewoon meer rust nemen”
+            vaak te simpel. Dan heb je óók de juiste aanpak nodig.
           </p>
         </div>
 
@@ -236,78 +318,40 @@
           <article class="panel">
             <h3>HSP (hooggevoeligheid)</h3>
             <p class="muted">
-              Sneller overprikkeld → sneller kort lontje of juist terugtrekken. We maken samen een plan:
-              signalen herkennen, pauzes afspreken, en “nazorg” na spanning.
+              Sneller overprikkeld → sneller kort lontje of terugtrekken. We werken met signalen, pauzes, en herstel.
             </p>
           </article>
 
           <article class="panel">
             <h3>ADHD</h3>
             <p class="muted">
-              Impulsiviteit, vergeetachtigheid en emotionele intensiteit kunnen relatie‑ruis geven.
-              We bouwen structuur die niet verstikt, maar wél helpt.
+              Impulsiviteit, vergeetachtigheid en emotionele intensiteit kunnen ruis geven. We bouwen structuur die helpt.
             </p>
           </article>
 
           <article class="panel">
             <h3>Autisme</h3>
             <p class="muted">
-              Letterlijk nemen, detailfocus, behoefte aan voorspelbaarheid: dit kan botsen met impliciete verwachtingen.
-              We vertalen naar expliciete afspraken en “taal” die beide partners begrijpen.
+              Behoefte aan duidelijkheid en voorspelbaarheid botst soms met impliciete verwachtingen. We maken afspraken expliciet.
             </p>
           </article>
 
           <article class="panel">
-            <h3>Trauma (en chronische stress)</h3>
+            <h3>Trauma</h3>
             <p class="muted">
-              Triggers, alertheid, controle of juist dissociatie beïnvloeden intimiteit en conflict.
-              We werken trauma‑sensitief: eerst veiligheid, dan verdieping.
+              Triggers en beschermingsmechanismen sturen gedrag. Trauma‑sensitief betekent: eerst veiligheid, dan groei.
             </p>
-          </article>
-        </div>
-
-        <div class="soft-divider" aria-hidden="true"></div>
-
-        <div class="grid-3">
-          <article class="panel small">
-            <h3>Wat je van mij mag verwachten</h3>
-            <ul class="bullets">
-              <li>Rust en regie in het gesprek</li>
-              <li>Doorvragen tot het helder wordt</li>
-              <li>Concrete oefeningen voor thuis</li>
-            </ul>
-          </article>
-
-          <article class="panel small">
-            <h3>Wat ik níet doe</h3>
-            <ul class="bullets">
-              <li>Zweverige beloftes</li>
-              <li>“Kies een kant” of oordeel</li>
-              <li>Jullie laten zwemmen zonder plan</li>
-            </ul>
-          </article>
-
-          <article class="panel small">
-            <h3>Andere thema’s (ook mogelijk)</h3>
-            <ul class="bullets">
-              <li>Stress & burn-out</li>
-              <li>Rouw & verlies</li>
-              <li>Zelfbeeld & zelfvertrouwen</li>
-              <li>Mentale begeleiding (werk/sport)</li>
-            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Werkwijze -->
-    <section class="section alt" id="werkwijze">
+    <!-- WERKWIJZE -->
+    <section class="section" id="werkwijze">
       <div class="container">
         <div class="section-head">
           <h2>Werkwijze: duidelijk, veilig en doelgericht</h2>
-          <p class="lead">
-            Geen doolhof aan submenu’s — wél snel naar wat je nodig hebt.
-          </p>
+          <p class="lead">Geen doolhof — wél richting. Iedere sessie eindigt met een haalbare stap voor de week.</p>
         </div>
 
         <div class="timeline">
@@ -315,7 +359,7 @@
             <div class="t-dot" aria-hidden="true"></div>
             <div class="t-content">
               <h3>1) Kennismaking (telefonisch / online)</h3>
-              <p>We verhelderen het probleem: wat gebeurt er, hoe lang speelt het, en wat is al geprobeerd? Je krijgt meteen eerste handvatten.</p>
+              <p>We verhelderen je vraag: wat gebeurt er, hoe lang speelt het, en wat is al geprobeerd? Je krijgt direct eerste handvatten.</p>
             </div>
           </div>
 
@@ -323,7 +367,7 @@
             <div class="t-dot" aria-hidden="true"></div>
             <div class="t-content">
               <h3>2) Patroon in beeld</h3>
-              <p>We maken het patroon zichtbaar: triggers, prikkels, miscommunicatie, rollen en beschermingsmechanismen (aanvallen/terugtrekken).</p>
+              <p>We maken zichtbaar wat er onder de oppervlakte gebeurt: triggers, prikkels, rolverdeling, stress en communicatie.</p>
             </div>
           </div>
 
@@ -331,7 +375,7 @@
             <div class="t-dot" aria-hidden="true"></div>
             <div class="t-content">
               <h3>3) Interventies + thuisopdrachten</h3>
-              <p>Elke sessie sluit af met een klein, haalbaar experiment voor thuis. Zo ontstaat verandering buiten de kamer, niet alleen erin.</p>
+              <p>Kleine, concrete experimenten voor thuis. Zo ontstaat verandering buiten de kamer — niet alleen erin.</p>
             </div>
           </div>
 
@@ -339,15 +383,15 @@
             <div class="t-dot" aria-hidden="true"></div>
             <div class="t-content">
               <h3>4) Borging</h3>
-              <p>We leggen vast wat werkt: gespreksscripts, pauze‑afspraken, prikkelplan, en herstelrituelen na conflict.</p>
+              <p>We leggen vast wat werkt: afspraken, routines, pauze‑momenten en herstel na spanning/conflict.</p>
             </div>
           </div>
         </div>
 
         <div class="cta-band">
           <div>
-            <h3>Twijfel je of dit past?</h3>
-            <p class="muted">Stuur kort: “waar lopen we op vast + wat wil je terug”. Dan reageer ik met de beste eerste stap.</p>
+            <h3>Twijfel je wat past?</h3>
+            <p class="muted">Stuur kort: “waar loop je op vast + wat wil je terug”. Dan geef ik de beste eerste stap.</p>
           </div>
           <div class="cta-actions">
             <a class="btn btn-primary" href="https://wa.me/31641251757">App je situatie</a>
@@ -358,7 +402,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="section" id="faq">
+    <section class="section alt" id="faq">
       <div class="container">
         <div class="section-head">
           <h2>Veelgestelde vragen</h2>
@@ -373,24 +417,24 @@
 
           <details>
             <summary>Moet je altijd met z’n tweeën komen?</summary>
-            <p>Nee. Soms start je samen, soms juist individueel (bijv. om patronen te begrijpen of bij stress/trauma). We kiezen wat het meest effectief is.</p>
+            <p>Nee. Soms start je samen, soms juist individueel. We kiezen wat het meest effectief is.</p>
           </details>
 
           <details>
             <summary>Wat als één van ons sneller overprikkeld is?</summary>
-            <p>Dan maken we prikkelbelasting bespreekbaar en zetten we concrete pauze‑afspraken en herstelmomenten neer, zodat gesprekken veilig blijven.</p>
+            <p>Dan maken we prikkelbelasting expliciet en werken we met pauze‑afspraken en herstelmomenten, zodat gesprekken veilig blijven.</p>
           </details>
 
           <details>
             <summary>Wat kost het?</summary>
-            <p>Tariefinformatie kun je hier later toevoegen. Tip: zet een “vanaf” of “per sessie” neer, of vraag contact op voor een passend traject.</p>
+            <p>Tariefinformatie kun je hier later toevoegen. Tip: zet “per sessie” of “vanaf”, of vraag contact op voor een passend traject.</p>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="section alt" id="contact">
+    <!-- CONTACT -->
+    <section class="section" id="contact">
       <div class="container contact-grid">
         <div>
           <h2>Contact</h2>
@@ -413,7 +457,7 @@
               </span>
             </a>
 
-            <a class="contact-card" href="mailto:Erwin@erwinnootercoaching.nl?subject=Kennismaking%20relatietherapie">
+            <a class="contact-card" href="mailto:Erwin@erwinnootercoaching.nl?subject=Kennismaking%20coaching">
               <span class="icon" aria-hidden="true">✉</span>
               <span>
                 <strong>E‑mail</strong><br />
@@ -423,9 +467,9 @@
           </div>
 
           <div class="contact-info">
-            <p><strong>Locatie:</strong> Veghel, Noord‑Brabant. [1](https://onedrive.live.com/?id=55b97db5-b58b-4a86-b400-9479e4130a00&cid=941eea39bc14c145&web=1)</p>
-            <p><strong>Beschikbaarheid:</strong> ma t/m vr 08:00–20:00 (bij behoefte ook later of weekenden; app even). [1](https://onedrive.live.com/?id=55b97db5-b58b-4a86-b400-9479e4130a00&cid=941eea39bc14c145&web=1)</p>
-            <p class="muted small">Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom. [1](https://onedrive.live.com/?id=55b97db5-b58b-4a86-b400-9479e4130a00&cid=941eea39bc14c145&web=1)</p>
+            <p><strong>Locatie:</strong> Veghel, Noord‑Brabant.</p>
+            <p><strong>Beschikbaarheid:</strong> ma t/m vr 08:00–20:00 (bij behoefte ook later of weekend; app even).</p>
+            <p class="muted small">Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom.</p>
           </div>
         </div>
 
@@ -448,17 +492,18 @@
             </label>
             <button class="btn btn-primary btn-block" type="submit">Verstuur</button>
             <p class="fineprint">
-              Liever direct? App naar <strong>06‑41251757</strong>. [1](https://onedrive.live.com/?id=55b97db5-b58b-4a86-b400-9479e4130a00&cid=941eea39bc14c145&web=1)
+              Liever direct? App naar <strong>06‑41251757</strong>.
             </p>
           </form>
 
           <div class="note">
-            <p><strong>Later uitbreiden:</strong> wil je echt inzenden zonder mailclient? Koppel dit formulier aan Formspree of Netlify Forms. De opzet is daar al geschikt voor.</p>
+            <p><strong>Later uitbreiden:</strong> Wil je echt inzenden zonder mailclient? Koppel dit formulier aan Formspree of Netlify Forms.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer class="footer">
       <div class="container footer-inner">
         <div>
@@ -467,7 +512,7 @@
             <strong>Erwin Nooter Coaching</strong>
           </div>
           <p class="muted">
-            Veghel, Noord‑Brabant — Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom. [1](https://onedrive.live.com/?id=55b97db5-b58b-4a86-b400-9479e4130a00&cid=941eea39bc14c145&web=1)
+            Veghel, Noord‑Brabant — Eerste gesprekken telefonisch of online, vervolgtrajecten persoonlijk of via Zoom.
           </p>
         </div>
 
@@ -475,7 +520,7 @@
           <a href="#top">Naar boven</a>
           <a href="#wie-ben-ik">Wie ben ik</a>
           <a href="#relatietherapie">Relatietherapie</a>
-          <a href="#specialisaties">Specialisaties</a>
+          <a href="#individueel">Individuele coaching</a>
           <a href="#contact">Contact</a>
         </div>
 
@@ -483,13 +528,11 @@
           <p class="muted small">
             © <span id="year"></span> Erwin Nooter Coaching •
             <a href="mailto:Erwin@erwinnootercoaching.nl">Erwin@erwinnootercoaching.nl</a> •
-            <a href="tel:+31641251757">06‑41251757</a> [1](https://onedrive.live.com/?id=55b97db5-b58b-4a86-b400-9479e4130a00&cid=941eea39bc14c145&web=1)
+            <a href="tel:+31641251757">06‑41251757</a>
           </p>
         </div>
       </div>
     </footer>
   </main>
-
-  <script src="assets/js/main.js"></script>
 </body>
 </html>
