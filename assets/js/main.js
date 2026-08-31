@@ -140,7 +140,7 @@
   }
 
   /*
-   * Eén FAQ tegelijk geopend houden
+   * Eén FAQ-item tegelijk geopend houden
    */
   const faqItems = document.querySelectorAll(".faq details");
 
@@ -162,7 +162,8 @@
    * Interactieve vraagwijzer
    *
    * De antwoorden worden alleen in het huidige browservenster gebruikt.
-   * Er wordt niets naar een server gestuurd en niets in localStorage gezet.
+   * Er wordt niets naar een server gestuurd.
+   * Er wordt niets in localStorage opgeslagen.
    */
   const questionForm = document.getElementById("question-form");
 
@@ -174,8 +175,11 @@
     questionForm.querySelectorAll(".question-step")
   );
 
-  const nextButtons = questionForm.querySelectorAll(".question-next");
-  const backButtons = questionForm.querySelectorAll(".question-back");
+  const nextButtons =
+    questionForm.querySelectorAll(".question-next");
+
+  const backButtons =
+    questionForm.querySelectorAll(".question-back");
 
   const progressBar = document.getElementById(
     "question-progress-bar"
@@ -191,7 +195,10 @@
 
   const situationField = document.getElementById("situation");
   const wishField = document.getElementById("wish");
-  const messagePreview = document.getElementById("message-preview");
+
+  const messagePreview = document.getElementById(
+    "message-preview"
+  );
 
   const situationCount = document.getElementById(
     "situation-count"
@@ -200,6 +207,7 @@
   const wishCount = document.getElementById("wish-count");
 
   const topicError = document.getElementById("topic-error");
+
   const situationError = document.getElementById(
     "situation-error"
   );
@@ -211,7 +219,10 @@
   );
 
   const emailButton = document.getElementById("send-email");
-  const resetButton = document.getElementById("question-reset");
+
+  const resetButton = document.getElementById(
+    "question-reset"
+  );
 
   const progressNames = {
     1: "Je situatie",
@@ -242,45 +253,6 @@
     setError(wishError, "");
   };
 
-  const focusFirstControl = (stepNumber) => {
-    const activeStep = questionSteps.find((step) => {
-      return Number(step.dataset.step) === stepNumber;
-    });
-
-    if (!activeStep) {
-      return;
-    }
-
-    const legend = activeStep.querySelector("legend");
-    const firstControl = activeStep.querySelector(
-      "input, textarea, button"
-    );
-
-    if (stepNumber === 4 && messagePreview) {
-      window.setTimeout(() => {
-        messagePreview.focus();
-      }, 180);
-
-      return;
-    }
-
-    if (firstControl) {
-      window.setTimeout(() => {
-        firstControl.focus();
-      }, 180);
-
-      return;
-    }
-
-    if (legend) {
-      legend.setAttribute("tabindex", "-1");
-
-      window.setTimeout(() => {
-        legend.focus();
-      }, 180);
-    }
-  };
-
   const updateProgress = (stepNumber) => {
     const percentage = stepNumber * 25;
 
@@ -298,6 +270,34 @@
     }
   };
 
+  const focusFirstControl = (stepNumber) => {
+    const activeStep = questionSteps.find((step) => {
+      return Number(step.dataset.step) === stepNumber;
+    });
+
+    if (!activeStep) {
+      return;
+    }
+
+    if (stepNumber === 4 && messagePreview) {
+      window.setTimeout(() => {
+        messagePreview.focus();
+      }, 150);
+
+      return;
+    }
+
+    const firstControl = activeStep.querySelector(
+      "input, textarea, button"
+    );
+
+    if (firstControl) {
+      window.setTimeout(() => {
+        firstControl.focus();
+      }, 150);
+    }
+  };
+
   const showStep = (stepNumber) => {
     currentStep = stepNumber;
     clearErrors();
@@ -311,28 +311,6 @@
     });
 
     updateProgress(stepNumber);
-
-    const questionBuilder = document.querySelector(
-      ".question-builder"
-    );
-
-    if (questionBuilder) {
-      const builderTop =
-        questionBuilder.getBoundingClientRect().top +
-        window.scrollY -
-        105;
-
-      if (
-        window.scrollY > builderTop + 200 ||
-        stepNumber === 1
-      ) {
-        window.scrollTo({
-          top: builderTop,
-          behavior: "smooth"
-        });
-      }
-    }
-
     focusFirstControl(stepNumber);
   };
 
@@ -380,7 +358,10 @@
     }
 
     if (stepNumber === 3) {
-      const wish = wishField ? wishField.value.trim() : "";
+      const wish = wishField
+        ? wishField.value.trim()
+        : "";
+
       const need = getSelectedValue("need");
 
       if (wish.length < 10) {
@@ -419,11 +400,15 @@
 
   const buildMessage = () => {
     const topic = getSelectedValue("topic");
+
     const situation = situationField
       ? situationField.value.trim()
       : "";
 
-    const wish = wishField ? wishField.value.trim() : "";
+    const wish = wishField
+      ? wishField.value.trim()
+      : "";
+
     const need = getSelectedValue("need");
 
     return [
@@ -448,11 +433,9 @@
   };
 
   const prepareMessagePreview = () => {
-    if (!messagePreview) {
-      return;
+    if (messagePreview) {
+      messagePreview.value = buildMessage();
     }
-
-    messagePreview.value = buildMessage();
   };
 
   nextButtons.forEach((button) => {
@@ -513,14 +496,22 @@
 
   if (wishField) {
     wishField.addEventListener("input", () => {
-      updateCharacterCount(wishField, wishCount, 700);
+      updateCharacterCount(
+        wishField,
+        wishCount,
+        700
+      );
 
       if (wishField.value.trim().length >= 10) {
         setError(wishError, "");
       }
     });
 
-    updateCharacterCount(wishField, wishCount, 700);
+    updateCharacterCount(
+      wishField,
+      wishCount,
+      700
+    );
   }
 
   questionForm
@@ -602,17 +593,16 @@
         900
       );
 
-      updateCharacterCount(wishField, wishCount, 700);
+      updateCharacterCount(
+        wishField,
+        wishCount,
+        700
+      );
 
       showStep(1);
     });
   }
 
-  /*
-   * Enter niet gebruiken om het formulier onverwacht
-   * te laten verzenden. In tekstvelden blijft Enter
-   * gewoon een nieuwe regel.
-   */
   questionForm.addEventListener("submit", (event) => {
     event.preventDefault();
   });
@@ -626,8 +616,5 @@
     }
   });
 
-  /*
-   * Begin altijd bij stap 1.
-   */
   showStep(1);
 })();
